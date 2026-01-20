@@ -1,0 +1,190 @@
+<!--
+Banner: Basic Leaderboard Modal
+Experience ID: Marketing ( Banner / Preis-Offensive
+Version: 2026-01-20_001_DE
+
+TODO:
+- Update image src and alt text for localization if needed
+- make sure image is hosted and accessible – on PROD!
+-->
+
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-20_001_DE">
+    img.banner-marketing__image {
+        width: 700px;
+        height: 175px;
+    }
+
+   /* Banner styles */
+    .overlay-banner.basic-leaderboard-modal--preis-offensive {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 700px;
+      height: 175px;
+      max-width: 95vw;
+    
+    &.top {
+      top: 20px;
+    }
+    
+    &.bottom {
+      bottom: 20px;
+    }
+    
+    .banner-content {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .banner-close {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 24px;
+      height: 24px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    
+    .banner-close:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .banner-close::before,
+    .banner-close::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: #333;
+    }
+    
+    .banner-close::before {
+      transform: rotate(45deg);
+    }
+    
+    .banner-close::after {
+      transform: rotate(-45deg);
+    }
+}
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .overlay-banner.basic-leaderboard-modal--preis-offensive {
+        width: 350px;
+        height: 86px;
+
+        &.bottom {
+            bottom: 50px;
+        }
+      
+        img.banner-marketing__image {
+            width: 350px;
+            height: 86px;
+        }
+      .banner-content {
+        padding: 10px;
+        font-size: 14px;
+      }
+      
+      .banner-close {
+        width: 20px;
+        height: 20px;
+        top: 5px;
+        right: 5px;
+      }
+      
+      .banner-close::before,
+      .banner-close::after {
+        width: 10px;
+      }
+    }
+}
+</style>
+
+
+<div id="overlayBanner" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
+    <div class="banner-content">
+        <!-- TODO: Use proper image and alt text here. Language! -->
+        <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" class="banner-marketing__image" />
+    </div>
+    <div class="banner-close" onclick="closeBanner()"></div>
+</div>
+
+
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-20_001_DE">
+  // Banner configuration
+    const BANNER_CONFIG = {
+        position: 'bottom', // 'top' or 'bottom'
+        storageKey: 'bannerClosed', // sessionStorage key
+        paths: [ // TODO: use proper paths, remove '/' if not needed
+            '/',
+            '/compass-preisoffensive'
+        ], // Array of paths where banner should be shown. Empty array = show on all paths.
+        DEBUG: true,
+        experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01-20_001_DE'
+    };
+
+    function isPathAllowed() {
+        // If paths array is empty, show banner on all paths
+        if (BANNER_CONFIG.paths.length === 0) {
+                return true;
+        }
+      
+        const currentPath = window.location.pathname;
+        return BANNER_CONFIG.paths.some(path => currentPath === path || currentPath.startsWith(path));
+    }
+
+    function initBanner() {
+        if (BANNER_CONFIG.DEBUG) {
+            console.info(`[Banner DEBUG] Initializing banner with experience ID: ${BANNER_CONFIG.experienceId}`);
+        }
+
+        const banner = document.getElementById('overlayBanner');
+        
+        // Check if current path is allowed
+        if (!isPathAllowed()) {
+            return; // Don't show banner on this path
+        }
+        
+        // Check if banner was previously closed
+        if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
+            return; // Don't show banner
+        }
+        
+        // Set position class
+        banner.classList.add(BANNER_CONFIG.position);
+        
+        // Show banner
+        banner.style.display = 'flex';
+    }
+
+    function closeBanner() {
+        const banner = document.getElementById('overlayBanner');
+        banner.style.display = 'none';
+        
+        // Remember that banner was closed
+        sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+    }
+
+    // Initialize banner when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBanner);
+    } else {
+        initBanner();
+    }
+</script>
