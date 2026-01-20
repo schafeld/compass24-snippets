@@ -112,40 +112,67 @@
 </div>
 
 
-<script data-id="basic-leaderboard-modal" data-version="2026-01-20_001">
+<script data-id="basic-leaderboard-modal" data-version="2026-01-20_002">
   // Banner configuration
     const BANNER_CONFIG = {
-      position: 'bottom', // 'top' or 'bottom'
-      storageKey: 'bannerClosed' // sessionStorage key
+        position: 'bottom', // 'top' or 'bottom'
+        storageKey: 'bannerClosed', // sessionStorage key
+        paths: [ 
+            '/',
+            '/navigation',
+            'motor',
+            'sale'
+        ], // Array of paths where banner should be shown. Empty array = show on all paths.
+        DEBUG: true,
+        experienceId: 'basic-leaderboard-modal-2026-01-20_002'
     };
 
+    function isPathAllowed() {
+        // If paths array is empty, show banner on all paths
+        if (BANNER_CONFIG.paths.length === 0) {
+                return true;
+        }
+      
+        const currentPath = window.location.pathname;
+        return BANNER_CONFIG.paths.some(path => currentPath === path || currentPath.startsWith(path));
+    }
+
     function initBanner() {
-      const banner = document.getElementById('overlayBanner');
-      
-      // Check if banner was previously closed
-      if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
-        return; // Don't show banner
-      }
-      
-      // Set position class
-      banner.classList.add(BANNER_CONFIG.position);
-      
-      // Show banner
-      banner.style.display = 'flex';
+        if (BANNER_CONFIG.DEBUG) {
+            console.info(`[Banner DEBUG] Initializing banner with experience ID: ${BANNER_CONFIG.experienceId}`);
+        }
+
+        const banner = document.getElementById('overlayBanner');
+        
+        // Check if current path is allowed
+        if (!isPathAllowed()) {
+            return; // Don't show banner on this path
+        }
+        
+        // Check if banner was previously closed
+        if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
+            return; // Don't show banner
+        }
+        
+        // Set position class
+        banner.classList.add(BANNER_CONFIG.position);
+        
+        // Show banner
+        banner.style.display = 'flex';
     }
 
     function closeBanner() {
-      const banner = document.getElementById('overlayBanner');
-      banner.style.display = 'none';
-      
-      // Remember that banner was closed
-      sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+        const banner = document.getElementById('overlayBanner');
+        banner.style.display = 'none';
+        
+        // Remember that banner was closed
+        sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
     }
 
     // Initialize banner when DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initBanner);
+        document.addEventListener('DOMContentLoaded', initBanner);
     } else {
-      initBanner();
+        initBanner();
     }
 </script>
