@@ -116,7 +116,7 @@ TODO:
 </style>
 
 
-<div id="overlayBanner-preisOffensive" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
+<div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
     <div class="banner-content">
         <a href="/compass-preisoffensive">
             <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" class="banner-marketing__image" />
@@ -138,7 +138,7 @@ TODO:
             'de': {
                 imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
                 imageAlt: 'Compass Preis-Offensive',
-                linkUrl: '/' // for testing, actual target pages don't exist yet. TODO: when ready, change to 'compass-preisoffensive'
+                linkUrl: '/compass-preisoffensive'
             },
             'dk': {
                 imageSrc: 'https://compass24.b-cdn.net/media/ff/5b/40/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-dk-desk.jpg?width=1920',
@@ -185,17 +185,18 @@ TODO:
                 imageAlt: 'Compass Pris-Offensiv',
                 linkUrl: '/pris-offensiv'
             }
-        }
+        },
+        allowedPaths: [] // Array of paths where banner should be shown. Empty array = show on all paths. 
     };
 
     function isPathAllowed() {
         // If paths array is empty, show banner on all paths
-        if (BANNER_CONFIG.paths.length === 0) {
+        if (BANNER_CONFIG.allowedPaths.length === 0) {
                 return true;
         }
       
         const currentPath = window.location.pathname;
-        return BANNER_CONFIG.paths.some(path => currentPath === path || currentPath.startsWith(path));
+        return BANNER_CONFIG.allowedPaths.some(path => currentPath === path || currentPath.startsWith(path));
     }
 
     function initBanner() {
@@ -203,7 +204,7 @@ TODO:
             console.info(`[Banner DEBUG] Initializing banner with experience ID: ${BANNER_CONFIG.experienceId}`);
         }
 
-        const banner = document.getElementById('overlayBanner');
+        const banner = document.getElementById('overlayBanner-preisOffensive-2026-01');
         
         // Check if current path is allowed
         if (!isPathAllowed()) {
@@ -223,7 +224,7 @@ TODO:
     }
 
     function closeBanner() {
-        const banner = document.getElementById('overlayBanner');
+        const banner = document.getElementById('overlayBanner-preisOffensive-2026-01');
         banner.style.display = 'none';
         
         // Remember that banner was closed
