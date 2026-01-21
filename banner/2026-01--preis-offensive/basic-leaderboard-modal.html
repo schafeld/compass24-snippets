@@ -14,7 +14,7 @@ TODO:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_002">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_003">
 
         img.banner-marketing__image {
                 width: 350px;
@@ -91,16 +91,16 @@ TODO:
     /* Mobile responsive */
         @media (max-width: 768px) {
             .overlay-banner.basic-leaderboard-modal--preis-offensive {
-                width: 175px;
-                height: 43px;
+                width: 350px;
+                height: 87px;
 
                 &.bottom {
-                        bottom: 50px;
+                    bottom: 50px;
                 }
       
                 img.banner-marketing__image {
-                        width: 175px;
-                        height: 43px;
+                    width: 350px;
+                    height: 87px;
                 }
             .banner-content {
                 padding: 10px;
@@ -133,7 +133,7 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_004">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_005">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -407,7 +407,8 @@ TODO:
         reset: function() {
             try {
                 localStorage.removeItem(BANNER_CONFIG.storageKey);
-                log('Banner state reset');
+                sessionStorage.removeItem('bannerSeen');
+                log('Banner state reset (localStorage and sessionStorage cleared)');
             } catch (e) {
                 log('Could not reset:', e.message);
             }
