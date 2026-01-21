@@ -14,11 +14,17 @@ TODO:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_003">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_007">
 
         img.banner-marketing__image {
                 width: 350px;
+                opacity: 0;
                 height: 87px;
+        }
+        .overlay-banner.basic-leaderboard-modal--preis-offensive.visible img.banner-marketing__image {
+                opacity: 1;
+                transition: opacity 500ms ease;
+                
         }
 
         .overlay-banner.basic-leaderboard-modal--preis-offensive {
@@ -34,6 +40,9 @@ TODO:
             width: 350px;
             height: 87px;
             max-width: 95vw;
+            opacity: 0;
+            transform: translateX(-50%) translateY(8px);
+            transition: opacity 320ms ease, transform 320ms ease;
 
             &.top {
                 top: 20px;
@@ -86,6 +95,10 @@ TODO:
             .banner-close::after {
                 transform: rotate(-45deg);
             }
+            &.visible {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
         }
 
     /* Mobile responsive */
@@ -123,7 +136,7 @@ TODO:
 </style>
 
 
-<div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
+<div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive">
     <div class="banner-content">
         <a href="/compass-preisoffensive" id="overlayBanner-link-preisOffensive-2026-01">
               <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" id="overlayBanner-image-preisOffensive-2026-01" class="banner-marketing__image"
@@ -136,7 +149,7 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_009">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_010">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -408,28 +421,75 @@ TODO:
         }
         /* Set position and show banner after delay */
         banner.classList.add(BANNER_CONFIG.position);
+        
         setTimeout(function() {
-            banner.style.display = 'flex';
-            try {
-                sessionStorage.setItem('bannerSeen', 'true');
+            /* Show the banner only after the image has loaded to avoid layout flash. */
+            var showBanner = function() {
+                try {
+                    requestAnimationFrame(function() { banner.classList.add('visible'); });
+                } catch (e) {
+                    setTimeout(function() { banner.classList.add('visible'); }, 20);
+                }
+
+                try { 
+                    sessionStorage.setItem('bannerSeen', 'true'); 
+                }
+                catch (e) { 
+                    log('Could not set sessionStorage bannerSeen:', e.message); 
+                }
+                log('Banner displayed after delay');
+            };
+
+            var imgEl = getElement(BANNER_CONFIG.elementIds.image);
+            if (imgEl) {
+                if (imgEl.complete && imgEl.naturalWidth > 0) {
+                    /* already loaded */
+                    showBanner();
+                } else {
+                    var onFinish = function() {
+                        try { 
+                            imgEl.removeEventListener('load', onFinish); 
+                            imgEl.removeEventListener('error', onFinish); 
+                        } 
+                        catch (e) {}
+                        showBanner();
+                    };
+                    imgEl.addEventListener('load', onFinish, { once: true });
+                    imgEl.addEventListener('error', onFinish, { once: true });
+                    /* Safety fallback: show after max wait even if image doesn't fire events */
+                    var maxWait = 1500; /* ms */
+                    setTimeout(function() {
+                        if (!banner.classList.contains('visible')) {
+                            showBanner();
+                        }
+                    }, maxWait);
+                }
+            } else {
+                showBanner();
             }
-            catch (e) {
-                log('Could not set sessionStorage bannerSeen:', e.message);
-            }
-            log('Banner displayed after delay'); }, BANNER_CONFIG.delay);
+        }, BANNER_CONFIG.delay);
     }
 
     function closeBanner() {
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
         if (!banner) return;
-        banner.style.display = 'none';
+        /* fade out by removing visible class, then hide and persist after transition */
         try {
-            localStorage.setItem(BANNER_CONFIG.storageKey, 'true');
-            log('Banner closed and preference saved');
+            banner.classList.remove('visible');
+        } catch (e) {
+            /* ignore */
         }
-        catch (e) {
-            log('Could not save to localStorage:', e.message);
-        }
+        var hideDelay = 600; /* ms - allow full fade-out before hiding */
+        setTimeout(function() {
+            try { banner.style.display = 'none'; } catch (e) {}
+            try {
+                localStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+                log('Banner closed and preference saved');
+            }
+            catch (e) {
+                log('Could not save to localStorage:', e.message);
+            }
+        }, hideDelay);
     }
 
     /* ========================================================================= */
