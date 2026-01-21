@@ -1,20 +1,19 @@
 <!--
 Banner: Basic Leaderboard Modal
-Experience ID: Marketing ( Banner / Preis-Offensive
-Version: 2026-01-20_001_DE
+Experience: Marketing / Banner / Preis-Offensive
 
 TODO:
-- Update image src and alt text for localization if needed
-- make sure image is hosted and accessible – on PROD!
+- For deployment in presonalization plugin: Match LANGUAGE with sales channel / country code.
+- refactor so this banner only appears in valid path(s)
+- make javascript global object so it can be tested/accessed via console
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-20_001_DE">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_001">
     img.banner-marketing__image {
         width: 700px;
         height: 175px;
     }
 
-   /* Banner styles */
     .overlay-banner.basic-leaderboard-modal--preis-offensive {
       position: fixed;
       left: 50%;
@@ -117,9 +116,8 @@ TODO:
 </style>
 
 
-<div id="overlayBanner" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
+<div id="overlayBanner-preisOffensive" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
     <div class="banner-content">
-        <!-- TODO: Use proper image and alt text and link here. Language! -->
         <a href="/compass-preisoffensive">
             <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" class="banner-marketing__image" />
         </a>
@@ -128,17 +126,66 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-20_001_DE">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_001">
   // Banner configuration
     const BANNER_CONFIG = {
         position: 'bottom', // 'top' or 'bottom'
         storageKey: 'bannerClosed', // sessionStorage key
-        paths: [ // TODO: use proper paths, remove '/' if not needed
-            '/',
-            '/compass-preisoffensive'
-        ], // Array of paths where banner should be shown. Empty array = show on all paths.
         DEBUG: true,
-        experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01-20_001_DE'
+        experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
+        LANGUAGE: 'de', // TODO: use country code matching deployment sales channel
+        data: { // FR and CH-FR share same banner
+            'de': {
+                imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
+                imageAlt: 'Compass Preis-Offensive',
+                linkUrl: '/' // for testing, actual target pages don't exist yet. TODO: when ready, change to 'compass-preisoffensive'
+            },
+            'dk': {
+                imageSrc: 'https://compass24.b-cdn.net/media/ff/5b/40/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-dk-desk.jpg?width=1920',
+                imageAlt: 'Compass Pris-Offensiv',
+                linkUrl: '/pris-offensiv'
+            },
+            'es': {
+                imageSrc: 'https://compass24.b-cdn.net/media/f2/d7/82/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-es-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensiva de Precios',
+                linkUrl: '/ofensiva-de-precios'
+            },
+            'fr': {
+                imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensive sur les Prix',
+                linkUrl: '/offensive-sur-les-prix'
+            },
+            'ch-fr': {
+                imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensive sur les Prix',
+                linkUrl: '/ch-fr/offensive-sur-les-prix'
+            },
+            'gb': {
+                imageSrc: 'https://compass24.b-cdn.net/media/1f/d4/f8/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-gb-desk.jpg?width=1920',
+                imageAlt: 'Compass Price-Offensive',
+                linkUrl: '/price-offensive'
+            },
+            'it': {
+                imageSrc: 'https://compass24.b-cdn.net/media/8d/d4/28/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-it-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensiva sui Prezzi',
+                linkUrl: '/offensiva-sui-prezzi'
+            },
+            'nl': {
+                imageSrc: 'https://compass24.b-cdn.net/media/1a/32/80/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-nl-desk.jpg?width=1920',
+                imageAlt: 'Compass Prijs-Offensief',
+                linkUrl: '/prijs-offensief'
+            },
+            'pl': {
+                imageSrc: 'https://compass24.b-cdn.net/media/eb/89/c2/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-pl-desk.jpg?width=1920',
+                imageAlt: 'Compass Ofensywa Cenowa',
+                linkUrl: '/ofensywa-cenowa'
+            },
+            'se': {
+                imageSrc: 'https://compass24.b-cdn.net/media/24/21/4e/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-se-desk.jpg?width=1920',
+                imageAlt: 'Compass Pris-Offensiv',
+                linkUrl: '/pris-offensiv'
+            }
+        }
     };
 
     function isPathAllowed() {
