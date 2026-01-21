@@ -14,110 +14,111 @@ TODO:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_001">
-    img.banner-marketing__image {
-        width: 700px;
-        height: 175px;
-    }
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_002">
 
-    .overlay-banner.basic-leaderboard-modal--preis-offensive {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 700px;
-      height: 175px;
-      max-width: 95vw;
-    
-    &.top {
-      top: 20px;
-    }
-    
-    &.bottom {
-      bottom: 20px;
-    }
-    
-    .banner-content {
-      flex: 1;
-      padding: 15px;
-      text-align: center;
-      font-size: 16px;
-      color: #333;
-    }
-    
-    .banner-close {
-      position: absolute;
-      top: 7px;
-      right: 7px;
-      width: 24px;
-      height: 24px;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    
-    .banner-close:hover {
-      background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .banner-close::before,
-    .banner-close::after {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 2px;
-      background: #333;
-    }
-    
-    .banner-close::before {
-      transform: rotate(45deg);
-    }
-    
-    .banner-close::after {
-      transform: rotate(-45deg);
-    }
-}
+        img.banner-marketing__image {
+                width: 350px;
+                height: 87px;
+        }
+
+        .overlay-banner.basic-leaderboard-modal--preis-offensive {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 87px;
+            max-width: 95vw;
+
+            &.top {
+                top: 20px;
+            }
+
+            &.bottom {
+                bottom: 20px;
+            }
+
+            .banner-content {
+                flex: 1;
+                padding: 15px;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .banner-close {
+                position: absolute;
+                top: 7px;
+                right: 7px;
+                width: 24px;
+                height: 24px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s;
+            }
+
+            .banner-close:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            .banner-close::before,
+            .banner-close::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 2px;
+                background: #333;
+            }
+
+            .banner-close::before {
+                transform: rotate(45deg);
+            }
+
+            .banner-close::after {
+                transform: rotate(-45deg);
+            }
+        }
 
     /* Mobile responsive */
-    @media (max-width: 768px) {
-      .overlay-banner.basic-leaderboard-modal--preis-offensive {
-        width: 350px;
-        height: 86px;
+        @media (max-width: 768px) {
+            .overlay-banner.basic-leaderboard-modal--preis-offensive {
+                width: 175px;
+                height: 43px;
 
-        &.bottom {
-            bottom: 50px;
+                &.bottom {
+                        bottom: 50px;
+                }
+      
+                img.banner-marketing__image {
+                        width: 175px;
+                        height: 43px;
+                }
+            .banner-content {
+                padding: 10px;
+                font-size: 14px;
+            }
+      
+            .banner-close {
+                width: 20px;
+                height: 20px;
+                top: 5px;
+                right: 5px;
+            }
+      
+            .banner-close::before,
+            .banner-close::after {
+                width: 10px;
+            }
         }
-      
-        img.banner-marketing__image {
-            width: 350px;
-            height: 86px;
-        }
-      .banner-content {
-        padding: 10px;
-        font-size: 14px;
-      }
-      
-      .banner-close {
-        width: 20px;
-        height: 20px;
-        top: 5px;
-        right: 5px;
-      }
-      
-      .banner-close::before,
-      .banner-close::after {
-        width: 10px;
-      }
-    }
 }
 </style>
 
@@ -132,7 +133,7 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_002">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_003">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -150,8 +151,9 @@ TODO:
     const BANNER_CONFIG = {
         // Banner behavior
         position: 'bottom', // 'top' or 'bottom'
-        storageKey: 'bannerClosed_preisOffensive_2026-01', // Unique sessionStorage key
+        storageKey: 'bannerClosed_preisOffensive_2026-01', // Unique localStorage key
         DEBUG: true,
+        delay: 5000, // Delay in ms before showing banner
         
         // Experience identification
         experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
@@ -321,46 +323,46 @@ TODO:
      */
     function initBanner() {
         log('Initializing banner...');
-        
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
         if (!banner) {
             log('Banner element not found, aborting initialization');
             return;
         }
-        
+
         // Check path restrictions
         if (!isPathAllowed()) {
             log('Current path not allowed:', window.location.pathname);
             return;
         }
-        
+
         // Check if previously closed
         try {
-            if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
-                log('Banner was previously closed in this session');
+            if (localStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
+                log('Banner was previously closed in this browser');
                 return;
             }
         } catch (e) {
-            log('sessionStorage not available:', e.message);
+            log('localStorage not available:', e.message);
         }
-        
+
         // Get and apply language-specific content
         var langData = getLanguageData();
         if (!langData) {
             log('No language data available, aborting');
             return;
         }
-        
+
         if (!applyLanguageContent(langData)) {
             log('Failed to apply language content, aborting');
             return;
         }
-        
-        // Set position and show banner
+
+        // Set position and show banner after delay
         banner.classList.add(BANNER_CONFIG.position);
-        banner.style.display = 'flex';
-        
-        log('Banner displayed successfully');
+        setTimeout(function() {
+            banner.style.display = 'flex';
+            log('Banner displayed after delay');
+        }, BANNER_CONFIG.delay);
     }
 
     /**
@@ -369,14 +371,14 @@ TODO:
     function closeBanner() {
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
         if (!banner) return;
-        
+
         banner.style.display = 'none';
-        
+
         try {
-            sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+            localStorage.setItem(BANNER_CONFIG.storageKey, 'true');
             log('Banner closed and preference saved');
         } catch (e) {
-            log('Could not save to sessionStorage:', e.message);
+            log('Could not save to localStorage:', e.message);
         }
     }
 
@@ -391,11 +393,11 @@ TODO:
         isPathAllowed: isPathAllowed,
         
         /**
-         * Resets the banner state (clears sessionStorage)
+         * Resets the banner state (clears localStorage)
          */
         reset: function() {
             try {
-                sessionStorage.removeItem(BANNER_CONFIG.storageKey);
+                localStorage.removeItem(BANNER_CONFIG.storageKey);
                 log('Banner state reset');
             } catch (e) {
                 log('Could not reset:', e.message);
