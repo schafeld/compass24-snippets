@@ -1,0 +1,1202 @@
+<!--
+This is serialized context data dumped into the rendered HTML by Shopware with this Twig command 
+<script>
+// Example: Set a JS variable from Twig-dumped JSON
+// In your Twig template, output the context as a JS variable:
+// <script>window.shopwareContext = {{ context | json_encode() | raw }};<\/script>
+// This will make the context available as a JS object directly.
+
+// If you only have the JSON string in the HTML (as in this file), you can parse it like this:
+// 1. Find the JSON string in the HTML (between comments or in a tag)
+// 2. Decode HTML entities if needed
+// 3. Parse and assign to a variable
+
+// --- Example for this file's context dump ---
+const html = document.documentElement.innerHTML;
+const jsonMatch = html.match(/-->([\s\S]*?)<\//);
+let jsonString = jsonMatch ? jsonMatch[1].trim() : null;
+if (jsonString) {
+	jsonString = jsonString.replace(/&quot;/g, '"')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>');
+	try {
+		window.shopwareContext = JSON.parse(jsonString);
+		// Pretty-print for demo
+		const pre = document.createElement('pre');
+		pre.textContent = JSON.stringify(window.shopwareContext, null, 2);
+		document.body.appendChild(pre);
+		console.log('Shopware context:', window.shopwareContext);
+	} catch (e) {
+		console.error('Failed to parse JSON:', e);
+	}
+}
+</script>
+-->
+
+{&quot;extensions&quot;:[],&quot;permissions&quot;:[],&quot;permisionsLocked&quot;:false,&quot;imitatingUserId&quot;:null,&quot;measurementSystem&quot;:{&quot;extensions&quot;:[],&quot;system&quot;:&quot;metric&quot;,&quot;units&quot;:{&quot;length&quot;:&quot;mm&quot;,&quot;weight&quot;:&quot;kg&quot;}},&quot;cartLock&quot;:null,&quot;context&quot;:{&quot;extensions&quot;:{&quot;netzp_notification&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null,&quot;cookiename&quot;:&quot;_netzp_notifications_compass_k24z44_meinserver_io&quot;,&quot;channelid&quot;:&quot;018943529c03736f915911952e62d44f&quot;,&quot;channelurl&quot;:&quot;&quot;,&quot;url&quot;:&quot;\/_esi\/global\/footer&quot;,&quot;route&quot;:&quot;frontend.footer&quot;,&quot;baseurl&quot;:&quot;&quot;,&quot;previewid&quot;:&quot;&quot;}},&quot;scope&quot;:&quot;user&quot;,&quot;rulesLocked&quot;:false,&quot;source&quot;:{&quot;type&quot;:&quot;sales-channel&quot;,&quot;salesChannelId&quot;:&quot;018943529c03736f915911952e62d44f&quot;},&quot;ruleIds&quot;:[&quot;0189434e89977158a3e1fdcec73f6f59&quot;,&quot;0189434e89aa70caa1f73339981db42a&quot;,&quot;0189434ec3d471448d438c7ba34592c6&quot;,&quot;018cf3ee56a370a6bf81bb99adedbe60&quot;,&quot;0191936c108573dcb8089228b5010878&quot;,&quot;31436ad20b8d42be8530d2c48fab7159&quot;,&quot;417bd8699b4e47db9d93755e26c1ec2e&quot;,&quot;8befb6c0f70e4b7192a484ac364aaee2&quot;,&quot;f8b01d6bdbfb4bcaa1538011264b6f92&quot;,&quot;0189434e8a047257b14ed1febfdd3ef9&quot;,&quot;019b260fb43471cf8a0dcde88cca913c&quot;,&quot;6d4c5e46d08a4eeb8583c978875cb2c7&quot;,&quot;f95efe345dcc7fcc1ce069fd1e08803b&quot;],&quot;currencyId&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;languageIdChain&quot;:[&quot;2fbb5fe2e29a4d70aa5854ce7ce3e20b&quot;],&quot;versionId&quot;:&quot;0fa91ce3e96a4bc2be4bd9ce752c3425&quot;,&quot;currencyFactor&quot;:1.0,&quot;considerInheritance&quot;:true,&quot;taxState&quot;:&quot;gross&quot;,&quot;rounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;states&quot;:[]},&quot;token&quot;:&quot;EdpGvuSIelIxdmdzuNQlZrdQOXAZJteo&quot;,&quot;salesChannel&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;sales_channel_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;018943529c03736f915911952e62d44f&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Compass24 DE&quot;,&quot;customFields&quot;:{&quot;ap_sales_channel_iso2&quot;:&quot;DE&quot;,&quot;ap_sales_channel_country_id&quot;:&quot;1&quot;,&quot;ap_sales_channel_project_id&quot;:&quot;c24_0001096&quot;,&quot;ap_sales_channel_shopware5_id&quot;:1,&quot;ap_category_extension_nav_entry&quot;:&quot;7a69eac5221e1f0e618933570f161608&quot;},&quot;homeSlotConfig&quot;:null,&quot;homeEnabled&quot;:true,&quot;homeName&quot;:null,&quot;homeMetaTitle&quot;:null,&quot;homeMetaDescription&quot;:null,&quot;homeKeywords&quot;:null},&quot;createdAt&quot;:&quot;2023-07-11T07:00:34.696+00:00&quot;,&quot;updatedAt&quot;:&quot;2026-01-19T09:43:05.037+00:00&quot;,&quot;typeId&quot;:&quot;8a243080f92e4c719546314b577cf82b&quot;,&quot;languageId&quot;:&quot;2fbb5fe2e29a4d70aa5854ce7ce3e20b&quot;,&quot;currencyId&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;paymentMethodId&quot;:&quot;409fe641d6d62a4416edd6307d758791&quot;,&quot;shippingMethodId&quot;:&quot;ccd9c045cdda4f008275409654447339&quot;,&quot;countryId&quot;:&quot;0189434e885471b08f472d7a81f33825&quot;,&quot;navigationCategoryId&quot;:&quot;7a69eac5221e1f0e618933570f161608&quot;,&quot;navigationCategoryVersionId&quot;:&quot;0fa91ce3e96a4bc2be4bd9ce752c3425&quot;,&quot;navigationCategoryDepth&quot;:4,&quot;homeSlotConfig&quot;:null,&quot;homeCmsPageId&quot;:null,&quot;homeCmsPageVersionId&quot;:&quot;0fa91ce3e96a4bc2be4bd9ce752c3425&quot;,&quot;homeCmsPage&quot;:null,&quot;homeEnabled&quot;:true,&quot;homeName&quot;:null,&quot;homeMetaTitle&quot;:null,&quot;homeMetaDescription&quot;:null,&quot;homeKeywords&quot;:null,&quot;footerCategoryId&quot;:&quot;2f7ab30b7e194f2d9b8a30c0a569465a&quot;,&quot;footerCategoryVersionId&quot;:&quot;0fa91ce3e96a4bc2be4bd9ce752c3425&quot;,&quot;serviceCategoryId&quot;:&quot;c1f1ca6bf15d44eb9c41fd53617dd844&quot;,&quot;serviceCategoryVersionId&quot;:&quot;0fa91ce3e96a4bc2be4bd9ce752c3425&quot;,&quot;name&quot;:&quot;Compass24 DE&quot;,&quot;shortName&quot;:null,&quot;accessKey&quot;:&quot;SWSCEXF6ZNR3YVJUBDDKT2LDVA&quot;,&quot;currencies&quot;:null,&quot;languages&quot;:[{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;language_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;2fbb5fe2e29a4d70aa5854ce7ce3e20b&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.434+00:00&quot;,&quot;updatedAt&quot;:&quot;2023-07-12T19:43:11.304+00:00&quot;,&quot;parentId&quot;:null,&quot;localeId&quot;:&quot;0189434e8808700290393ef34240521f&quot;,&quot;translationCodeId&quot;:&quot;0189434e8808700290393ef34240521f&quot;,&quot;translationCode&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;locale_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;0189434e8808700290393ef34240521f&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Deutsch&quot;,&quot;territory&quot;:&quot;Deutschland&quot;,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.433+00:00&quot;,&quot;updatedAt&quot;:null,&quot;code&quot;:&quot;de-DE&quot;,&quot;name&quot;:&quot;Deutsch&quot;,&quot;territory&quot;:&quot;Deutschland&quot;,&quot;translations&quot;:null,&quot;users&quot;:null,&quot;languages&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434e8808700290393ef34240521f&quot;},&quot;name&quot;:&quot;Deutsch&quot;,&quot;active&quot;:true,&quot;locale&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;locale_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;0189434e8808700290393ef34240521f&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Deutsch&quot;,&quot;territory&quot;:&quot;Deutschland&quot;,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.433+00:00&quot;,&quot;updatedAt&quot;:null,&quot;code&quot;:&quot;de-DE&quot;,&quot;name&quot;:&quot;Deutsch&quot;,&quot;territory&quot;:&quot;Deutschland&quot;,&quot;translations&quot;:null,&quot;users&quot;:null,&quot;languages&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434e8808700290393ef34240521f&quot;},&quot;parent&quot;:null,&quot;children&quot;:null,&quot;salesChannels&quot;:null,&quot;customers&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;categoryTranslations&quot;:null,&quot;countryStateTranslations&quot;:null,&quot;countryTranslations&quot;:null,&quot;currencyTranslations&quot;:null,&quot;customerGroupTranslations&quot;:null,&quot;localeTranslations&quot;:null,&quot;mediaTranslations&quot;:null,&quot;paymentMethodTranslations&quot;:null,&quot;productManufacturerTranslations&quot;:null,&quot;productTranslations&quot;:null,&quot;shippingMethodTranslations&quot;:null,&quot;unitTranslations&quot;:null,&quot;propertyGroupTranslations&quot;:null,&quot;propertyGroupOptionTranslations&quot;:null,&quot;salesChannelTranslations&quot;:null,&quot;salesChannelTypeTranslations&quot;:null,&quot;salutationTranslations&quot;:null,&quot;salesChannelDomains&quot;:null,&quot;pluginTranslations&quot;:null,&quot;productStreamTranslations&quot;:null,&quot;stateMachineTranslations&quot;:null,&quot;stateMachineStateTranslations&quot;:null,&quot;cmsPageTranslations&quot;:null,&quot;cmsSlotTranslations&quot;:null,&quot;mailTemplateTranslations&quot;:null,&quot;mailHeaderFooterTranslations&quot;:null,&quot;documentTypeTranslations&quot;:null,&quot;deliveryTimeTranslations&quot;:null,&quot;newsletterRecipients&quot;:null,&quot;orders&quot;:null,&quot;numberRangeTypeTranslations&quot;:null,&quot;productSearchKeywords&quot;:null,&quot;productKeywordDictionaries&quot;:null,&quot;mailTemplateTypeTranslations&quot;:null,&quot;promotionTranslations&quot;:null,&quot;numberRangeTranslations&quot;:null,&quot;productReviews&quot;:null,&quot;seoUrlTranslations&quot;:null,&quot;taxRuleTypeTranslations&quot;:null,&quot;productCrossSellingTranslations&quot;:null,&quot;importExportProfileTranslations&quot;:null,&quot;productFeatureSetTranslations&quot;:null,&quot;appTranslations&quot;:null,&quot;actionButtonTranslations&quot;:null,&quot;productSortingTranslations&quot;:null,&quot;productSearchConfig&quot;:null,&quot;landingPageTranslations&quot;:null,&quot;appCmsBlockTranslations&quot;:null,&quot;appScriptConditionTranslations&quot;:null,&quot;appFlowActionTranslations&quot;:null,&quot;taxProviderTranslations&quot;:null,&quot;customFields&quot;:{&quot;ap_language_language_id&quot;:&quot;1&quot;},&quot;id&quot;:&quot;2fbb5fe2e29a4d70aa5854ce7ce3e20b&quot;}],&quot;configuration&quot;:null,&quot;active&quot;:true,&quot;maintenance&quot;:true,&quot;maintenanceIpWhitelist&quot;:[&quot;46.223.163.206&quot;,&quot;217.241.93.139&quot;,&quot;78.94.136.110&quot;,&quot;84.139.221.230&quot;,&quot;46.223.163.168&quot;,&quot;84.130.3.176&quot;,&quot;176.94.165.174&quot;,&quot;92.208.229.62&quot;,&quot;217.241.87.49&quot;,&quot;195.190.138.8&quot;,&quot;188.136.83.62&quot;,&quot;92.208.223.234&quot;,&quot;91.11.199.251&quot;,&quot;91.11.197.203&quot;,&quot;2.205.247.83&quot;,&quot;46.223.163.156&quot;,&quot;94.130.225.116&quot;,&quot;79.200.46.163&quot;,&quot;87.162.36.227&quot;],&quot;taxCalculationType&quot;:&quot;horizontal&quot;,&quot;type&quot;:null,&quot;currency&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;currency_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;shortName&quot;:&quot;EUR&quot;,&quot;name&quot;:&quot;Euro&quot;,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.822+00:00&quot;,&quot;updatedAt&quot;:null,&quot;isoCode&quot;:&quot;EUR&quot;,&quot;factor&quot;:1.0,&quot;symbol&quot;:&quot;\u20ac&quot;,&quot;shortName&quot;:&quot;EUR&quot;,&quot;name&quot;:&quot;Euro&quot;,&quot;position&quot;:1,&quot;translations&quot;:null,&quot;orders&quot;:null,&quot;salesChannels&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;salesChannelDomains&quot;:null,&quot;promotionDiscountPrices&quot;:null,&quot;isSystemDefault&quot;:true,&quot;productExports&quot;:null,&quot;countryRoundings&quot;:null,&quot;itemRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;totalRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;taxFreeFrom&quot;:0.0,&quot;customFields&quot;:null,&quot;id&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;},&quot;language&quot;:null,&quot;paymentMethod&quot;:null,&quot;shippingMethod&quot;:null,&quot;country&quot;:null,&quot;orders&quot;:null,&quot;customers&quot;:null,&quot;countries&quot;:null,&quot;paymentMethods&quot;:null,&quot;shippingMethods&quot;:null,&quot;translations&quot;:null,&quot;domains&quot;:[{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;sales_channel_domain_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;e4874f48e994483e96386ae7010783b3&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-09-19T12:20:02.749+00:00&quot;,&quot;updatedAt&quot;:&quot;2025-10-10T08:27:11.129+00:00&quot;,&quot;url&quot;:&quot;https:\/\/compass.k24z44.meinserver.io&quot;,&quot;currencyId&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;currency&quot;:null,&quot;snippetSetId&quot;:&quot;0189434e89e971d185c4c47e52e63214&quot;,&quot;snippetSet&quot;:null,&quot;salesChannelId&quot;:&quot;018943529c03736f915911952e62d44f&quot;,&quot;salesChannel&quot;:null,&quot;languageId&quot;:&quot;2fbb5fe2e29a4d70aa5854ce7ce3e20b&quot;,&quot;language&quot;:null,&quot;measurementUnits&quot;:{&quot;extensions&quot;:[],&quot;system&quot;:&quot;metric&quot;,&quot;units&quot;:{&quot;length&quot;:&quot;mm&quot;,&quot;weight&quot;:&quot;kg&quot;}},&quot;productExports&quot;:null,&quot;salesChannelDefaultHreflang&quot;:null,&quot;hreflangUseOnlyLocale&quot;:false,&quot;customFields&quot;:null,&quot;id&quot;:&quot;e4874f48e994483e96386ae7010783b3&quot;}],&quot;systemConfigs&quot;:null,&quot;navigationCategory&quot;:null,&quot;footerCategory&quot;:null,&quot;serviceCategory&quot;:null,&quot;productVisibilities&quot;:null,&quot;mailHeaderFooterId&quot;:&quot;9af796baa18c4cac9839ccce06342289&quot;,&quot;numberRangeSalesChannels&quot;:null,&quot;mailHeaderFooter&quot;:null,&quot;customerGroupId&quot;:&quot;cfbd5018d38d41d8adca10d94fc8bdd6&quot;,&quot;customerGroup&quot;:null,&quot;newsletterRecipients&quot;:null,&quot;promotionSalesChannels&quot;:null,&quot;documentBaseConfigSalesChannels&quot;:null,&quot;productReviews&quot;:null,&quot;seoUrls&quot;:null,&quot;seoUrlTemplates&quot;:null,&quot;mainCategories&quot;:null,&quot;paymentMethodIds&quot;:[&quot;0189434e899e7206802cf7618c274524&quot;,&quot;0189434e899f7023a2970e419f8ed1c8&quot;,&quot;409fe641d6d62a4416edd6307d758791&quot;,&quot;4673044aff79424a938d42e9847693c3&quot;,&quot;6d6adcd4b7bf40499873c294a85f32ed&quot;,&quot;95aa098aac8f11e9a2a32a2ae2dbcce4&quot;],&quot;productExports&quot;:null,&quot;hreflangActive&quot;:true,&quot;hreflangDefaultDomainId&quot;:&quot;e4874f48e994483e96386ae7010783b3&quot;,&quot;hreflangDefaultDomain&quot;:null,&quot;analyticsId&quot;:null,&quot;analytics&quot;:null,&quot;customerGroupsRegistrations&quot;:null,&quot;boundCustomers&quot;:null,&quot;wishlists&quot;:null,&quot;landingPages&quot;:null,&quot;measurementUnits&quot;:{&quot;extensions&quot;:[],&quot;system&quot;:&quot;metric&quot;,&quot;units&quot;:{&quot;length&quot;:&quot;mm&quot;,&quot;weight&quot;:&quot;kg&quot;}},&quot;customFields&quot;:{&quot;ap_sales_channel_iso2&quot;:&quot;DE&quot;,&quot;ap_sales_channel_country_id&quot;:&quot;1&quot;,&quot;ap_sales_channel_project_id&quot;:&quot;c24_0001096&quot;,&quot;ap_sales_channel_shopware5_id&quot;:1,&quot;ap_category_extension_nav_entry&quot;:&quot;7a69eac5221e1f0e618933570f161608&quot;,&quot;original_root_navigation_id&quot;:&quot;0189434e89b9736190ad3f38013a3a4f&quot;},&quot;id&quot;:&quot;018943529c03736f915911952e62d44f&quot;},&quot;currency&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;currency_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;shortName&quot;:&quot;EUR&quot;,&quot;name&quot;:&quot;Euro&quot;,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.822+00:00&quot;,&quot;updatedAt&quot;:null,&quot;isoCode&quot;:&quot;EUR&quot;,&quot;factor&quot;:1.0,&quot;symbol&quot;:&quot;\u20ac&quot;,&quot;shortName&quot;:&quot;EUR&quot;,&quot;name&quot;:&quot;Euro&quot;,&quot;position&quot;:1,&quot;translations&quot;:null,&quot;orders&quot;:null,&quot;salesChannels&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;salesChannelDomains&quot;:null,&quot;promotionDiscountPrices&quot;:null,&quot;isSystemDefault&quot;:true,&quot;productExports&quot;:null,&quot;countryRoundings&quot;:null,&quot;itemRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;totalRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;taxFreeFrom&quot;:0.0,&quot;customFields&quot;:null,&quot;id&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;},&quot;currentCustomerGroup&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;customer_group_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;cfbd5018d38d41d8adca10d94fc8bdd6&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Standard-Kundengruppe&quot;,&quot;customFields&quot;:[],&quot;registrationTitle&quot;:null,&quot;registrationIntroduction&quot;:null,&quot;registrationOnlyCompanyRegistration&quot;:null,&quot;registrationSeoMetaDescription&quot;:null},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.828+00:00&quot;,&quot;updatedAt&quot;:null,&quot;name&quot;:&quot;Standard-Kundengruppe&quot;,&quot;displayGross&quot;:true,&quot;translations&quot;:null,&quot;customers&quot;:null,&quot;salesChannels&quot;:null,&quot;registrationActive&quot;:false,&quot;registrationSalesChannels&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;cfbd5018d38d41d8adca10d94fc8bdd6&quot;},&quot;taxRules&quot;:[{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434e89b77119aea75bc50c80ccaf&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.863+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:19.0,&quot;name&quot;:&quot;Standard rate&quot;,&quot;position&quot;:1,&quot;products&quot;:null,&quot;rules&quot;:[{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_rule_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434ed1897302be35f22bd2ac8014&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:26.249+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxId&quot;:&quot;0189434e89b77119aea75bc50c80ccaf&quot;,&quot;tax&quot;:null,&quot;countryId&quot;:&quot;0189434e885471b08f472d7a81f33825&quot;,&quot;country&quot;:null,&quot;taxRuleTypeId&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;,&quot;type&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_rule_type_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;typeName&quot;:&quot;Gesamte Land&quot;},&quot;createdAt&quot;:&quot;2023-07-11T06:56:16.136+00:00&quot;,&quot;updatedAt&quot;:null,&quot;typeName&quot;:&quot;Gesamte Land&quot;,&quot;technicalName&quot;:&quot;entire_country&quot;,&quot;position&quot;:3,&quot;rules&quot;:null,&quot;translations&quot;:null,&quot;id&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;},&quot;taxRate&quot;:19.0,&quot;data&quot;:null,&quot;activeFrom&quot;:null,&quot;id&quot;:&quot;0189434ed1897302be35f22bd2ac8014&quot;}],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434e89b77119aea75bc50c80ccaf&quot;},{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434e89b77119aea75bc50ce2813d&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.864+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:7.0,&quot;name&quot;:&quot;Reduced rate&quot;,&quot;position&quot;:2,&quot;products&quot;:null,&quot;rules&quot;:[{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_rule_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434ed18a70d8ae8f4806ea28f999&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:26.250+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxId&quot;:&quot;0189434e89b77119aea75bc50ce2813d&quot;,&quot;tax&quot;:null,&quot;countryId&quot;:&quot;0189434e885471b08f472d7a81f33825&quot;,&quot;country&quot;:null,&quot;taxRuleTypeId&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;,&quot;type&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_rule_type_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;typeName&quot;:&quot;Gesamte Land&quot;},&quot;createdAt&quot;:&quot;2023-07-11T06:56:16.136+00:00&quot;,&quot;updatedAt&quot;:null,&quot;typeName&quot;:&quot;Gesamte Land&quot;,&quot;technicalName&quot;:&quot;entire_country&quot;,&quot;position&quot;:3,&quot;rules&quot;:null,&quot;translations&quot;:null,&quot;id&quot;:&quot;0189434eaa08731bb041ad517356cf5c&quot;},&quot;taxRate&quot;:7.0,&quot;data&quot;:null,&quot;activeFrom&quot;:null,&quot;id&quot;:&quot;0189434ed18a70d8ae8f4806ea28f999&quot;}],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434e89b77119aea75bc50ce2813d&quot;},{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434ed182731a99d53520f7d18725&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-11T06:56:26.242+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:0.0,&quot;name&quot;:&quot;Reduced rate 2&quot;,&quot;position&quot;:3,&quot;products&quot;:null,&quot;rules&quot;:[],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434ed182731a99d53520f7d18725&quot;},{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;018991efa8847039b617dfaba6ad1b96&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2023-07-26T13:22:29.000+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:0.0,&quot;name&quot;:&quot;Steuerfrei (Mehrzweckgutschein)&quot;,&quot;position&quot;:-1,&quot;products&quot;:null,&quot;rules&quot;:[],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:{&quot;neti_easy_coupon_tax_rule&quot;:true},&quot;id&quot;:&quot;018991efa8847039b617dfaba6ad1b96&quot;},{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;721626177b764b5388def01d6532e9c6&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2024-12-10T09:46:28.852+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:0.0,&quot;name&quot;:&quot;Photovoltaic taxation&quot;,&quot;position&quot;:0,&quot;products&quot;:null,&quot;rules&quot;:[],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;721626177b764b5388def01d6532e9c6&quot;},{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;tax_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;e8dd8ebd071146e7ad53811edf837d00&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:[],&quot;createdAt&quot;:&quot;2024-12-10T09:46:28.851+00:00&quot;,&quot;updatedAt&quot;:null,&quot;taxRate&quot;:0.0,&quot;name&quot;:&quot;Differential taxation&quot;,&quot;position&quot;:0,&quot;products&quot;:null,&quot;rules&quot;:[],&quot;shippingMethods&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;e8dd8ebd071146e7ad53811edf837d00&quot;}],&quot;paymentMethod&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;payment_method_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;409fe641d6d62a4416edd6307d758791&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;PayPal&quot;,&quot;distinguishableName&quot;:&quot;PayPal | Unzer Payment&quot;,&quot;description&quot;:&quot;PayPal-Zahlungen mit Unzer-Payments&quot;,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-14T08:56:05.652+00:00&quot;,&quot;updatedAt&quot;:&quot;2025-12-22T13:26:13.934+00:00&quot;,&quot;pluginId&quot;:&quot;0189539d3e0970a28d15fa2577a428d3&quot;,&quot;handlerIdentifier&quot;:&quot;UnzerPayment6\\Components\\PaymentHandler\\UnzerPayPalPaymentHandler&quot;,&quot;name&quot;:&quot;PayPal&quot;,&quot;distinguishableName&quot;:&quot;PayPal | Unzer Payment&quot;,&quot;description&quot;:&quot;PayPal-Zahlungen mit Unzer-Payments&quot;,&quot;position&quot;:1,&quot;active&quot;:true,&quot;afterOrderEnabled&quot;:true,&quot;plugin&quot;:null,&quot;translations&quot;:null,&quot;orderTransactions&quot;:null,&quot;customers&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;salesChannels&quot;:null,&quot;availabilityRule&quot;:null,&quot;availabilityRuleId&quot;:null,&quot;mediaId&quot;:&quot;17b0fb83ab89499c974a5a2d517f9cdd&quot;,&quot;media&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;media_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;17b0fb83ab89499c974a5a2d517f9cdd&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;alt&quot;:null,&quot;title&quot;:null,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-07-31T11:42:42.781+00:00&quot;,&quot;updatedAt&quot;:&quot;2023-07-31T11:42:42.995+00:00&quot;,&quot;userId&quot;:&quot;bbe062214f0b4670b3820d2a539b32bc&quot;,&quot;mimeType&quot;:&quot;image\/png&quot;,&quot;fileExtension&quot;:&quot;png&quot;,&quot;fileSize&quot;:3388,&quot;title&quot;:null,&quot;metaData&quot;:{&quot;hash&quot;:&quot;fa8ba285f45faf236ffc41558b506232&quot;,&quot;type&quot;:3,&quot;width&quot;:200,&quot;height&quot;:51},&quot;mediaType&quot;:{&quot;extensions&quot;:[],&quot;name&quot;:&quot;IMAGE&quot;,&quot;flags&quot;:[&quot;transparent&quot;]},&quot;uploadedAt&quot;:&quot;2023-07-31T11:42:42.992+00:00&quot;,&quot;alt&quot;:null,&quot;url&quot;:&quot;https:\/\/compass-test.b-cdn.net\/media\/2b\/37\/14\/1690803762\/payment-icons_paypal.png?width=1920&quot;,&quot;fileName&quot;:&quot;payment-icons_paypal&quot;,&quot;user&quot;:null,&quot;translations&quot;:null,&quot;categories&quot;:null,&quot;productManufacturers&quot;:null,&quot;productMedia&quot;:null,&quot;avatarUsers&quot;:null,&quot;thumbnails&quot;:[],&quot;mediaFolderId&quot;:&quot;a0e9e09d66d6468185320571dbab7f65&quot;,&quot;mediaFolder&quot;:null,&quot;hasFile&quot;:true,&quot;private&quot;:false,&quot;propertyGroupOptions&quot;:null,&quot;mailTemplateMedia&quot;:null,&quot;tags&quot;:null,&quot;path&quot;:&quot;media\/2b\/37\/14\/1690803762\/payment-icons_paypal.png&quot;,&quot;documentBaseConfigs&quot;:null,&quot;shippingMethods&quot;:null,&quot;paymentMethods&quot;:null,&quot;productConfiguratorSettings&quot;:null,&quot;orderLineItems&quot;:null,&quot;cmsBlocks&quot;:null,&quot;cmsSections&quot;:null,&quot;cmsPages&quot;:null,&quot;documents&quot;:null,&quot;a11yDocuments&quot;:null,&quot;appPaymentMethods&quot;:null,&quot;appShippingMethods&quot;:null,&quot;productDownloads&quot;:null,&quot;orderLineItemDownloads&quot;:null,&quot;config&quot;:null,&quot;fileHash&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;17b0fb83ab89499c974a5a2d517f9cdd&quot;},&quot;formattedHandlerIdentifier&quot;:&quot;handler_unzerpayment6_unzerpaypalpaymenthandler&quot;,&quot;shortName&quot;:&quot;unzer_pay_pal_payment_handler&quot;,&quot;technicalName&quot;:&quot;unzer_paypal&quot;,&quot;appPaymentMethod&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;409fe641d6d62a4416edd6307d758791&quot;},&quot;shippingMethod&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;shipping_method_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;ccd9c045cdda4f008275409654447339&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Standard-Versand Deutschland Compass&quot;,&quot;customFields&quot;:{&quot;ap_shipping_method_order_type&quot;:&quot;3&quot;},&quot;description&quot;:null,&quot;trackingUrl&quot;:null},&quot;createdAt&quot;:&quot;2024-08-27T14:40:57.954+00:00&quot;,&quot;updatedAt&quot;:&quot;2024-08-28T10:01:04.513+00:00&quot;,&quot;name&quot;:&quot;Standard-Versand Deutschland Compass&quot;,&quot;active&quot;:true,&quot;position&quot;:1,&quot;description&quot;:null,&quot;trackingUrl&quot;:null,&quot;deliveryTimeId&quot;:&quot;0189434e89a271ac819caa6ce387f660&quot;,&quot;deliveryTime&quot;:null,&quot;translations&quot;:null,&quot;orderDeliveries&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;salesChannels&quot;:null,&quot;availabilityRule&quot;:null,&quot;availabilityRuleId&quot;:&quot;0191936c108573dcb8089228b5010878&quot;,&quot;prices&quot;:[],&quot;mediaId&quot;:&quot;7511f8e5232d48c3b27165e3056a1c5b&quot;,&quot;taxId&quot;:null,&quot;media&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;media_foreign_keys_extension&quot;},&quot;internal_mapping_storage&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:null}},&quot;_uniqueIdentifier&quot;:&quot;7511f8e5232d48c3b27165e3056a1c5b&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;alt&quot;:null,&quot;title&quot;:null,&quot;customFields&quot;:[]},&quot;createdAt&quot;:&quot;2023-06-23T13:14:44.294+00:00&quot;,&quot;updatedAt&quot;:&quot;2023-07-26T06:14:15.982+00:00&quot;,&quot;userId&quot;:null,&quot;mimeType&quot;:&quot;image\/png&quot;,&quot;fileExtension&quot;:&quot;png&quot;,&quot;fileSize&quot;:761,&quot;title&quot;:null,&quot;metaData&quot;:{&quot;hash&quot;:&quot;f204ed32f44a72f50ae1b18e55ebfc30&quot;,&quot;type&quot;:3,&quot;width&quot;:256,&quot;height&quot;:57},&quot;mediaType&quot;:{&quot;extensions&quot;:[],&quot;name&quot;:&quot;IMAGE&quot;,&quot;flags&quot;:[&quot;transparent&quot;]},&quot;uploadedAt&quot;:&quot;2023-06-23T13:14:44.509+00:00&quot;,&quot;alt&quot;:null,&quot;url&quot;:&quot;https:\/\/compass-test.b-cdn.net\/media\/bb\/fb\/cc\/1687526084\/logo_dhl.png?width=1920&quot;,&quot;fileName&quot;:&quot;logo_dhl&quot;,&quot;user&quot;:null,&quot;translations&quot;:null,&quot;categories&quot;:null,&quot;productManufacturers&quot;:null,&quot;productMedia&quot;:null,&quot;avatarUsers&quot;:null,&quot;thumbnails&quot;:[],&quot;mediaFolderId&quot;:&quot;a1a18844d7b84137bf4c4816815143aa&quot;,&quot;mediaFolder&quot;:null,&quot;hasFile&quot;:true,&quot;private&quot;:false,&quot;propertyGroupOptions&quot;:null,&quot;mailTemplateMedia&quot;:null,&quot;tags&quot;:null,&quot;path&quot;:&quot;media\/bb\/fb\/cc\/1687526084\/logo_dhl.png&quot;,&quot;documentBaseConfigs&quot;:null,&quot;shippingMethods&quot;:null,&quot;paymentMethods&quot;:null,&quot;productConfiguratorSettings&quot;:null,&quot;orderLineItems&quot;:null,&quot;cmsBlocks&quot;:null,&quot;cmsSections&quot;:null,&quot;cmsPages&quot;:null,&quot;documents&quot;:null,&quot;a11yDocuments&quot;:null,&quot;appPaymentMethods&quot;:null,&quot;appShippingMethods&quot;:null,&quot;productDownloads&quot;:null,&quot;orderLineItemDownloads&quot;:null,&quot;config&quot;:null,&quot;fileHash&quot;:null,&quot;customFields&quot;:null,&quot;id&quot;:&quot;7511f8e5232d48c3b27165e3056a1c5b&quot;},&quot;tags&quot;:null,&quot;taxType&quot;:&quot;auto&quot;,&quot;technicalName&quot;:&quot;temporary_ccd9c045cdda4f008275409654447339&quot;,&quot;tax&quot;:null,&quot;appShippingMethod&quot;:null,&quot;customFields&quot;:{&quot;ap_shipping_method_order_type&quot;:&quot;3&quot;},&quot;id&quot;:&quot;ccd9c045cdda4f008275409654447339&quot;},&quot;shippingLocation&quot;:{&quot;extensions&quot;:[],&quot;country&quot;:{&quot;extensions&quot;:{&quot;foreignKeys&quot;:{&quot;extensions&quot;:[],&quot;apiAlias&quot;:&quot;country_foreign_keys_extension&quot;}},&quot;_uniqueIdentifier&quot;:&quot;0189434e885471b08f472d7a81f33825&quot;,&quot;versionId&quot;:null,&quot;translated&quot;:{&quot;name&quot;:&quot;Deutschland&quot;,&quot;customFields&quot;:[],&quot;addressFormat&quot;:[[&quot;address\/company&quot;,&quot;symbol\/dash&quot;,&quot;address\/department&quot;],[&quot;address\/first_name&quot;,&quot;address\/last_name&quot;],[&quot;address\/street&quot;],[&quot;address\/zipcode&quot;,&quot;address\/city&quot;],[&quot;address\/country&quot;]]},&quot;createdAt&quot;:&quot;2023-07-11T06:56:07.508+00:00&quot;,&quot;updatedAt&quot;:&quot;2023-09-07T09:26:45.846+00:00&quot;,&quot;name&quot;:&quot;Deutschland&quot;,&quot;iso&quot;:&quot;DE&quot;,&quot;position&quot;:1,&quot;active&quot;:true,&quot;shippingAvailable&quot;:true,&quot;iso3&quot;:&quot;DEU&quot;,&quot;displayStateInRegistration&quot;:false,&quot;forceStateInRegistration&quot;:false,&quot;checkVatIdPattern&quot;:false,&quot;vatIdPattern&quot;:&quot;DE\\d{9}&quot;,&quot;vatIdRequired&quot;:false,&quot;customerTax&quot;:{&quot;extensions&quot;:[],&quot;enabled&quot;:false,&quot;currencyId&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;amount&quot;:0.0},&quot;companyTax&quot;:{&quot;extensions&quot;:[],&quot;enabled&quot;:false,&quot;currencyId&quot;:&quot;b7d2554b0ce847cd82f3ac9bd1c0dfca&quot;,&quot;amount&quot;:0.0},&quot;states&quot;:null,&quot;translations&quot;:null,&quot;orderAddresses&quot;:null,&quot;customerAddresses&quot;:null,&quot;salesChannelDefaultAssignments&quot;:null,&quot;salesChannels&quot;:null,&quot;taxRules&quot;:null,&quot;currencyCountryRoundings&quot;:null,&quot;postalCodeRequired&quot;:false,&quot;isEu&quot;:true,&quot;checkPostalCodePattern&quot;:false,&quot;checkAdvancedPostalCodePattern&quot;:false,&quot;advancedPostalCodePattern&quot;:null,&quot;defaultPostalCodePattern&quot;:&quot;\\d{5}&quot;,&quot;addressFormat&quot;:[[&quot;address\/company&quot;,&quot;symbol\/dash&quot;,&quot;address\/department&quot;],[&quot;address\/first_name&quot;,&quot;address\/last_name&quot;],[&quot;address\/street&quot;],[&quot;address\/zipcode&quot;,&quot;address\/city&quot;],[&quot;address\/country&quot;]],&quot;customFields&quot;:null,&quot;id&quot;:&quot;0189434e885471b08f472d7a81f33825&quot;},&quot;state&quot;:null,&quot;address&quot;:null},&quot;customer&quot;:null,&quot;itemRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;totalRounding&quot;:{&quot;extensions&quot;:[],&quot;decimals&quot;:2,&quot;interval&quot;:0.01,&quot;roundForNet&quot;:true},&quot;languageInfo&quot;:{&quot;name&quot;:&quot;Deutsch&quot;,&quot;localeCode&quot;:&quot;de-DE&quot;},&quot;areaRuleIds&quot;:{&quot;payment&quot;:[&quot;0189434ec3d471448d438c7ba34592c6&quot;,&quot;0189434e8a047257b14ed1febfdd3ef9&quot;],&quot;promotion&quot;:[&quot;0189434ec3d471448d438c7ba34592c6&quot;,&quot;417bd8699b4e47db9d93755e26c1ec2e&quot;,&quot;0189434e8a047257b14ed1febfdd3ef9&quot;],&quot;product&quot;:[&quot;018cf3ee56a370a6bf81bb99adedbe60&quot;,&quot;f95efe345dcc7fcc1ce069fd1e08803b&quot;],&quot;category&quot;:[&quot;018cf3ee56a370a6bf81bb99adedbe60&quot;],&quot;landing-page&quot;:[&quot;018cf3ee56a370a6bf81bb99adedbe60&quot;],&quot;shipping&quot;:[&quot;0191936c108573dcb8089228b5010878&quot;,&quot;417bd8699b4e47db9d93755e26c1ec2e&quot;,&quot;f8b01d6bdbfb4bcaa1538011264b6f92&quot;,&quot;0189434e8a047257b14ed1febfdd3ef9&quot;],&quot;flow&quot;:[&quot;8befb6c0f70e4b7192a484ac364aaee2&quot;]},&quot;states&quot;:[]}
+
+
+<!-- This is how the string might be made useful and readable with Javascript: -->
+<script>
+// Find the first text node containing the JSON (between the HTML comments)
+const html = document.documentElement.innerHTML;
+const jsonMatch = html.match(/-->([\s\S]*?)<\//);
+let jsonString = jsonMatch ? jsonMatch[1].trim() : null;
+if (jsonString) {
+	// Decode HTML entities (e.g., &quot; to ")
+	jsonString = jsonString.replace(/&quot;/g, '"')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>');
+	try {
+		const data = JSON.parse(jsonString);
+		// Pretty-print the object in a <pre> block
+		const pre = document.createElement('pre');
+		pre.textContent = JSON.stringify(data, null, 2);
+		document.body.appendChild(pre);
+	} catch (e) {
+		console.error('Failed to parse JSON:', e);
+	}
+}
+
+window.shopwareContext = jsonString ? JSON.parse(jsonString) : null;
+console.log('Shopware context:', window.shopwareContext);
+</script>
+
+
+
+<!-- This makes the context available to Javascript: -->
+
+<script>window.shopwareContext = {{ context | json_encode() | raw }};</script>
+
+
+
+<!-- Resulting Json object from Compass24.de homepage: -->
+<script type="application/json" id="shopware-context"> 
+{
+    "extensions": [],
+    "permissions": [],
+    "permisionsLocked": false,
+    "imitatingUserId": null,
+    "measurementSystem": {
+        "extensions": [],
+        "system": "metric",
+        "units": {
+            "length": "mm",
+            "weight": "kg"
+        }
+    },
+    "cartLock": null,
+    "context": {
+        "extensions": {
+            "netzp_notification": {
+                "extensions": [],
+                "apiAlias": null,
+                "cookiename": "_netzp_notifications_compass_k24z44_meinserver_io",
+                "channelid": "018943529c03736f915911952e62d44f",
+                "channelurl": "",
+                "url": "/_esi/global/footer",
+                "route": "frontend.footer",
+                "baseurl": "",
+                "previewid": ""
+            }
+        },
+        "scope": "user",
+        "rulesLocked": false,
+        "source": {
+            "type": "sales-channel",
+            "salesChannelId": "018943529c03736f915911952e62d44f"
+        },
+        "ruleIds": [
+            "0189434e89977158a3e1fdcec73f6f59",
+            "0189434e89aa70caa1f73339981db42a",
+            "0189434ec3d471448d438c7ba34592c6",
+            "018cf3ee56a370a6bf81bb99adedbe60",
+            "0191936c108573dcb8089228b5010878",
+            "31436ad20b8d42be8530d2c48fab7159",
+            "417bd8699b4e47db9d93755e26c1ec2e",
+            "8befb6c0f70e4b7192a484ac364aaee2",
+            "f8b01d6bdbfb4bcaa1538011264b6f92",
+            "0189434e8a047257b14ed1febfdd3ef9",
+            "019b260fb43471cf8a0dcde88cca913c",
+            "6d4c5e46d08a4eeb8583c978875cb2c7",
+            "f95efe345dcc7fcc1ce069fd1e08803b"
+        ],
+        "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+        "languageIdChain": [
+            "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+        ],
+        "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "currencyFactor": 1,
+        "considerInheritance": true,
+        "taxState": "gross",
+        "rounding": {
+            "extensions": [],
+            "decimals": 2,
+            "interval": 0.01,
+            "roundForNet": true
+        },
+        "states": []
+    },
+    "token": "EdpGvuSIelIxdmdzuNQlZrdQOXAZJteo",
+    "salesChannel": {
+        "extensions": {
+            "foreignKeys": {
+                "extensions": [],
+                "apiAlias": "sales_channel_foreign_keys_extension"
+            }
+        },
+        "_uniqueIdentifier": "018943529c03736f915911952e62d44f",
+        "versionId": null,
+        "translated": {
+            "name": "Compass24 DE",
+            "customFields": {
+                "ap_sales_channel_iso2": "DE",
+                "ap_sales_channel_country_id": "1",
+                "ap_sales_channel_project_id": "c24_0001096",
+                "ap_sales_channel_shopware5_id": 1,
+                "ap_category_extension_nav_entry": "7a69eac5221e1f0e618933570f161608"
+            },
+            "homeSlotConfig": null,
+            "homeEnabled": true,
+            "homeName": null,
+            "homeMetaTitle": null,
+            "homeMetaDescription": null,
+            "homeKeywords": null
+        },
+        "createdAt": "2023-07-11T07:00:34.696+00:00",
+        "updatedAt": "2026-01-19T09:43:05.037+00:00",
+        "typeId": "8a243080f92e4c719546314b577cf82b",
+        "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+        "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+        "paymentMethodId": "409fe641d6d62a4416edd6307d758791",
+        "shippingMethodId": "ccd9c045cdda4f008275409654447339",
+        "countryId": "0189434e885471b08f472d7a81f33825",
+        "navigationCategoryId": "7a69eac5221e1f0e618933570f161608",
+        "navigationCategoryVersionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "navigationCategoryDepth": 4,
+        "homeSlotConfig": null,
+        "homeCmsPageId": null,
+        "homeCmsPageVersionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "homeCmsPage": null,
+        "homeEnabled": true,
+        "homeName": null,
+        "homeMetaTitle": null,
+        "homeMetaDescription": null,
+        "homeKeywords": null,
+        "footerCategoryId": "2f7ab30b7e194f2d9b8a30c0a569465a",
+        "footerCategoryVersionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "serviceCategoryId": "c1f1ca6bf15d44eb9c41fd53617dd844",
+        "serviceCategoryVersionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
+        "name": "Compass24 DE",
+        "shortName": null,
+        "accessKey": "SWSCEXF6ZNR3YVJUBDDKT2LDVA",
+        "currencies": null,
+        "languages": [
+            {
+                "extensions": {
+                    "foreignKeys": {
+                        "extensions": [],
+                        "apiAlias": "language_foreign_keys_extension"
+                    }
+                },
+                "_uniqueIdentifier": "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+                "versionId": null,
+                "translated": [],
+                "createdAt": "2023-07-11T06:56:07.434+00:00",
+                "updatedAt": "2023-07-12T19:43:11.304+00:00",
+                "parentId": null,
+                "localeId": "0189434e8808700290393ef34240521f",
+                "translationCodeId": "0189434e8808700290393ef34240521f",
+                "translationCode": {
+                    "extensions": {
+                        "foreignKeys": {
+                            "extensions": [],
+                            "apiAlias": "locale_foreign_keys_extension"
+                        },
+                        "internal_mapping_storage": {
+                            "extensions": [],
+                            "apiAlias": null
+                        }
+                    },
+                    "_uniqueIdentifier": "0189434e8808700290393ef34240521f",
+                    "versionId": null,
+                    "translated": {
+                        "name": "Deutsch",
+                        "territory": "Deutschland",
+                        "customFields": []
+                    },
+                    "createdAt": "2023-07-11T06:56:07.433+00:00",
+                    "updatedAt": null,
+                    "code": "de-DE",
+                    "name": "Deutsch",
+                    "territory": "Deutschland",
+                    "translations": null,
+                    "users": null,
+                    "languages": null,
+                    "customFields": null,
+                    "id": "0189434e8808700290393ef34240521f"
+                },
+                "name": "Deutsch",
+                "active": true,
+                "locale": {
+                    "extensions": {
+                        "foreignKeys": {
+                            "extensions": [],
+                            "apiAlias": "locale_foreign_keys_extension"
+                        },
+                        "internal_mapping_storage": {
+                            "extensions": [],
+                            "apiAlias": null
+                        }
+                    },
+                    "_uniqueIdentifier": "0189434e8808700290393ef34240521f",
+                    "versionId": null,
+                    "translated": {
+                        "name": "Deutsch",
+                        "territory": "Deutschland",
+                        "customFields": []
+                    },
+                    "createdAt": "2023-07-11T06:56:07.433+00:00",
+                    "updatedAt": null,
+                    "code": "de-DE",
+                    "name": "Deutsch",
+                    "territory": "Deutschland",
+                    "translations": null,
+                    "users": null,
+                    "languages": null,
+                    "customFields": null,
+                    "id": "0189434e8808700290393ef34240521f"
+                },
+                "parent": null,
+                "children": null,
+                "salesChannels": null,
+                "customers": null,
+                "salesChannelDefaultAssignments": null,
+                "categoryTranslations": null,
+                "countryStateTranslations": null,
+                "countryTranslations": null,
+                "currencyTranslations": null,
+                "customerGroupTranslations": null,
+                "localeTranslations": null,
+                "mediaTranslations": null,
+                "paymentMethodTranslations": null,
+                "productManufacturerTranslations": null,
+                "productTranslations": null,
+                "shippingMethodTranslations": null,
+                "unitTranslations": null,
+                "propertyGroupTranslations": null,
+                "propertyGroupOptionTranslations": null,
+                "salesChannelTranslations": null,
+                "salesChannelTypeTranslations": null,
+                "salutationTranslations": null,
+                "salesChannelDomains": null,
+                "pluginTranslations": null,
+                "productStreamTranslations": null,
+                "stateMachineTranslations": null,
+                "stateMachineStateTranslations": null,
+                "cmsPageTranslations": null,
+                "cmsSlotTranslations": null,
+                "mailTemplateTranslations": null,
+                "mailHeaderFooterTranslations": null,
+                "documentTypeTranslations": null,
+                "deliveryTimeTranslations": null,
+                "newsletterRecipients": null,
+                "orders": null,
+                "numberRangeTypeTranslations": null,
+                "productSearchKeywords": null,
+                "productKeywordDictionaries": null,
+                "mailTemplateTypeTranslations": null,
+                "promotionTranslations": null,
+                "numberRangeTranslations": null,
+                "productReviews": null,
+                "seoUrlTranslations": null,
+                "taxRuleTypeTranslations": null,
+                "productCrossSellingTranslations": null,
+                "importExportProfileTranslations": null,
+                "productFeatureSetTranslations": null,
+                "appTranslations": null,
+                "actionButtonTranslations": null,
+                "productSortingTranslations": null,
+                "productSearchConfig": null,
+                "landingPageTranslations": null,
+                "appCmsBlockTranslations": null,
+                "appScriptConditionTranslations": null,
+                "appFlowActionTranslations": null,
+                "taxProviderTranslations": null,
+                "customFields": {
+                    "ap_language_language_id": "1"
+                },
+                "id": "2fbb5fe2e29a4d70aa5854ce7ce3e20b"
+            }
+        ],
+        "configuration": null,
+        "active": true,
+        "maintenance": true,
+        "maintenanceIpWhitelist": [
+            "46.223.163.206",
+            "217.241.93.139",
+            "78.94.136.110",
+            "84.139.221.230",
+            "46.223.163.168",
+            "84.130.3.176",
+            "176.94.165.174",
+            "92.208.229.62",
+            "217.241.87.49",
+            "195.190.138.8",
+            "188.136.83.62",
+            "92.208.223.234",
+            "91.11.199.251",
+            "91.11.197.203",
+            "2.205.247.83",
+            "46.223.163.156",
+            "94.130.225.116",
+            "79.200.46.163",
+            "87.162.36.227"
+        ],
+        "taxCalculationType": "horizontal",
+        "type": null,
+        "currency": {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "currency_foreign_keys_extension"
+                },
+                "internal_mapping_storage": {
+                    "extensions": [],
+                    "apiAlias": null
+                }
+            },
+            "_uniqueIdentifier": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "versionId": null,
+            "translated": {
+                "shortName": "EUR",
+                "name": "Euro",
+                "customFields": []
+            },
+            "createdAt": "2023-07-11T06:56:07.822+00:00",
+            "updatedAt": null,
+            "isoCode": "EUR",
+            "factor": 1,
+            "symbol": "€",
+            "shortName": "EUR",
+            "name": "Euro",
+            "position": 1,
+            "translations": null,
+            "orders": null,
+            "salesChannels": null,
+            "salesChannelDefaultAssignments": null,
+            "salesChannelDomains": null,
+            "promotionDiscountPrices": null,
+            "isSystemDefault": true,
+            "productExports": null,
+            "countryRoundings": null,
+            "itemRounding": {
+                "extensions": [],
+                "decimals": 2,
+                "interval": 0.01,
+                "roundForNet": true
+            },
+            "totalRounding": {
+                "extensions": [],
+                "decimals": 2,
+                "interval": 0.01,
+                "roundForNet": true
+            },
+            "taxFreeFrom": 0,
+            "customFields": null,
+            "id": "b7d2554b0ce847cd82f3ac9bd1c0dfca"
+        },
+        "language": null,
+        "paymentMethod": null,
+        "shippingMethod": null,
+        "country": null,
+        "orders": null,
+        "customers": null,
+        "countries": null,
+        "paymentMethods": null,
+        "shippingMethods": null,
+        "translations": null,
+        "domains": [
+            {
+                "extensions": {
+                    "foreignKeys": {
+                        "extensions": [],
+                        "apiAlias": "sales_channel_domain_foreign_keys_extension"
+                    }
+                },
+                "_uniqueIdentifier": "e4874f48e994483e96386ae7010783b3",
+                "versionId": null,
+                "translated": [],
+                "createdAt": "2023-09-19T12:20:02.749+00:00",
+                "updatedAt": "2025-10-10T08:27:11.129+00:00",
+                "url": "https://compass.k24z44.meinserver.io",
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "currency": null,
+                "snippetSetId": "0189434e89e971d185c4c47e52e63214",
+                "snippetSet": null,
+                "salesChannelId": "018943529c03736f915911952e62d44f",
+                "salesChannel": null,
+                "languageId": "2fbb5fe2e29a4d70aa5854ce7ce3e20b",
+                "language": null,
+                "measurementUnits": {
+                    "extensions": [],
+                    "system": "metric",
+                    "units": {
+                        "length": "mm",
+                        "weight": "kg"
+                    }
+                },
+                "productExports": null,
+                "salesChannelDefaultHreflang": null,
+                "hreflangUseOnlyLocale": false,
+                "customFields": null,
+                "id": "e4874f48e994483e96386ae7010783b3"
+            }
+        ],
+        "systemConfigs": null,
+        "navigationCategory": null,
+        "footerCategory": null,
+        "serviceCategory": null,
+        "productVisibilities": null,
+        "mailHeaderFooterId": "9af796baa18c4cac9839ccce06342289",
+        "numberRangeSalesChannels": null,
+        "mailHeaderFooter": null,
+        "customerGroupId": "cfbd5018d38d41d8adca10d94fc8bdd6",
+        "customerGroup": null,
+        "newsletterRecipients": null,
+        "promotionSalesChannels": null,
+        "documentBaseConfigSalesChannels": null,
+        "productReviews": null,
+        "seoUrls": null,
+        "seoUrlTemplates": null,
+        "mainCategories": null,
+        "paymentMethodIds": [
+            "0189434e899e7206802cf7618c274524",
+            "0189434e899f7023a2970e419f8ed1c8",
+            "409fe641d6d62a4416edd6307d758791",
+            "4673044aff79424a938d42e9847693c3",
+            "6d6adcd4b7bf40499873c294a85f32ed",
+            "95aa098aac8f11e9a2a32a2ae2dbcce4"
+        ],
+        "productExports": null,
+        "hreflangActive": true,
+        "hreflangDefaultDomainId": "e4874f48e994483e96386ae7010783b3",
+        "hreflangDefaultDomain": null,
+        "analyticsId": null,
+        "analytics": null,
+        "customerGroupsRegistrations": null,
+        "boundCustomers": null,
+        "wishlists": null,
+        "landingPages": null,
+        "measurementUnits": {
+            "extensions": [],
+            "system": "metric",
+            "units": {
+                "length": "mm",
+                "weight": "kg"
+            }
+        },
+        "customFields": {
+            "ap_sales_channel_iso2": "DE",
+            "ap_sales_channel_country_id": "1",
+            "ap_sales_channel_project_id": "c24_0001096",
+            "ap_sales_channel_shopware5_id": 1,
+            "ap_category_extension_nav_entry": "7a69eac5221e1f0e618933570f161608",
+            "original_root_navigation_id": "0189434e89b9736190ad3f38013a3a4f"
+        },
+        "id": "018943529c03736f915911952e62d44f"
+    },
+    "currency": {
+        "extensions": {
+            "foreignKeys": {
+                "extensions": [],
+                "apiAlias": "currency_foreign_keys_extension"
+            }
+        },
+        "_uniqueIdentifier": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+        "versionId": null,
+        "translated": {
+            "shortName": "EUR",
+            "name": "Euro",
+            "customFields": []
+        },
+        "createdAt": "2023-07-11T06:56:07.822+00:00",
+        "updatedAt": null,
+        "isoCode": "EUR",
+        "factor": 1,
+        "symbol": "€",
+        "shortName": "EUR",
+        "name": "Euro",
+        "position": 1,
+        "translations": null,
+        "orders": null,
+        "salesChannels": null,
+        "salesChannelDefaultAssignments": null,
+        "salesChannelDomains": null,
+        "promotionDiscountPrices": null,
+        "isSystemDefault": true,
+        "productExports": null,
+        "countryRoundings": null,
+        "itemRounding": {
+            "extensions": [],
+            "decimals": 2,
+            "interval": 0.01,
+            "roundForNet": true
+        },
+        "totalRounding": {
+            "extensions": [],
+            "decimals": 2,
+            "interval": 0.01,
+            "roundForNet": true
+        },
+        "taxFreeFrom": 0,
+        "customFields": null,
+        "id": "b7d2554b0ce847cd82f3ac9bd1c0dfca"
+    },
+    "currentCustomerGroup": {
+        "extensions": {
+            "foreignKeys": {
+                "extensions": [],
+                "apiAlias": "customer_group_foreign_keys_extension"
+            }
+        },
+        "_uniqueIdentifier": "cfbd5018d38d41d8adca10d94fc8bdd6",
+        "versionId": null,
+        "translated": {
+            "name": "Standard-Kundengruppe",
+            "customFields": [],
+            "registrationTitle": null,
+            "registrationIntroduction": null,
+            "registrationOnlyCompanyRegistration": null,
+            "registrationSeoMetaDescription": null
+        },
+        "createdAt": "2023-07-11T06:56:07.828+00:00",
+        "updatedAt": null,
+        "name": "Standard-Kundengruppe",
+        "displayGross": true,
+        "translations": null,
+        "customers": null,
+        "salesChannels": null,
+        "registrationActive": false,
+        "registrationSalesChannels": null,
+        "customFields": null,
+        "id": "cfbd5018d38d41d8adca10d94fc8bdd6"
+    },
+    "taxRules": [
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "0189434e89b77119aea75bc50c80ccaf",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2023-07-11T06:56:07.863+00:00",
+            "updatedAt": null,
+            "taxRate": 19,
+            "name": "Standard rate",
+            "position": 1,
+            "products": null,
+            "rules": [
+                {
+                    "extensions": {
+                        "foreignKeys": {
+                            "extensions": [],
+                            "apiAlias": "tax_rule_foreign_keys_extension"
+                        }
+                    },
+                    "_uniqueIdentifier": "0189434ed1897302be35f22bd2ac8014",
+                    "versionId": null,
+                    "translated": [],
+                    "createdAt": "2023-07-11T06:56:26.249+00:00",
+                    "updatedAt": null,
+                    "taxId": "0189434e89b77119aea75bc50c80ccaf",
+                    "tax": null,
+                    "countryId": "0189434e885471b08f472d7a81f33825",
+                    "country": null,
+                    "taxRuleTypeId": "0189434eaa08731bb041ad517356cf5c",
+                    "type": {
+                        "extensions": {
+                            "foreignKeys": {
+                                "extensions": [],
+                                "apiAlias": "tax_rule_type_foreign_keys_extension"
+                            },
+                            "internal_mapping_storage": {
+                                "extensions": [],
+                                "apiAlias": null
+                            }
+                        },
+                        "_uniqueIdentifier": "0189434eaa08731bb041ad517356cf5c",
+                        "versionId": null,
+                        "translated": {
+                            "typeName": "Gesamte Land"
+                        },
+                        "createdAt": "2023-07-11T06:56:16.136+00:00",
+                        "updatedAt": null,
+                        "typeName": "Gesamte Land",
+                        "technicalName": "entire_country",
+                        "position": 3,
+                        "rules": null,
+                        "translations": null,
+                        "id": "0189434eaa08731bb041ad517356cf5c"
+                    },
+                    "taxRate": 19,
+                    "data": null,
+                    "activeFrom": null,
+                    "id": "0189434ed1897302be35f22bd2ac8014"
+                }
+            ],
+            "shippingMethods": null,
+            "customFields": null,
+            "id": "0189434e89b77119aea75bc50c80ccaf"
+        },
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "0189434e89b77119aea75bc50ce2813d",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2023-07-11T06:56:07.864+00:00",
+            "updatedAt": null,
+            "taxRate": 7,
+            "name": "Reduced rate",
+            "position": 2,
+            "products": null,
+            "rules": [
+                {
+                    "extensions": {
+                        "foreignKeys": {
+                            "extensions": [],
+                            "apiAlias": "tax_rule_foreign_keys_extension"
+                        }
+                    },
+                    "_uniqueIdentifier": "0189434ed18a70d8ae8f4806ea28f999",
+                    "versionId": null,
+                    "translated": [],
+                    "createdAt": "2023-07-11T06:56:26.250+00:00",
+                    "updatedAt": null,
+                    "taxId": "0189434e89b77119aea75bc50ce2813d",
+                    "tax": null,
+                    "countryId": "0189434e885471b08f472d7a81f33825",
+                    "country": null,
+                    "taxRuleTypeId": "0189434eaa08731bb041ad517356cf5c",
+                    "type": {
+                        "extensions": {
+                            "foreignKeys": {
+                                "extensions": [],
+                                "apiAlias": "tax_rule_type_foreign_keys_extension"
+                            },
+                            "internal_mapping_storage": {
+                                "extensions": [],
+                                "apiAlias": null
+                            }
+                        },
+                        "_uniqueIdentifier": "0189434eaa08731bb041ad517356cf5c",
+                        "versionId": null,
+                        "translated": {
+                            "typeName": "Gesamte Land"
+                        },
+                        "createdAt": "2023-07-11T06:56:16.136+00:00",
+                        "updatedAt": null,
+                        "typeName": "Gesamte Land",
+                        "technicalName": "entire_country",
+                        "position": 3,
+                        "rules": null,
+                        "translations": null,
+                        "id": "0189434eaa08731bb041ad517356cf5c"
+                    },
+                    "taxRate": 7,
+                    "data": null,
+                    "activeFrom": null,
+                    "id": "0189434ed18a70d8ae8f4806ea28f999"
+                }
+            ],
+            "shippingMethods": null,
+            "customFields": null,
+            "id": "0189434e89b77119aea75bc50ce2813d"
+        },
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "0189434ed182731a99d53520f7d18725",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2023-07-11T06:56:26.242+00:00",
+            "updatedAt": null,
+            "taxRate": 0,
+            "name": "Reduced rate 2",
+            "position": 3,
+            "products": null,
+            "rules": [],
+            "shippingMethods": null,
+            "customFields": null,
+            "id": "0189434ed182731a99d53520f7d18725"
+        },
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "018991efa8847039b617dfaba6ad1b96",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2023-07-26T13:22:29.000+00:00",
+            "updatedAt": null,
+            "taxRate": 0,
+            "name": "Steuerfrei (Mehrzweckgutschein)",
+            "position": -1,
+            "products": null,
+            "rules": [],
+            "shippingMethods": null,
+            "customFields": {
+                "neti_easy_coupon_tax_rule": true
+            },
+            "id": "018991efa8847039b617dfaba6ad1b96"
+        },
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "721626177b764b5388def01d6532e9c6",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2024-12-10T09:46:28.852+00:00",
+            "updatedAt": null,
+            "taxRate": 0,
+            "name": "Photovoltaic taxation",
+            "position": 0,
+            "products": null,
+            "rules": [],
+            "shippingMethods": null,
+            "customFields": null,
+            "id": "721626177b764b5388def01d6532e9c6"
+        },
+        {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "tax_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "e8dd8ebd071146e7ad53811edf837d00",
+            "versionId": null,
+            "translated": [],
+            "createdAt": "2024-12-10T09:46:28.851+00:00",
+            "updatedAt": null,
+            "taxRate": 0,
+            "name": "Differential taxation",
+            "position": 0,
+            "products": null,
+            "rules": [],
+            "shippingMethods": null,
+            "customFields": null,
+            "id": "e8dd8ebd071146e7ad53811edf837d00"
+        }
+    ],
+    "paymentMethod": {
+        "extensions": {
+            "foreignKeys": {
+                "extensions": [],
+                "apiAlias": "payment_method_foreign_keys_extension"
+            }
+        },
+        "_uniqueIdentifier": "409fe641d6d62a4416edd6307d758791",
+        "versionId": null,
+        "translated": {
+            "name": "PayPal",
+            "distinguishableName": "PayPal | Unzer Payment",
+            "description": "PayPal-Zahlungen mit Unzer-Payments",
+            "customFields": []
+        },
+        "createdAt": "2023-07-14T08:56:05.652+00:00",
+        "updatedAt": "2025-12-22T13:26:13.934+00:00",
+        "pluginId": "0189539d3e0970a28d15fa2577a428d3",
+        "handlerIdentifier": "UnzerPayment6\\Components\\PaymentHandler\\UnzerPayPalPaymentHandler",
+        "name": "PayPal",
+        "distinguishableName": "PayPal | Unzer Payment",
+        "description": "PayPal-Zahlungen mit Unzer-Payments",
+        "position": 1,
+        "active": true,
+        "afterOrderEnabled": true,
+        "plugin": null,
+        "translations": null,
+        "orderTransactions": null,
+        "customers": null,
+        "salesChannelDefaultAssignments": null,
+        "salesChannels": null,
+        "availabilityRule": null,
+        "availabilityRuleId": null,
+        "mediaId": "17b0fb83ab89499c974a5a2d517f9cdd",
+        "media": {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "media_foreign_keys_extension"
+                },
+                "internal_mapping_storage": {
+                    "extensions": [],
+                    "apiAlias": null
+                }
+            },
+            "_uniqueIdentifier": "17b0fb83ab89499c974a5a2d517f9cdd",
+            "versionId": null,
+            "translated": {
+                "alt": null,
+                "title": null,
+                "customFields": []
+            },
+            "createdAt": "2023-07-31T11:42:42.781+00:00",
+            "updatedAt": "2023-07-31T11:42:42.995+00:00",
+            "userId": "bbe062214f0b4670b3820d2a539b32bc",
+            "mimeType": "image/png",
+            "fileExtension": "png",
+            "fileSize": 3388,
+            "title": null,
+            "metaData": {
+                "hash": "fa8ba285f45faf236ffc41558b506232",
+                "type": 3,
+                "width": 200,
+                "height": 51
+            },
+            "mediaType": {
+                "extensions": [],
+                "name": "IMAGE",
+                "flags": [
+                    "transparent"
+                ]
+            },
+            "uploadedAt": "2023-07-31T11:42:42.992+00:00",
+            "alt": null,
+            "url": "https://compass-test.b-cdn.net/media/2b/37/14/1690803762/payment-icons_paypal.png?width=1920",
+            "fileName": "payment-icons_paypal",
+            "user": null,
+            "translations": null,
+            "categories": null,
+            "productManufacturers": null,
+            "productMedia": null,
+            "avatarUsers": null,
+            "thumbnails": [],
+            "mediaFolderId": "a0e9e09d66d6468185320571dbab7f65",
+            "mediaFolder": null,
+            "hasFile": true,
+            "private": false,
+            "propertyGroupOptions": null,
+            "mailTemplateMedia": null,
+            "tags": null,
+            "path": "media/2b/37/14/1690803762/payment-icons_paypal.png",
+            "documentBaseConfigs": null,
+            "shippingMethods": null,
+            "paymentMethods": null,
+            "productConfiguratorSettings": null,
+            "orderLineItems": null,
+            "cmsBlocks": null,
+            "cmsSections": null,
+            "cmsPages": null,
+            "documents": null,
+            "a11yDocuments": null,
+            "appPaymentMethods": null,
+            "appShippingMethods": null,
+            "productDownloads": null,
+            "orderLineItemDownloads": null,
+            "config": null,
+            "fileHash": null,
+            "customFields": null,
+            "id": "17b0fb83ab89499c974a5a2d517f9cdd"
+        },
+        "formattedHandlerIdentifier": "handler_unzerpayment6_unzerpaypalpaymenthandler",
+        "shortName": "unzer_pay_pal_payment_handler",
+        "technicalName": "unzer_paypal",
+        "appPaymentMethod": null,
+        "customFields": null,
+        "id": "409fe641d6d62a4416edd6307d758791"
+    },
+    "shippingMethod": {
+        "extensions": {
+            "foreignKeys": {
+                "extensions": [],
+                "apiAlias": "shipping_method_foreign_keys_extension"
+            }
+        },
+        "_uniqueIdentifier": "ccd9c045cdda4f008275409654447339",
+        "versionId": null,
+        "translated": {
+            "name": "Standard-Versand Deutschland Compass",
+            "customFields": {
+                "ap_shipping_method_order_type": "3"
+            },
+            "description": null,
+            "trackingUrl": null
+        },
+        "createdAt": "2024-08-27T14:40:57.954+00:00",
+        "updatedAt": "2024-08-28T10:01:04.513+00:00",
+        "name": "Standard-Versand Deutschland Compass",
+        "active": true,
+        "position": 1,
+        "description": null,
+        "trackingUrl": null,
+        "deliveryTimeId": "0189434e89a271ac819caa6ce387f660",
+        "deliveryTime": null,
+        "translations": null,
+        "orderDeliveries": null,
+        "salesChannelDefaultAssignments": null,
+        "salesChannels": null,
+        "availabilityRule": null,
+        "availabilityRuleId": "0191936c108573dcb8089228b5010878",
+        "prices": [],
+        "mediaId": "7511f8e5232d48c3b27165e3056a1c5b",
+        "taxId": null,
+        "media": {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "media_foreign_keys_extension"
+                },
+                "internal_mapping_storage": {
+                    "extensions": [],
+                    "apiAlias": null
+                }
+            },
+            "_uniqueIdentifier": "7511f8e5232d48c3b27165e3056a1c5b",
+            "versionId": null,
+            "translated": {
+                "alt": null,
+                "title": null,
+                "customFields": []
+            },
+            "createdAt": "2023-06-23T13:14:44.294+00:00",
+            "updatedAt": "2023-07-26T06:14:15.982+00:00",
+            "userId": null,
+            "mimeType": "image/png",
+            "fileExtension": "png",
+            "fileSize": 761,
+            "title": null,
+            "metaData": {
+                "hash": "f204ed32f44a72f50ae1b18e55ebfc30",
+                "type": 3,
+                "width": 256,
+                "height": 57
+            },
+            "mediaType": {
+                "extensions": [],
+                "name": "IMAGE",
+                "flags": [
+                    "transparent"
+                ]
+            },
+            "uploadedAt": "2023-06-23T13:14:44.509+00:00",
+            "alt": null,
+            "url": "https://compass-test.b-cdn.net/media/bb/fb/cc/1687526084/logo_dhl.png?width=1920",
+            "fileName": "logo_dhl",
+            "user": null,
+            "translations": null,
+            "categories": null,
+            "productManufacturers": null,
+            "productMedia": null,
+            "avatarUsers": null,
+            "thumbnails": [],
+            "mediaFolderId": "a1a18844d7b84137bf4c4816815143aa",
+            "mediaFolder": null,
+            "hasFile": true,
+            "private": false,
+            "propertyGroupOptions": null,
+            "mailTemplateMedia": null,
+            "tags": null,
+            "path": "media/bb/fb/cc/1687526084/logo_dhl.png",
+            "documentBaseConfigs": null,
+            "shippingMethods": null,
+            "paymentMethods": null,
+            "productConfiguratorSettings": null,
+            "orderLineItems": null,
+            "cmsBlocks": null,
+            "cmsSections": null,
+            "cmsPages": null,
+            "documents": null,
+            "a11yDocuments": null,
+            "appPaymentMethods": null,
+            "appShippingMethods": null,
+            "productDownloads": null,
+            "orderLineItemDownloads": null,
+            "config": null,
+            "fileHash": null,
+            "customFields": null,
+            "id": "7511f8e5232d48c3b27165e3056a1c5b"
+        },
+        "tags": null,
+        "taxType": "auto",
+        "technicalName": "temporary_ccd9c045cdda4f008275409654447339",
+        "tax": null,
+        "appShippingMethod": null,
+        "customFields": {
+            "ap_shipping_method_order_type": "3"
+        },
+        "id": "ccd9c045cdda4f008275409654447339"
+    },
+    "shippingLocation": {
+        "extensions": [],
+        "country": {
+            "extensions": {
+                "foreignKeys": {
+                    "extensions": [],
+                    "apiAlias": "country_foreign_keys_extension"
+                }
+            },
+            "_uniqueIdentifier": "0189434e885471b08f472d7a81f33825",
+            "versionId": null,
+            "translated": {
+                "name": "Deutschland",
+                "customFields": [],
+                "addressFormat": [
+                    [
+                        "address/company",
+                        "symbol/dash",
+                        "address/department"
+                    ],
+                    [
+                        "address/first_name",
+                        "address/last_name"
+                    ],
+                    [
+                        "address/street"
+                    ],
+                    [
+                        "address/zipcode",
+                        "address/city"
+                    ],
+                    [
+                        "address/country"
+                    ]
+                ]
+            },
+            "createdAt": "2023-07-11T06:56:07.508+00:00",
+            "updatedAt": "2023-09-07T09:26:45.846+00:00",
+            "name": "Deutschland",
+            "iso": "DE",
+            "position": 1,
+            "active": true,
+            "shippingAvailable": true,
+            "iso3": "DEU",
+            "displayStateInRegistration": false,
+            "forceStateInRegistration": false,
+            "checkVatIdPattern": false,
+            "vatIdPattern": "DE\\d{9}",
+            "vatIdRequired": false,
+            "customerTax": {
+                "extensions": [],
+                "enabled": false,
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "amount": 0
+            },
+            "companyTax": {
+                "extensions": [],
+                "enabled": false,
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "amount": 0
+            },
+            "states": null,
+            "translations": null,
+            "orderAddresses": null,
+            "customerAddresses": null,
+            "salesChannelDefaultAssignments": null,
+            "salesChannels": null,
+            "taxRules": null,
+            "currencyCountryRoundings": null,
+            "postalCodeRequired": false,
+            "isEu": true,
+            "checkPostalCodePattern": false,
+            "checkAdvancedPostalCodePattern": false,
+            "advancedPostalCodePattern": null,
+            "defaultPostalCodePattern": "\\d{5}",
+            "addressFormat": [
+                [
+                    "address/company",
+                    "symbol/dash",
+                    "address/department"
+                ],
+                [
+                    "address/first_name",
+                    "address/last_name"
+                ],
+                [
+                    "address/street"
+                ],
+                [
+                    "address/zipcode",
+                    "address/city"
+                ],
+                [
+                    "address/country"
+                ]
+            ],
+            "customFields": null,
+            "id": "0189434e885471b08f472d7a81f33825"
+        },
+        "state": null,
+        "address": null
+    },
+    "customer": null,
+    "itemRounding": {
+        "extensions": [],
+        "decimals": 2,
+        "interval": 0.01,
+        "roundForNet": true
+    },
+    "totalRounding": {
+        "extensions": [],
+        "decimals": 2,
+        "interval": 0.01,
+        "roundForNet": true
+    },
+    "languageInfo": {
+        "name": "Deutsch",
+        "localeCode": "de-DE"
+    },
+    "areaRuleIds": {
+        "payment": [
+            "0189434ec3d471448d438c7ba34592c6",
+            "0189434e8a047257b14ed1febfdd3ef9"
+        ],
+        "promotion": [
+            "0189434ec3d471448d438c7ba34592c6",
+            "417bd8699b4e47db9d93755e26c1ec2e",
+            "0189434e8a047257b14ed1febfdd3ef9"
+        ],
+        "product": [
+            "018cf3ee56a370a6bf81bb99adedbe60",
+            "f95efe345dcc7fcc1ce069fd1e08803b"
+        ],
+        "category": [
+            "018cf3ee56a370a6bf81bb99adedbe60"
+        ],
+        "landing-page": [
+            "018cf3ee56a370a6bf81bb99adedbe60"
+        ],
+        "shipping": [
+            "0191936c108573dcb8089228b5010878",
+            "417bd8699b4e47db9d93755e26c1ec2e",
+            "f8b01d6bdbfb4bcaa1538011264b6f92",
+            "0189434e8a047257b14ed1febfdd3ef9"
+        ],
+        "flow": [
+            "8befb6c0f70e4b7192a484ac364aaee2"
+        ]
+    },
+    "states": []
+}
+</script>
