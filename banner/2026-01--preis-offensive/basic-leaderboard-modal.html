@@ -133,7 +133,7 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_003">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_004">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -335,14 +335,18 @@ TODO:
             return;
         }
 
-        // Check if previously closed
+        // Check if previously closed (persistent) or already seen (session)
         try {
             if (localStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
                 log('Banner was previously closed in this browser');
                 return;
             }
+            if (sessionStorage.getItem('bannerSeen') === 'true') {
+                log('Banner already seen in this session');
+                return;
+            }
         } catch (e) {
-            log('localStorage not available:', e.message);
+            log('localStorage/sessionStorage not available:', e.message);
         }
 
         // Get and apply language-specific content
@@ -361,6 +365,11 @@ TODO:
         banner.classList.add(BANNER_CONFIG.position);
         setTimeout(function() {
             banner.style.display = 'flex';
+            try {
+                sessionStorage.setItem('bannerSeen', 'true');
+            } catch (e) {
+                log('Could not set sessionStorage bannerSeen:', e.message);
+            }
             log('Banner displayed after delay');
         }, BANNER_CONFIG.delay);
     }

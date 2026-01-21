@@ -61,13 +61,29 @@ const BANNER_CONFIG = {
 | `se` | Swedish | `/pris-offensiv` |
 
 ## Deployment
+## Features
 
-For each sales channel deployment:
-
-1. Copy the banner code from `basic-leaderboard-modal.html`
-2. Update `BANNER_CONFIG.language` to match the sales channel's country code
-3. Optionally configure `allowedPaths` to restrict display to specific pages
+- **Multi-language support**: 10 languages (de, dk, es, fr, ch-fr, gb, it, nl, pl, se)
+- **Path restrictions**: Show banner only on specific paths (or all paths)
+- **Persistent closed state**: Remembers if user closed the banner (uses `localStorage`)
+- **Session display control**: Banner is only shown once per session, even if not closed (uses `sessionStorage` with key `bannerSeen`)
+- **Configurable delay**: Banner appears after a configurable delay (default: 5 seconds, see `BANNER_CONFIG.delay`)
+- **Reduced size**: Banner is about half the previous size for desktop and mobile
+- **Debug mode**: Console logging for development/testing
+- **Global API**: Accessible via browser console for testing
+- **Safe injection**: Uses specific IDs to avoid conflicts with page elements
 4. Set `DEBUG: false` for production
+
+```javascript
+const BANNER_CONFIG = {
+    position: 'bottom',           // 'top' or 'bottom'
+    language: 'de',               // Language code for content
+    allowedPaths: [],             // Empty = all paths, or ['/path1', '/path2']
+    storageKey: 'bannerClosed_preisOffensive_2026-01', // localStorage key for closed state
+    DEBUG: true,                  // Enable console logging
+    delay: 5000                   // Delay in ms before showing banner
+};
+```
 5. Inject via personalization platform
 
 ## Console API
@@ -78,13 +94,20 @@ The global `PreisOffensiveBanner` object is always available for testing and deb
 
 ```javascript
 // Access configuration
+| Desktop (>768px) | 350×87px |
+| Mobile (≤768px) | 175×43px |
 PreisOffensiveBanner.config
 
+| `.close()` | Close the banner and save preference to localStorage |
+| `.reset()` | Clear the closed state from localStorage |
 // Manually show/hide
-PreisOffensiveBanner.init()
-PreisOffensiveBanner.close()
+## Safety Features
 
-// Reset closed state (clears sessionStorage)
+- **IIFE wrapper**: Script runs in isolated scope, no global pollution except explicit API
+- **Null checks**: All DOM operations check for element existence
+- **Try/catch**: localStorage/sessionStorage operations wrapped for private browsing compatibility
+- **Specific IDs**: No generic class selectors that could conflict with page styles
+- **Session display control**: Banner is only shown once per session, even if not closed (uses `sessionStorage` with key `bannerSeen`)
 PreisOffensiveBanner.reset()
 
 // Switch language and reinitialize
