@@ -1,16 +1,14 @@
 <!--
 Banner: Basic Leaderboard Modal
 Experience: Marketing / Banner / Preis-Offensive
+Global object: PreisOffensiveBanner
+Version: 2026-01-21_002
+
+Description:
+This snippet creates a promotional overlay banner for the "Preis-Offensive" campaign. 
+It supports multiple languages and can be configured to appear at the top or bottom of the viewport.
 
 See README.md for configuration and deployment instructions.
-
-DONE:
-✓ Multi-language support via BANNER_CONFIG.language
-✓ Path restrictions via BANNER_CONFIG.allowedPaths
-✓ Global API via window.PreisOffensiveBanner for console testing
-✓ Specific element IDs to avoid conflicts
-✓ IIFE wrapper to avoid global scope pollution
-✓ Error handling and null checks
 
 TODO:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
@@ -151,7 +149,7 @@ TODO:
     // =========================================================================
     const BANNER_CONFIG = {
         // Banner behavior
-        position: 'bottom',                    // 'top' or 'bottom'
+        position: 'bottom', // 'top' or 'bottom'
         storageKey: 'bannerClosed_preisOffensive_2026-01', // Unique sessionStorage key
         DEBUG: true,
         
