@@ -2,10 +2,18 @@
 Banner: Basic Leaderboard Modal
 Experience: Marketing / Banner / Preis-Offensive
 
+See README.md for configuration and deployment instructions.
+
+DONE:
+✓ Multi-language support via BANNER_CONFIG.language
+✓ Path restrictions via BANNER_CONFIG.allowedPaths
+✓ Global API via window.PreisOffensiveBanner for console testing
+✓ Specific element IDs to avoid conflicts
+✓ IIFE wrapper to avoid global scope pollution
+✓ Error handling and null checks
+
 TODO:
-- For deployment in presonalization plugin: Match LANGUAGE with sales channel / country code.
-- refactor so this banner only appears in valid path(s)
-- make javascript global object so it can be tested/accessed via console
+- For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
 <style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_001">
@@ -118,23 +126,50 @@ TODO:
 
 <div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
     <div class="banner-content">
-        <a href="/compass-preisoffensive">
-            <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" class="banner-marketing__image" />
+        <a href="/compass-preisoffensive" id="overlayBanner-link-preisOffensive-2026-01">
+            <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" id="overlayBanner-image-preisOffensive-2026-01" class="banner-marketing__image" />
         </a>
     </div>
-    <div class="banner-close" onclick="closeBanner()"></div>
+    <div class="banner-close" onclick="PreisOffensiveBanner.close()"></div>
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_001">
-  // Banner configuration
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_002">
+/**
+ * Preis-Offensive Banner Experience
+ * 
+ * This script manages a promotional overlay banner with multi-language support.
+ * It uses specific element IDs to avoid conflicts when injected into pages.
+ * 
+ * @see README.md for configuration and deployment instructions
+ */
+(function() {
+    'use strict';
+
+    // =========================================================================
+    // CONFIGURATION
+    // =========================================================================
     const BANNER_CONFIG = {
-        position: 'bottom', // 'top' or 'bottom'
-        storageKey: 'bannerClosed', // sessionStorage key
+        // Banner behavior
+        position: 'bottom',                    // 'top' or 'bottom'
+        storageKey: 'bannerClosed_preisOffensive_2026-01', // Unique sessionStorage key
         DEBUG: true,
+        
+        // Experience identification
         experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
-        LANGUAGE: 'de', // TODO: use country code matching deployment sales channel
-        data: { // FR and CH-FR share same banner
+        
+        // Language setting - match to deployment sales channel
+        language: 'de',
+        
+        // Element IDs (must match HTML)
+        elementIds: {
+            banner: 'overlayBanner-preisOffensive-2026-01',
+            link: 'overlayBanner-link-preisOffensive-2026-01',
+            image: 'overlayBanner-image-preisOffensive-2026-01'
+        },
+        
+        // Language-specific content
+        data: {
             'de': {
                 imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
                 imageAlt: 'Compass Preis-Offensive',
@@ -186,55 +221,213 @@ TODO:
                 linkUrl: '/pris-offensiv'
             }
         },
-        allowedPaths: [] // Array of paths where banner should be shown. Empty array = show on all paths. 
+        
+        // Path restrictions (empty array = show on all paths)
+        allowedPaths: []
     };
 
+    // =========================================================================
+    // HELPER FUNCTIONS
+    // =========================================================================
+    
+    /**
+     * Logs debug messages when DEBUG mode is enabled
+     * @param {string} message - Message to log
+     * @param {*} [data] - Optional data to include
+     */
+    function log(message, data) {
+        if (!BANNER_CONFIG.DEBUG) return;
+        const prefix = '[Banner:' + BANNER_CONFIG.experienceId + ']';
+        if (data !== undefined) {
+            console.info(prefix, message, data);
+        } else {
+            console.info(prefix, message);
+        }
+    }
+
+    /**
+     * Safely gets an element by ID with null check
+     * @param {string} id - Element ID
+     * @returns {HTMLElement|null}
+     */
+    function getElement(id) {
+        var element = document.getElementById(id);
+        if (!element) {
+            log('Element not found: #' + id);
+        }
+        return element;
+    }
+
+    /**
+     * Gets the language-specific data from configuration
+     * @returns {Object|null} Language data or null if not found
+     */
+    function getLanguageData() {
+        var lang = BANNER_CONFIG.language;
+        var data = BANNER_CONFIG.data[lang];
+        
+        if (!data) {
+            log('No data found for language: ' + lang);
+            return null;
+        }
+        
+        return data;
+    }
+
+    /**
+     * Checks if current path is in the allowed paths list
+     * @returns {boolean}
+     */
     function isPathAllowed() {
-        // If paths array is empty, show banner on all paths
         if (BANNER_CONFIG.allowedPaths.length === 0) {
-                return true;
+            return true;
         }
-      
-        const currentPath = window.location.pathname;
-        return BANNER_CONFIG.allowedPaths.some(path => currentPath === path || currentPath.startsWith(path));
+        
+        var currentPath = window.location.pathname;
+        return BANNER_CONFIG.allowedPaths.some(function(path) {
+            return currentPath === path || currentPath.startsWith(path);
+        });
     }
 
+    /**
+     * Applies language-specific content to banner elements
+     * @param {Object} langData - Language-specific configuration
+     * @returns {boolean} True if successful
+     */
+    function applyLanguageContent(langData) {
+        var linkEl = getElement(BANNER_CONFIG.elementIds.link);
+        var imageEl = getElement(BANNER_CONFIG.elementIds.image);
+        
+        if (!linkEl || !imageEl) {
+            log('Required elements not found, cannot apply language content');
+            return false;
+        }
+        
+        // Apply link URL
+        linkEl.href = langData.linkUrl;
+        
+        // Apply image source and alt text
+        imageEl.src = langData.imageSrc;
+        imageEl.alt = langData.imageAlt;
+        
+        log('Applied language content:', langData);
+        return true;
+    }
+
+    // =========================================================================
+    // BANNER CONTROL FUNCTIONS
+    // =========================================================================
+
+    /**
+     * Initializes and displays the banner
+     */
     function initBanner() {
-        if (BANNER_CONFIG.DEBUG) {
-            console.info(`[Banner DEBUG] Initializing banner with experience ID: ${BANNER_CONFIG.experienceId}`);
-        }
-
-        const banner = document.getElementById('overlayBanner-preisOffensive-2026-01');
+        log('Initializing banner...');
         
-        // Check if current path is allowed
+        var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        if (!banner) {
+            log('Banner element not found, aborting initialization');
+            return;
+        }
+        
+        // Check path restrictions
         if (!isPathAllowed()) {
-            return; // Don't show banner on this path
+            log('Current path not allowed:', window.location.pathname);
+            return;
         }
         
-        // Check if banner was previously closed
-        if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
-            return; // Don't show banner
+        // Check if previously closed
+        try {
+            if (sessionStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
+                log('Banner was previously closed in this session');
+                return;
+            }
+        } catch (e) {
+            log('sessionStorage not available:', e.message);
         }
         
-        // Set position class
+        // Get and apply language-specific content
+        var langData = getLanguageData();
+        if (!langData) {
+            log('No language data available, aborting');
+            return;
+        }
+        
+        if (!applyLanguageContent(langData)) {
+            log('Failed to apply language content, aborting');
+            return;
+        }
+        
+        // Set position and show banner
         banner.classList.add(BANNER_CONFIG.position);
-        
-        // Show banner
         banner.style.display = 'flex';
+        
+        log('Banner displayed successfully');
     }
 
+    /**
+     * Closes the banner and remembers the choice
+     */
     function closeBanner() {
-        const banner = document.getElementById('overlayBanner-preisOffensive-2026-01');
+        var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        if (!banner) return;
+        
         banner.style.display = 'none';
         
-        // Remember that banner was closed
-        sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+        try {
+            sessionStorage.setItem(BANNER_CONFIG.storageKey, 'true');
+            log('Banner closed and preference saved');
+        } catch (e) {
+            log('Could not save to sessionStorage:', e.message);
+        }
     }
 
-    // Initialize banner when DOM is ready
+    // =========================================================================
+    // GLOBAL API (for console testing/debugging)
+    // =========================================================================
+    window.PreisOffensiveBanner = {
+        config: BANNER_CONFIG,
+        init: initBanner,
+        close: closeBanner,
+        getLanguageData: getLanguageData,
+        isPathAllowed: isPathAllowed,
+        
+        /**
+         * Resets the banner state (clears sessionStorage)
+         */
+        reset: function() {
+            try {
+                sessionStorage.removeItem(BANNER_CONFIG.storageKey);
+                log('Banner state reset');
+            } catch (e) {
+                log('Could not reset:', e.message);
+            }
+        },
+        
+        /**
+         * Changes the language and reinitializes
+         * @param {string} lang - Language code
+         */
+        setLanguage: function(lang) {
+            if (BANNER_CONFIG.data[lang]) {
+                BANNER_CONFIG.language = lang;
+                log('Language changed to:', lang);
+                this.reset();
+                initBanner();
+            } else {
+                console.warn('Available languages:', Object.keys(BANNER_CONFIG.data).join(', '));
+            }
+        }
+    };
+
+    // =========================================================================
+    // INITIALIZATION
+    // =========================================================================
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initBanner);
     } else {
         initBanner();
     }
+
+})();
 </script>
