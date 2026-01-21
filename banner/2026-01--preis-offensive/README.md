@@ -164,3 +164,9 @@ The banner uses specific, namespaced IDs to avoid conflicts:
 - **Null checks**: All DOM operations check for element existence
 - **Try/catch**: sessionStorage operations wrapped for private browsing compatibility
 - **Specific IDs**: No generic class selectors that could conflict with page styles
+
+## Developer Notes
+
+**Important:** Do NOT use single line comments `//` in JavaScript on Prod. Use multi-line comments `/* */`. Minification will otherwise render the script useless.
+
+Probably [cache deletion ("Cache löschen")](https://www.compass24.de/admin#/sw/settings/cache/index) required to see updated script payload.

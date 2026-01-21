@@ -133,7 +133,7 @@ TODO:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_005">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_008">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -145,30 +145,30 @@ TODO:
 (function() {
     'use strict';
 
-    // =========================================================================
-    // CONFIGURATION
-    // =========================================================================
+    /* ========================================================================= */
+    /* CONFIGURATION */
+    /* ========================================================================= */
     const BANNER_CONFIG = {
-        // Banner behavior
-        position: 'bottom', // 'top' or 'bottom'
-        storageKey: 'bannerClosed_preisOffensive_2026-01', // Unique localStorage key
+        /* Banner behavior */
+        position: 'bottom', /* 'top' or 'bottom' */
+        storageKey: 'bannerClosed_preisOffensive_2026-01', /* Unique localStorage key */
         DEBUG: true,
-        delay: 5000, // Delay in ms before showing banner
+        delay: 5000, /* Delay in ms before showing banner */
         
-        // Experience identification
+        /* Experience identification */
         experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
-        
-        // Language setting - match to deployment sales channel
-        language: 'de',
-        
-        // Element IDs (must match HTML)
+
+        /* Language setting - match to deployment sales channel */
+        language: 'ch', /* e.g. 'de', 'dk', 'es', 'fr', 'ch' (it will be decided via code whether 'ch-fr' or 'ch-de'), 'gb', 'it', 'nl', 'pl', 'se' */
+
+        /* Element IDs (must match HTML) */
         elementIds: {
             banner: 'overlayBanner-preisOffensive-2026-01',
             link: 'overlayBanner-link-preisOffensive-2026-01',
             image: 'overlayBanner-image-preisOffensive-2026-01'
         },
         
-        // Language-specific content
+        /* Language-specific content */
         data: {
             'de': {
                 imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
@@ -189,6 +189,11 @@ TODO:
                 imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
                 imageAlt: 'Compass Offensive sur les Prix',
                 linkUrl: '/offensive-sur-les-prix'
+            },
+            'ch-de': {
+                imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
+                imageAlt: 'Compass Preis-Offensive',
+                linkUrl: '/compass-preisoffensive'
             },
             'ch-fr': {
                 imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
@@ -222,13 +227,13 @@ TODO:
             }
         },
         
-        // Path restrictions (empty array = show on all paths)
+        /* Path restrictions (empty array = show on all paths) */
         allowedPaths: []
     };
 
-    // =========================================================================
-    // HELPER FUNCTIONS
-    // =========================================================================
+    /* ========================================================================= */
+    /* HELPER FUNCTIONS */
+    /* ========================================================================= */
     
     /**
      * Logs debug messages when DEBUG mode is enabled
@@ -264,6 +269,18 @@ TODO:
      */
     function getLanguageData() {
         var lang = BANNER_CONFIG.language;
+
+        /* Special handling for Swiss languages */
+        if (lang === 'ch') {
+            /* If path contains 'ch-fr/ use 'ch-fr', else 'ch-de' */
+            if (window.location.pathname.includes('/ch-fr/')) {
+                lang = 'ch-fr';
+            } else {
+                lang = 'ch-de';
+            }
+        }
+
+
         var data = BANNER_CONFIG.data[lang];
         
         if (!data) {
@@ -303,10 +320,10 @@ TODO:
             return false;
         }
         
-        // Apply link URL
+        /* Apply link URL */
         linkEl.href = langData.linkUrl;
-        
-        // Apply image source and alt text
+
+        /* Apply image source and alt text */
         imageEl.src = langData.imageSrc;
         imageEl.alt = langData.imageAlt;
         
@@ -314,13 +331,10 @@ TODO:
         return true;
     }
 
-    // =========================================================================
-    // BANNER CONTROL FUNCTIONS
-    // =========================================================================
+    /* ========================================================================= */
+    /* BANNER CONTROL FUNCTIONS */
+    /* ========================================================================= */
 
-    /**
-     * Initializes and displays the banner
-     */
     function initBanner() {
         log('Initializing banner...');
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
@@ -329,13 +343,13 @@ TODO:
             return;
         }
 
-        // Check path restrictions
+        /* Check path restrictions */
         if (!isPathAllowed()) {
             log('Current path not allowed:', window.location.pathname);
             return;
         }
 
-        // Check if previously closed (persistent) or already seen (session)
+        /* Check if previously closed (persistent) or already seen (session) */
         try {
             if (localStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
                 log('Banner was previously closed in this browser');
@@ -349,7 +363,7 @@ TODO:
             log('localStorage/sessionStorage not available:', e.message);
         }
 
-        // Get and apply language-specific content
+        /* Get and apply language-specific content */
         var langData = getLanguageData();
         if (!langData) {
             log('No language data available, aborting');
@@ -360,40 +374,35 @@ TODO:
             log('Failed to apply language content, aborting');
             return;
         }
-
-        // Set position and show banner after delay
+        /* Set position and show banner after delay */
         banner.classList.add(BANNER_CONFIG.position);
         setTimeout(function() {
             banner.style.display = 'flex';
             try {
                 sessionStorage.setItem('bannerSeen', 'true');
-            } catch (e) {
+            }
+            catch (e) {
                 log('Could not set sessionStorage bannerSeen:', e.message);
             }
-            log('Banner displayed after delay');
-        }, BANNER_CONFIG.delay);
+            log('Banner displayed after delay'); }, BANNER_CONFIG.delay);
     }
 
-    /**
-     * Closes the banner and remembers the choice
-     */
     function closeBanner() {
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
         if (!banner) return;
-
         banner.style.display = 'none';
-
         try {
             localStorage.setItem(BANNER_CONFIG.storageKey, 'true');
             log('Banner closed and preference saved');
-        } catch (e) {
+        }
+        catch (e) {
             log('Could not save to localStorage:', e.message);
         }
     }
 
-    // =========================================================================
-    // GLOBAL API (for console testing/debugging)
-    // =========================================================================
+    /* ========================================================================= */
+    /* GLOBAL API (for console testing/debugging) */
+    /* ========================================================================= */
     window.PreisOffensiveBanner = {
         config: BANNER_CONFIG,
         init: initBanner,
@@ -401,15 +410,13 @@ TODO:
         getLanguageData: getLanguageData,
         isPathAllowed: isPathAllowed,
         
-        /**
-         * Resets the banner state (clears localStorage)
-         */
         reset: function() {
-            try {
+            try { 
                 localStorage.removeItem(BANNER_CONFIG.storageKey);
                 sessionStorage.removeItem('bannerSeen');
-                log('Banner state reset (localStorage and sessionStorage cleared)');
-            } catch (e) {
+                log('Banner state reset (localStorage and sessionStorage cleared)'); 
+            } 
+            catch (e) { 
                 log('Could not reset:', e.message);
             }
         },
@@ -430,9 +437,9 @@ TODO:
         }
     };
 
-    // =========================================================================
-    // INITIALIZATION
-    // =========================================================================
+    /* ========================================================================= */
+    /* INITIALIZATION */
+    /* ========================================================================= */
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initBanner);
     } else {
