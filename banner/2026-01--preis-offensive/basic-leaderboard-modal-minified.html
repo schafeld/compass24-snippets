@@ -1,0 +1,330 @@
+ 
+
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_003">
+
+        img.banner-marketing__image {
+                width: 350px;
+                height: 87px;
+        }
+
+        .overlay-banner.basic-leaderboard-modal--preis-offensive {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 87px;
+            max-width: 95vw;
+
+            &.top {
+                top: 20px;
+            }
+
+            &.bottom {
+                bottom: 20px;
+            }
+
+            .banner-content {
+                flex: 1;
+                padding: 15px;
+                text-align: center;
+                font-size: 16px;
+                color: #333;
+            }
+
+            .banner-close {
+                position: absolute;
+                top: 7px;
+                right: 7px;
+                width: 24px;
+                height: 24px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s;
+            }
+
+            .banner-close:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            .banner-close::before,
+            .banner-close::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 2px;
+                background: #333;
+            }
+
+            .banner-close::before {
+                transform: rotate(45deg);
+            }
+
+            .banner-close::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .overlay-banner.basic-leaderboard-modal--preis-offensive {
+                width: 350px;
+                height: 87px;
+
+                &.bottom {
+                    bottom: 50px;
+                }
+      
+                img.banner-marketing__image {
+                    width: 350px;
+                    height: 87px;
+                }
+            .banner-content {
+                padding: 10px;
+                font-size: 14px;
+            }
+      
+            .banner-close {
+                width: 20px;
+                height: 20px;
+                top: 5px;
+                right: 5px;
+            }
+      
+            .banner-close::before,
+            .banner-close::after {
+                width: 10px;
+            }
+        }
+}
+</style>
+
+
+<div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive" style="display: none;">
+    <div class="banner-content">
+        <a href="/compass-preisoffensive" id="overlayBanner-link-preisOffensive-2026-01">
+            <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" id="overlayBanner-image-preisOffensive-2026-01" class="banner-marketing__image" />
+        </a>
+    </div>
+    <div class="banner-close" onclick="PreisOffensiveBanner.close()"></div>
+</div>
+
+
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_005">
+(function(){
+    'use strict';
+
+
+    const BANNER_CONFIG = {
+        position: 'bottom',
+        storageKey: 'bannerClosed_preisOffensive_2026-01',
+        DEBUG: true,
+        delay: 5000,
+        
+        experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
+        language: 'de',
+
+        elementIds: {
+            banner: 'overlayBanner-preisOffensive-2026-01',
+            link: 'overlayBanner-link-preisOffensive-2026-01',
+            image: 'overlayBanner-image-preisOffensive-2026-01'
+        },
+        
+
+        data: {
+            'de': {
+                imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
+                imageAlt: 'Compass Preis-Offensive',
+                linkUrl: '/compass-preisoffensive'
+            },
+            'dk': {
+                imageSrc: 'https://compass24.b-cdn.net/media/ff/5b/40/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-dk-desk.jpg?width=1920',
+                imageAlt: 'Compass Pris-Offensiv',
+                linkUrl: '/pris-offensiv'
+            },
+            'es': {
+                imageSrc: 'https://compass24.b-cdn.net/media/f2/d7/82/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-es-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensiva de Precios',
+                linkUrl: '/ofensiva-de-precios'
+            },
+            'fr': {
+                imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensive sur les Prix',
+                linkUrl: '/offensive-sur-les-prix'
+            },
+            'ch-fr': {
+                imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensive sur les Prix',
+                linkUrl: '/ch-fr/offensive-sur-les-prix'
+            },
+            'gb': {
+                imageSrc: 'https://compass24.b-cdn.net/media/1f/d4/f8/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-gb-desk.jpg?width=1920',
+                imageAlt: 'Compass Price-Offensive',
+                linkUrl: '/price-offensive'
+            },
+            'it': {
+                imageSrc: 'https://compass24.b-cdn.net/media/8d/d4/28/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-it-desk.jpg?width=1920',
+                imageAlt: 'Compass Offensiva sui Prezzi',
+                linkUrl: '/offensiva-sui-prezzi'
+            },
+            'nl': {
+                imageSrc: 'https://compass24.b-cdn.net/media/1a/32/80/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-nl-desk.jpg?width=1920',
+                imageAlt: 'Compass Prijs-Offensief',
+                linkUrl: '/prijs-offensief'
+            },
+            'pl': {
+                imageSrc: 'https://compass24.b-cdn.net/media/eb/89/c2/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-pl-desk.jpg?width=1920',
+                imageAlt: 'Compass Ofensywa Cenowa',
+                linkUrl: '/ofensywa-cenowa'
+            },
+            'se': {
+                imageSrc: 'https://compass24.b-cdn.net/media/24/21/4e/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-se-desk.jpg?width=1920',
+                imageAlt: 'Compass Pris-Offensiv',
+                linkUrl: '/pris-offensiv'
+            }
+        },
+        
+        allowedPaths: []
+    };
+
+    function log(message, data) {
+        if (!BANNER_CONFIG.DEBUG) return;
+        const prefix = '[Banner:' + BANNER_CONFIG.experienceId + ']';
+        if (data !== undefined) {
+            console.info(prefix, message, data);
+        } else {
+            console.info(prefix, message);
+        }
+    }
+
+    function getElement(id) {
+        var element = document.getElementById(id);
+        if (!element) {
+            log('Element not found: #' + id);
+        }
+        return element;
+    }
+
+    function getLanguageData() {
+        var lang = BANNER_CONFIG.language;
+        var data = BANNER_CONFIG.data[lang];
+        if (!data) {
+            log('No data found for language: ' + lang);
+            return null;
+        }
+        return data;
+    }
+
+    function isPathAllowed() {
+        if (BANNER_CONFIG.allowedPaths.length === 0) {
+            return true;
+        }
+        var currentPath = window.location.pathname;
+        return BANNER_CONFIG.allowedPaths.some(function(path) {
+            return currentPath === path || currentPath.startsWith(path);
+        });
+    }
+
+    function applyLanguageContent(langData) {
+        var linkEl = getElement(BANNER_CONFIG.elementIds.link);
+        var imageEl = getElement(BANNER_CONFIG.elementIds.image);
+        if (!linkEl || !imageEl) {
+            log('Required elements not found, cannot apply language content');
+            return false;
+        }
+        linkEl.href = langData.linkUrl;
+        imageEl.src = langData.imageSrc;
+        imageEl.alt = langData.imageAlt;
+        log('Applied language content:', langData);
+        return true;
+    }
+
+    function initBanner() {
+        log('Initializing banner...');
+        var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        if (!banner) {
+            log('Banner element not found, aborting initialization');
+            return;
+        }
+        if (!isPathAllowed()) {
+            log('Current path not allowed:', window.location.pathname);
+            return;
+        }
+        try {
+            if (localStorage.getItem(BANNER_CONFIG.storageKey) === 'true') {
+                log('Banner was previously closed in this browser');
+                return;
+            }
+            if (sessionStorage.getItem('bannerSeen') === 'true') {
+                log('Banner already seen in this session');
+                return;
+            }
+        } catch (e) {
+            log('localStorage/sessionStorage not available:', e.message);
+        }
+        var langData = getLanguageData();
+        if (!langData) {
+            log('No language data available, aborting');
+            return;
+        }
+        if (!applyLanguageContent(langData)) {
+            log('Failed to apply language content, aborting');
+            return;
+        }
+        banner.classList.add(BANNER_CONFIG.position);
+        setTimeout(function() {
+            banner.style.display = 'flex';
+            try { sessionStorage.setItem('bannerSeen', 'true'); } catch (e) { log('Could not set sessionStorage bannerSeen:', e.message); }
+            log('Banner displayed after delay');
+        }, BANNER_CONFIG.delay);
+    }
+
+    function closeBanner() {
+        var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        if (!banner) return;
+        banner.style.display = 'none';
+        try { localStorage.setItem(BANNER_CONFIG.storageKey, 'true'); log('Banner closed and preference saved'); } catch (e) { log('Could not save to localStorage:', e.message); }
+    }
+
+
+    window.PreisOffensiveBanner = {
+        config: BANNER_CONFIG,
+        init: initBanner,
+        close: closeBanner,
+        getLanguageData: getLanguageData,
+        isPathAllowed: isPathAllowed,
+        
+        reset: function() {
+            try { localStorage.removeItem(BANNER_CONFIG.storageKey); sessionStorage.removeItem('bannerSeen'); log('Banner state reset (localStorage and sessionStorage cleared)'); } catch (e) { log('Could not reset:', e.message); }
+        },
+        
+
+        setLanguage: function(lang) {
+            if (BANNER_CONFIG.data[lang]) {
+                BANNER_CONFIG.language = lang;
+                log('Language changed to:', lang);
+                this.reset();
+                initBanner();
+            } else {
+                console.warn('Available languages:', Object.keys(BANNER_CONFIG.data).join(', '));
+            }
+        }
+    };
+
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initBanner);
+    } else {
+        initBanner();
+    }
+
+})();
+</script>
