@@ -68,11 +68,27 @@ console.log('Shopware context:', window.shopwareContext);
 
 <!-- This makes the context available to Javascript: -->
 
-<script>window.shopwareContext = {{ context | json_encode() | raw }};</script>
+<script>
+/* Get the entire context from Shopware */
+/* The double braces wrap Twig syntax */
+window.shopwareContext = {{ context | json_encode() | raw }};
+
+let salesChannelName = window.shopwareContext.salesChannel.translated.name;
+
+console.info('Sales Channel Name derived from Shopware context:', salesChannelName);
+
+console.info('Locale code: ', shopwareContext.languageInfo.localeCode);
+</script>
 
 
 
 <!-- Resulting Json object from Compass24.de homepage: -->
+
+
+
+// "shopNameFromJS": 
+document.getElementById('shopware-context') ? JSON.parse(document.getElementById('shopware-context').textContent).salesChannel.translated.name : null;
+
 <script type="application/json" id="shopware-context"> 
 {
     "extensions": [],
