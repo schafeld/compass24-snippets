@@ -45,7 +45,47 @@ const BANNER_CONFIG = {
 | `storageKey` | string | `'bannerClosed_preisOffensive_2026-01'` | sessionStorage key |
 | `DEBUG` | boolean | `true` | Enable console debug logging |
 
-### Supported Languages
+# Preis-Offensive Banner (January 2026)
+
+A promotional overlay banner for the Compass Preis-Offensive campaign with multi-language support.
+
+## Overview
+
+This banner is designed to be injected into pages via a personalization platform. It displays a fixed-position promotional banner with language-specific images and links.
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `basic-leaderboard-modal.html` | Complete banner code (CSS, HTML, JS) |
+| `assets/` | Banner image assets per language |
+
+## Key Features
+
+- Multi-language support (de, dk, es, fr, ch-fr, gb, it, nl, pl, se)
+- Path restrictions (show only on configured paths)
+- Persistent closed state using `localStorage`
+- Session display control using `sessionStorage.bannerSeen` (banner shows once per session)
+- Configurable delay before display (`BANNER_CONFIG.delay`, default 5000ms)
+- Responsive images with `srcset`, `sizes`, and `loading="lazy"`
+- Global API for debugging: `window.PreisOffensiveBanner`
+
+## Configuration
+
+The banner is configured via the `BANNER_CONFIG` object in the script.
+
+```javascript
+const BANNER_CONFIG = {
+    position: 'bottom',                     // 'top' or 'bottom'
+    language: 'de',                         // Language code for content
+    allowedPaths: [],                       // Empty = all paths
+    storageKey: 'bannerClosed_preisOffensive_2026-01', // localStorage key for closed state
+    DEBUG: true,                            // Enable console logging (set false in prod)
+    delay: 5000                             // Delay in ms before showing banner
+};
+```
+
+## Supported Languages
 
 | Code | Language | Link URL |
 |------|----------|----------|
@@ -54,6 +94,7 @@ const BANNER_CONFIG = {
 | `es` | Spanish | `/ofensiva-de-precios` |
 | `fr` | French | `/offensive-sur-les-prix` |
 | `ch-fr` | Swiss French | `/ch-fr/offensive-sur-les-prix` |
+| `ch-de` | Swiss German | `/compass-preisoffensive` |
 | `gb` | English (UK) | `/price-offensive` |
 | `it` | Italian | `/offensiva-sui-prezzi` |
 | `nl` | Dutch | `/prijs-offensief` |
@@ -61,63 +102,50 @@ const BANNER_CONFIG = {
 | `se` | Swedish | `/pris-offensiv` |
 
 ## Deployment
-## Features
 
-- **Multi-language support**: 10 languages (de, dk, es, fr, ch-fr, gb, it, nl, pl, se)
-- **Path restrictions**: Show banner only on specific paths (or all paths)
-- **Persistent closed state**: Remembers if user closed the banner (uses `localStorage`)
-- **Session display control**: Banner is only shown once per session, even if not closed (uses `sessionStorage` with key `bannerSeen`)
-- **Configurable delay**: Banner appears after a configurable delay (default: 5 seconds, see `BANNER_CONFIG.delay`)
-- **Reduced size**: Banner is about half the previous size for desktop and mobile
-- **Debug mode**: Console logging for development/testing
-- **Global API**: Accessible via browser console for testing
-- **Safe injection**: Uses specific IDs to avoid conflicts with page elements
-4. Set `DEBUG: false` for production
+1. Set `BANNER_CONFIG` values to match the deployment channel (language, position, allowedPaths).
+2. Set `DEBUG: false` for production.
+3. Inject `basic-leaderboard-modal.html` through the personalization platform or include it in your page template.
+4. If you serve a minified variant, ensure comments are removed or converted to `/* ... */`.
+5. Clear cache after deployment if necessary.
 
-```javascript
-const BANNER_CONFIG = {
-    position: 'bottom',           // 'top' or 'bottom'
-    language: 'de',               // Language code for content
-    allowedPaths: [],             // Empty = all paths, or ['/path1', '/path2']
-    storageKey: 'bannerClosed_preisOffensive_2026-01', // localStorage key for closed state
-    DEBUG: true,                  // Enable console logging
-    delay: 5000                   // Delay in ms before showing banner
-};
+## Responsive Images
+
+The banner uses language-specific `imageSrc` URLs in `BANNER_CONFIG.data`. Images are requested at different widths by appending a `width=` query parameter to the image URL. The script sets `srcset`, `sizes`, and `loading="lazy"` for the banner image to improve network and rendering performance.
+
+Recommendations and behavior:
+
+- `imageSrc` should point to an origin that supports dynamic resizing via a `width` query parameter (the script expects `?width=...` or `&width=...`).
+- The script builds a `srcset` with common breakpoints (480w, 768w, 1200w, 1920w). You can customize those in the script if needed.
+- `sizes` is set to: `(max-width: 480px) 90vw, (max-width: 768px) 95vw, 350px` — adjust to match your layout.
+- `loading="lazy"` is applied to avoid loading the banner image until it's near the viewport.
+- Example generated `srcset` entry:
+
 ```
-5. Inject via personalization platform
+https://.../image.jpg?width=480 480w, https://.../image.jpg?width=768 768w, https://.../image.jpg?width=1200 1200w
+```
 
-## Console API
+If your image CDN uses a different parameter for resizing, update the helper `getSrcWithWidth()` in the script accordingly.
 
-The global `PreisOffensiveBanner` object is always available for testing and debugging. Console logging only appears when `DEBUG: true`.
+## Console API / Debugging
 
-> **Note**: The API uses a campaign-specific name (`PreisOffensiveBanner`) rather than generic names like `closeBanner` to avoid conflicts when multiple banner scripts are active on the same page.
+Use the global `PreisOffensiveBanner` object in the console to inspect and control the banner during development.
 
 ```javascript
 // Access configuration
-| Desktop (>768px) | 350×87px |
-| Mobile (≤768px) | 175×43px |
 PreisOffensiveBanner.config
 
-| `.close()` | Close the banner and save preference to localStorage |
-| `.reset()` | Clear the closed state from localStorage |
-// Manually show/hide
-## Safety Features
+// Close and persist preference
+PreisOffensiveBanner.close()
 
-- **IIFE wrapper**: Script runs in isolated scope, no global pollution except explicit API
-- **Null checks**: All DOM operations check for element existence
-- **Try/catch**: localStorage/sessionStorage operations wrapped for private browsing compatibility
-- **Specific IDs**: No generic class selectors that could conflict with page styles
-- **Session display control**: Banner is only shown once per session, even if not closed (uses `sessionStorage` with key `bannerSeen`)
+// Reset stored preferences (clears localStorage and sessionStorage)
 PreisOffensiveBanner.reset()
 
-// Switch language and reinitialize
+// Change language and reinitialize
 PreisOffensiveBanner.setLanguage('fr')
 
-// Check path restrictions
-PreisOffensiveBanner.isPathAllowed()
-
-// Get current language data
-PreisOffensiveBanner.getLanguageData()
+// Manual init
+PreisOffensiveBanner.init()
 ```
 
 ### API Reference
@@ -126,24 +154,13 @@ PreisOffensiveBanner.getLanguageData()
 |-----------------|-------------|
 | `.config` | Access the full `BANNER_CONFIG` object |
 | `.init()` | Initialize and display the banner |
-| `.close()` | Close the banner and save preference to sessionStorage |
-| `.reset()` | Clear the closed state from sessionStorage |
+| `.close()` | Close the banner and save preference to `localStorage` |
+| `.reset()` | Clear the closed state from `localStorage` and session (`sessionStorage.bannerSeen`) |
 | `.setLanguage(code)` | Switch language and reinitialize (e.g., `'pl'`, `'fr'`) |
 | `.isPathAllowed()` | Check if current path matches `allowedPaths` |
 | `.getLanguageData()` | Get the current language's image/link configuration |
 
-### Debug Logging
-
-When `DEBUG: true`, all banner operations are logged to the console with the prefix:
-```
-[Banner:basic-leaderboard-modal--preis-offensive-2026-01]
-```
-
-Set `DEBUG: false` for production to silence all console output.
-
 ## Element IDs
-
-The banner uses specific, namespaced IDs to avoid conflicts:
 
 | ID | Element |
 |----|---------|
@@ -151,22 +168,12 @@ The banner uses specific, namespaced IDs to avoid conflicts:
 | `overlayBanner-link-preisOffensive-2026-01` | Anchor tag |
 | `overlayBanner-image-preisOffensive-2026-01` | Image element |
 
-## Responsive Design
-
-| Viewport | Banner Size |
-|----------|-------------|
-| Desktop (>768px) | 700×175px |
-| Mobile (≤768px) | 350×86px |
-
-## Safety Features
-
-- **IIFE wrapper**: Script runs in isolated scope, no global pollution except explicit API
-- **Null checks**: All DOM operations check for element existence
-- **Try/catch**: sessionStorage operations wrapped for private browsing compatibility
-- **Specific IDs**: No generic class selectors that could conflict with page styles
-
 ## Developer Notes
 
-**Important:** Do NOT use single line comments `//` in JavaScript on Prod. Use multi-line comments `/* */`. Minification will otherwise render the script useless.
+- Avoid single-line `//` comments in the production script; minifiers or inline serving can break if comments are not handled. Use `/* ... */` for multi-line comments when possible.
+- If your CDN or image origin does not support `width=` querying, adapt `getSrcWithWidth()` in the script to match your resizing parameter.
+- Test in staging (and private browsing) — storage APIs may be restricted in some browsers.
 
-Probably [cache deletion ("Cache löschen")](https://www.compass24.de/admin#/sw/settings/cache/index) required to see updated script payload.
+---
+
+Last updated: 2026-01-21
