@@ -14,122 +14,123 @@ TODO:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_008">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_009">
 
+    .overlay-banner.basic-leaderboard-modal--preis-offensive {
+        position: fixed;
+        left: 50%;
+        z-index: 9999;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 350px;
+        height: 87px;
+        max-width: 95vw;
+        opacity: 0;
+        transform: translateX(-50%) translateY(8px);
+        transition: opacity 320ms ease, transform 320ms ease;
+
+        &.top {
+            top: 20px;
+        }
+
+        &.bottom {
+            bottom: 20px;
+        }
+
+        &.visible img.banner-marketing__image {
+        opacity: 1;
+            transition: opacity 500ms ease;
+        }
+        
         img.banner-marketing__image {
             width: 350px;
             opacity: 0;
             height: 87px;
         }
-        .overlay-banner.basic-leaderboard-modal--preis-offensive.visible img.banner-marketing__image {
-            opacity: 1;
-            transition: opacity 500ms ease;
+
+        .banner-content {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
         }
 
-        .overlay-banner.basic-leaderboard-modal--preis-offensive {
-            position: fixed;
-            left: 50%;
-            z-index: 9999;
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .banner-close {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 350px;
-            height: 87px;
-            max-width: 95vw;
-            opacity: 0;
-            transform: translateX(-50%) translateY(8px);
-            transition: opacity 320ms ease, transform 320ms ease;
-
-            &.top {
-                top: 20px;
-            }
-
-            &.bottom {
-                bottom: 20px;
-            }
-
-            .banner-content {
-                flex: 1;
-                padding: 15px;
-                text-align: center;
-                font-size: 16px;
-                color: #333;
-            }
-
-            .banner-close {
-                position: absolute;
-                top: 7px;
-                right: 7px;
-                width: 24px;
-                height: 24px;
-                background: rgba(0, 0, 0, 0.1);
-                border-radius: 50%;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: background 0.2s;
-            }
-
-            .banner-close:hover {
-                background: rgba(0, 0, 0, 0.2);
-            }
-
-            .banner-close::before,
-            .banner-close::after {
-                content: '';
-                position: absolute;
-                width: 12px;
-                height: 2px;
-                background: #333;
-            }
-
-            .banner-close::before {
-                transform: rotate(45deg);
-            }
-
-            .banner-close::after {
-                transform: rotate(-45deg);
-            }
-            &.visible {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
+            transition: background 0.2s;
         }
+
+        .banner-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .banner-close::before,
+        .banner-close::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background: #333;
+        }
+
+        .banner-close::before {
+            transform: rotate(45deg);
+        }
+
+        .banner-close::after {
+            transform: rotate(-45deg);
+        }
+        &.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
 
     /* Mobile responsive */
-        @media (max-width: 768px) {
-            .overlay-banner.basic-leaderboard-modal--preis-offensive {
+    @media (max-width: 768px) {
+        .overlay-banner.basic-leaderboard-modal--preis-offensive {
+            width: 350px;
+            height: 87px;
+
+            &.bottom {
+                bottom: 50px;
+            }
+    
+            img.banner-marketing__image {
                 width: 350px;
                 height: 87px;
-
-                &.bottom {
-                    bottom: 50px;
-                }
-      
-                img.banner-marketing__image {
-                    width: 350px;
-                    height: 87px;
-                }
-            .banner-content {
-                padding: 10px;
-                font-size: 14px;
             }
-      
-            .banner-close {
-                width: 20px;
-                height: 20px;
-                top: 5px;
-                right: 5px;
-            }
-      
-            .banner-close::before,
-            .banner-close::after {
-                width: 10px;
-            }
+        .banner-content {
+            padding: 10px;
+            font-size: 14px;
         }
+    
+        .banner-close {
+            width: 20px;
+            height: 20px;
+            top: 5px;
+            right: 5px;
+        }
+    
+        .banner-close::before,
+        .banner-close::after {
+            width: 10px;
+        }
+    }
 }
 </style>
 
