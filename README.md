@@ -6,7 +6,29 @@ E.g. for A/B-Testing or personalization.
 
 Contents:
 
-- /banner-test; HTML, JS, and CSS injection payloads for banners
+- /banner-test; HTML, JS, and CSS injection payloads for banners. Experiments with Shopware context.
+- /banner/2006-01--preis-offensive; multi-language modal-banner, vanilla JS, accessible, json-configurable
 - t.b.c.
 
 The code is currently being injected on the Shopware 6.7 stage through the [C24 - Simple AB Testing plugin](https://compass.k24z44.meinserver.io/admin#/sw/extension/config/C24SimpleABTesting).
+
+## Developer Notes
+
+It is possible to access the Shopware context via our Compass24 [C24 - Simple AB Testing plugin](https://compass.k24z44.meinserver.io/admin#/sw/extension/config/C24SimpleABTesting).
+
+Demo code snippet:
+
+```html
+<script>
+
+/* Make the large context json object globally available */
+window.shopwareContext = {{ context | json_encode() | raw }};
+
+let salesChannelName = window.shopwareContext.salesChannel.translated.name;
+
+console.info('Sales Channel Name derived from Shopware context:', salesChannelName);
+
+console.info('Locale code: ', shopwareContext.languageInfo.localeCode);
+</script>
+
+```
