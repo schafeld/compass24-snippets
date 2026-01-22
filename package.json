@@ -1,0 +1,24 @@
+{
+  "name": "compass24-snippets",
+  "version": "1.0.0",
+  "description": "Code snippets for Compass24",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schafeld/compass24-snippets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/schafeld/compass24-snippets/issues"
+  },
+  "homepage": "https://github.com/schafeld/compass24-snippets#readme",
+  "devDependencies": {
+    "eslint": "^8.57.1"
+  }
+}
