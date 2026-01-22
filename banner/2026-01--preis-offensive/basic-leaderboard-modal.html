@@ -315,7 +315,7 @@ IMPORTANT:
      * @returns {HTMLElement|null}
      */
     function getElement(id) {
-        var element = document.getElementById(id);
+        const element = document.getElementById(id);
         if (!element) {
             log('Element not found: #' + id);
         }
@@ -327,7 +327,7 @@ IMPORTANT:
      * @returns {Object|null} Language data or null if not found
      */
     function getLanguageData() {
-        var lang = BANNER_CONFIG.language;
+        let lang = BANNER_CONFIG.language;
 
         /* Special handling for Swiss languages */
         if (lang === 'ch') {
@@ -340,7 +340,7 @@ IMPORTANT:
         }
 
 
-        var data = BANNER_CONFIG.data[lang];
+        const data = BANNER_CONFIG.data[lang];
         
         if (!data) {
             log('No data found for language: ' + lang);
@@ -367,7 +367,7 @@ IMPORTANT:
     }
 
     function buildSrcSet(src) {
-        var widths = [480, 768, 1200, 1920];
+        const widths = [480, 768, 1200, 1920];
         return widths.map(function(w) { return getSrcWithWidth(src, w) + ' ' + w + 'w'; }).join(', ');
     }
 
@@ -381,7 +381,7 @@ IMPORTANT:
             return true;
         }
         
-        var currentPath = window.location.pathname;
+        const currentPath = window.location.pathname;
         return BANNER_CONFIG.allowedPaths.some(function(path) {
             return currentPath === path || currentPath.startsWith(path);
         });
@@ -393,8 +393,8 @@ IMPORTANT:
      * @returns {boolean} True if successful
      */
     function applyLanguageContent(langData) {
-        var linkEl = getElement(BANNER_CONFIG.elementIds.link);
-        var imageEl = getElement(BANNER_CONFIG.elementIds.image);
+        const linkEl = getElement(BANNER_CONFIG.elementIds.link);
+        const imageEl = getElement(BANNER_CONFIG.elementIds.image);
         
         if (!linkEl || !imageEl) {
             log('Required elements not found, cannot apply language content');
@@ -424,12 +424,15 @@ IMPORTANT:
     /* BANNER CONTROL FUNCTIONS */
     /* ========================================================================= */
 
+    /* Shared state used by initBanner() and closeBanner() */
+    let previousActiveElement = null;
+    let escHandler = null;
+
     function initBanner() {
         log('Initializing banner...');
-        var banner = getElement(BANNER_CONFIG.elementIds.banner);
-        var closeBtn = getElement('overlayBanner-close-preisOffensive-2026-01');
-        var announcementEl = getElement('overlayBanner-announcement-preisOffensive-2026-01');
-        var previousActiveElement = null;
+        const banner = getElement(BANNER_CONFIG.elementIds.banner);
+        const closeBtn = getElement('overlayBanner-close-preisOffensive-2026-01');
+        const announcementEl = getElement('overlayBanner-announcement-preisOffensive-2026-01');
         if (!banner) {
             log('Banner element not found, aborting initialization');
             return;
@@ -456,7 +459,7 @@ IMPORTANT:
         }
 
         /* Get and apply language-specific content */
-        var langData = getLanguageData();
+        const langData = getLanguageData();
         if (!langData) {
             log('No language data available, aborting');
             return;
@@ -470,12 +473,12 @@ IMPORTANT:
         banner.classList.add(BANNER_CONFIG.position);
         /* attach close handler if button exists */
         if (closeBtn) {
-            try { closeBtn.addEventListener('click', closeBanner); } catch (e) {}
+            try { closeBtn.addEventListener('click', closeBanner); } catch (e) { log('Error:', e.message); }
         }
 
         setTimeout(function() {
             /* Show the banner only after the image has loaded to avoid layout flash. */
-            var showBanner = function() {
+            const showBanner = function() {
                 previousActiveElement = document.activeElement;
                 try {
                     requestAnimationFrame(function() { banner.classList.add('visible'); });
@@ -484,11 +487,11 @@ IMPORTANT:
                 }
 
                 /* focus management: focus close button for keyboard users */
-                // try { if (closeBtn) closeBtn.focus(); } catch (e) {}
+                // try { if (closeBtn) closeBtn.focus(); } catch (e) { log('Error:', e.message); }
 
                 try {
                     if (announcementEl) announcementEl.textContent = langData.ariaAnnouncementText;
-                } catch (e) {}
+                } catch (e) { log('Error:', e.message); }
 
                 try { 
                     sessionStorage.setItem('bannerSeen', 'true'); 
@@ -499,24 +502,24 @@ IMPORTANT:
                 log('Banner displayed after delay');
             };
 
-            var imgEl = getElement(BANNER_CONFIG.elementIds.image);
+            const imgEl = getElement(BANNER_CONFIG.elementIds.image);
             if (imgEl) {
                 if (imgEl.complete && imgEl.naturalWidth > 0) {
                     /* already loaded */
                     showBanner();
                 } else {
-                    var onFinish = function() {
-                        try { 
-                            imgEl.removeEventListener('load', onFinish); 
-                            imgEl.removeEventListener('error', onFinish); 
-                        } 
-                        catch (e) {}
+                    const onFinish = function() {
+                        try {
+                            imgEl.removeEventListener('load', onFinish);
+                            imgEl.removeEventListener('error', onFinish);
+                        }
+                        catch (e) { log('Error:', e.message); }
                         showBanner();
                     };
                     imgEl.addEventListener('load', onFinish, { once: true });
                     imgEl.addEventListener('error', onFinish, { once: true });
                     /* Safety fallback: show after max wait even if image doesn't fire events */
-                    var maxWait = 1500; /* ms */
+                    const maxWait = 1500; /* ms */
                     setTimeout(function() {
                         if (!banner.classList.contains('visible')) {
                             showBanner();
@@ -528,39 +531,34 @@ IMPORTANT:
             }
         }, BANNER_CONFIG.delay);
 
-        /* keyboard: close on Escape when banner visible */
-        var escHandler = function(e) {
+        /* keyboard: close on Escape when banner visible; escHandler assigned to outer scope */
+        escHandler = function(e) {
             if (e.key === 'Escape' || e.key === 'Esc') {
-                closeBanner();
+                try { closeBanner(); } catch (err) { log('Error:', err.message); }
             }
         };
-        try { document.addEventListener('keydown', escHandler); } catch (e) {}
-
-        /* restore focus when closed (closeBanner will handle persistence and hiding) */
-        var originalClose = closeBanner;
-        closeBanner = function() {
-            try { document.removeEventListener('keydown', escHandler); } catch (e) {}
-            try {
-                if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-                    previousActiveElement.focus();
-                }
-            } catch (e) {}
-            originalClose();
-        };
+        try { document.addEventListener('keydown', escHandler); } catch (e) { log('Error:', e.message); }
     }
 
     function closeBanner() {
-        var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        const banner = getElement(BANNER_CONFIG.elementIds.banner);
         if (!banner) return;
+        /* Remove keyboard handler and restore focus if possible */
+        try { document.removeEventListener('keydown', escHandler); } catch (e) { log('Error:', e.message); }
+        try {
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                previousActiveElement.focus();
+            }
+        } catch (e) { log('Error:', e.message); }
         /* fade out by removing visible class, then hide and persist after transition */
         try {
             banner.classList.remove('visible');
         } catch (e) {
-            /* ignore */
+            log('Could not remove visible class:', e.message);
         }
-        var hideDelay = 600; /* ms - allow full fade-out before hiding */
-        setTimeout(function() {
-            try { banner.style.display = 'none'; } catch (e) {}
+        const hideDelay = 600; /* ms - allow full fade-out before hiding */
+                    setTimeout(function() {
+                        try { banner.style.display = 'none'; } catch (e) { log('Error:', e.message); }
             try {
                 localStorage.setItem(BANNER_CONFIG.storageKey, 'true');
                 log('Banner closed and preference saved');
