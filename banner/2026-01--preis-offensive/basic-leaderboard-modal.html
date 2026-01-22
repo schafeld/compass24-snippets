@@ -181,7 +181,7 @@ IMPORTANT:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_003">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_004">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -207,7 +207,7 @@ IMPORTANT:
         experienceId: 'basic-leaderboard-modal--preis-offensive-2026-01',
 
         /* Language setting - match to deployment sales channel */
-        language: 'ch', /* e.g. 'de', 'dk', 'es', 'fr', 'ch' (it will be decided via code whether 'ch-fr' or 'ch-de'), 'gb', 'it', 'nl', 'pl', 'se' */
+        language: 'de', /* e.g. 'de', 'dk', 'es', 'fr', 'ch' (it will be decided via code whether 'ch-fr' or 'ch-de'), 'gb', 'it', 'nl', 'pl', 'se' */
 
         /* Element IDs (must match HTML) */
         elementIds: {
@@ -286,7 +286,7 @@ IMPORTANT:
             }
         },
         
-        /* Path restrictions (empty array = show on all paths) */
+        /* Path restrictions (empty array = show on all paths). No trailing slash! */
         allowedPaths: []
     };
 
@@ -377,6 +377,7 @@ IMPORTANT:
      */
     function isPathAllowed() {
         if (BANNER_CONFIG.allowedPaths.length === 0) {
+            log('No path restrictions set, allowing all paths');
             return true;
         }
         
