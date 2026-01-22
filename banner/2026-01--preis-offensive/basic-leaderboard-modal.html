@@ -14,7 +14,7 @@ IMPORTANT:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_002">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_003">
 
     .overlay-banner.basic-leaderboard-modal--preis-offensive {
         position: fixed;
@@ -98,27 +98,27 @@ IMPORTANT:
             align-items: center;
             justify-content: center;
             transition: background 0.2s;
-        }
 
-        .banner-close:hover {
-            background: rgba(0, 0, 0, 0.2);
-        }
+            &:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
 
-        .banner-close::before,
-        .banner-close::after {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 2px;
-            background: #777;
-        }
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 2px;
+                background: #777;
+            }
 
-        .banner-close::before {
-            transform: rotate(45deg);
-        }
+            &::before {
+                transform: rotate(45deg);
+            }
 
-        .banner-close::after {
-            transform: rotate(-45deg);
+            &::after {
+                transform: rotate(-45deg);
+            }
         }
         &.visible {
             opacity: 1;
@@ -150,11 +150,11 @@ IMPORTANT:
             height: 20px;
             top: 5px;
             right: 5px;
-        }
-    
-        .banner-close::before,
-        .banner-close::after {
-            width: 10px;
+
+            &::before,
+            &::after {
+                width: 10px;
+            }
         }
 
         button#overlayBanner-close-preisOffensive-2026-01,
@@ -181,7 +181,7 @@ IMPORTANT:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_004">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_005">
 /**
  * Preis-Offensive Banner Experience
  * 
