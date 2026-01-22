@@ -2,7 +2,7 @@
 Banner: Basic Leaderboard Modal
 Experience: Marketing / Banner / Preis-Offensive
 Global object: PreisOffensiveBanner
-Version: 2026-01-21_002
+Date: 2026-01-22
 
 Description:
 This snippet creates a promotional overlay banner for the "Preis-Offensive" campaign. 
@@ -10,11 +10,11 @@ It supports multiple languages and can be configured to appear at the top or bot
 
 See README.md for configuration and deployment instructions.
 
-TODO:
+IMPORTANT:
 - For deployment: Match BANNER_CONFIG.language with sales channel / country code
 -->
 
-<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_009">
+<style data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_002">
 
     .overlay-banner.basic-leaderboard-modal--preis-offensive {
         position: fixed;
@@ -41,7 +41,7 @@ TODO:
         }
 
         &.visible img.banner-marketing__image {
-        opacity: 1;
+            opacity: 1;
             transition: opacity 500ms ease;
         }
         
@@ -49,6 +49,28 @@ TODO:
             width: 350px;
             opacity: 0;
             height: 87px;
+        }
+
+        .banner-close:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0,123,255,0.18);
+        }
+
+        /* screen-reader only helper */
+        .sr-only {
+            position: absolute !important;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        /* Respect reduced motion preferences: disable transitions when user opts out */
+        @media (prefers-reduced-motion: reduce) {
+            .overlay-banner.basic-leaderboard-modal--preis-offensive,
+            .overlay-banner.basic-leaderboard-modal--preis-offensive img.banner-marketing__image,
+            .overlay-banner.basic-leaderboard-modal--preis-offensive .banner-close {
+                transition: none !important;
+            }
         }
 
         .banner-content {
@@ -59,10 +81,14 @@ TODO:
             color: #333;
         }
 
+        button#overlayBanner-close-preisOffensive-2026-01 {
+            border: 2px solid #777;
+        }
+
         .banner-close {
             position: absolute;
-            top: 7px;
-            right: 7px;
+            top: -1px;
+            right: -26px;
             width: 24px;
             height: 24px;
             background: rgba(0, 0, 0, 0.1);
@@ -84,7 +110,7 @@ TODO:
             position: absolute;
             width: 12px;
             height: 2px;
-            background: #333;
+            background: #777;
         }
 
         .banner-close::before {
@@ -130,6 +156,12 @@ TODO:
         .banner-close::after {
             width: 10px;
         }
+
+        button#overlayBanner-close-preisOffensive-2026-01,
+        .banner-close::after,
+        .banner-close::before {
+            border: 1px solid #333;
+        }
     }
 }
 </style>
@@ -138,17 +170,18 @@ TODO:
 <div id="overlayBanner-preisOffensive-2026-01" data-id="basic-leaderboard-modal--preis-offensive" class="overlay-banner basic-leaderboard-modal--preis-offensive">
     <div class="banner-content">
         <a href="/compass-preisoffensive" id="overlayBanner-link-preisOffensive-2026-01">
-              <img src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" id="overlayBanner-image-preisOffensive-2026-01" class="banner-marketing__image"
+              <img width="350" height="87" src="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920" alt="Compass Preis-Offensive" id="overlayBanner-image-preisOffensive-2026-01" class="banner-marketing__image"
                   loading="lazy"
                   srcset="https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=480 480w, https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_PreisOffensive_Banner_FS26-de-desk.jpg?width=768 768w, https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_PreisOffensive_Banner_FS26-de-desk.jpg?width=1200 1200w, https://compass-test.b-cdn.net/media/3b/45/4d/1768387878/COM_2026_01_PreisOffensive_Banner_FS26-de-desk.jpg?width=1920 1920w"
                   sizes="(max-width: 480px) 90vw, (max-width: 768px) 95vw, 350px" />
         </a>
+        <span id="overlayBanner-announcement-preisOffensive-2026-01" class="sr-only" aria-live="polite"></span>
     </div>
-    <div class="banner-close" onclick="PreisOffensiveBanner.close()"></div>
+    <button type="button" id="overlayBanner-close-preisOffensive-2026-01" class="banner-close" aria-label="Close banner"></button>
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-21_010">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_002">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -382,6 +415,9 @@ TODO:
     function initBanner() {
         log('Initializing banner...');
         var banner = getElement(BANNER_CONFIG.elementIds.banner);
+        var closeBtn = getElement('overlayBanner-close-preisOffensive-2026-01');
+        var announcementEl = getElement('overlayBanner-announcement-preisOffensive-2026-01');
+        var previousActiveElement = null;
         if (!banner) {
             log('Banner element not found, aborting initialization');
             return;
@@ -420,15 +456,27 @@ TODO:
         }
         /* Set position and show banner after delay */
         banner.classList.add(BANNER_CONFIG.position);
-        
+        /* attach close handler if button exists */
+        if (closeBtn) {
+            try { closeBtn.addEventListener('click', closeBanner); } catch (e) {}
+        }
+
         setTimeout(function() {
             /* Show the banner only after the image has loaded to avoid layout flash. */
             var showBanner = function() {
+                previousActiveElement = document.activeElement;
                 try {
                     requestAnimationFrame(function() { banner.classList.add('visible'); });
                 } catch (e) {
                     setTimeout(function() { banner.classList.add('visible'); }, 20);
                 }
+
+                /* focus management: focus close button for keyboard users */
+                // try { if (closeBtn) closeBtn.focus(); } catch (e) {}
+
+                try {
+                    if (announcementEl) announcementEl.textContent = 'Promotional banner: Preis-Offensive';
+                } catch (e) {}
 
                 try { 
                     sessionStorage.setItem('bannerSeen', 'true'); 
@@ -467,6 +515,26 @@ TODO:
                 showBanner();
             }
         }, BANNER_CONFIG.delay);
+
+        /* keyboard: close on Escape when banner visible */
+        var escHandler = function(e) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                closeBanner();
+            }
+        };
+        try { document.addEventListener('keydown', escHandler); } catch (e) {}
+
+        /* restore focus when closed (closeBanner will handle persistence and hiding) */
+        var originalClose = closeBanner;
+        closeBanner = function() {
+            try { document.removeEventListener('keydown', escHandler); } catch (e) {}
+            try {
+                if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                    previousActiveElement.focus();
+                }
+            } catch (e) {}
+            originalClose();
+        };
     }
 
     function closeBanner() {

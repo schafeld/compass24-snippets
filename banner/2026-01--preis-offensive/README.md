@@ -177,3 +177,13 @@ PreisOffensiveBanner.init()
 ---
 
 Last updated: 2026-01-21
+
+## Accessibility
+
+- The banner includes ARIA labeling and a polite announcement region to help screen reader users discover the content when it appears.
+- The close control is implemented as a semantic `<button>` with `aria-label` and visible focus styles. It supports keyboard activation and the Escape key closes the banner.
+- The image includes `width` and `height` attributes to reduce layout shift (CLS) and `alt` text is set per language.
+- Animations respect the user's `prefers-reduced-motion` setting and are disabled when the preference is set to `reduce`.
+- Focus is returned to the previously focused element when the banner is closed to avoid losing keyboard context.
+
+If you want stricter behavior (e.g., focus trap / modal), we can convert this to a fully modal dialog with `aria-modal` and more rigorous focus management.
