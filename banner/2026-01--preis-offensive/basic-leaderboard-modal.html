@@ -181,7 +181,7 @@ IMPORTANT:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_002">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_003">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -221,57 +221,68 @@ IMPORTANT:
             'de': {
                 imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
                 imageAlt: 'Compass Preis-Offensive',
-                linkUrl: '/compass-preisoffensive'
+                linkUrl: '/compass-preisoffensive',
+                ariaAnnouncementText: 'Werbebanner: Preis-Offensive'
             },
             'dk': {
                 imageSrc: 'https://compass24.b-cdn.net/media/ff/5b/40/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-dk-desk.jpg?width=1920',
                 imageAlt: 'Compass Pris-Offensiv',
-                linkUrl: '/pris-offensiv'
+                linkUrl: '/pris-offensiv',
+                ariaAnnouncementText: 'Reklamebanner: Pris-Offensiv'
             },
             'es': {
                 imageSrc: 'https://compass24.b-cdn.net/media/f2/d7/82/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-es-desk.jpg?width=1920',
                 imageAlt: 'Compass Offensiva de Precios',
-                linkUrl: '/ofensiva-de-precios'
+                linkUrl: '/ofensiva-de-precios',
+                ariaAnnouncementText: 'Banner publicitario: Ofensiva de Precios'
             },
             'fr': {
                 imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
                 imageAlt: 'Compass Offensive sur les Prix',
-                linkUrl: '/offensive-sur-les-prix'
+                linkUrl: '/offensive-sur-les-prix',
+                ariaAnnouncementText: 'Bannière publicitaire : Offensive sur les Prix'
             },
             'ch-de': {
                 imageSrc: 'https://compass24.b-cdn.net/media/3c/2a/04/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-de-desk.jpg?width=1920',
                 imageAlt: 'Compass Preis-Offensive',
-                linkUrl: '/compass-preisoffensive'
+                linkUrl: '/compass-preisoffensive',
+                ariaAnnouncementText: 'Werbebanner: Preis-Offensive'
             },
             'ch-fr': {
                 imageSrc: 'https://compass24.b-cdn.net/media/b9/9d/16/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-fr-desk.jpg?width=1920',
                 imageAlt: 'Compass Offensive sur les Prix',
-                linkUrl: '/ch-fr/offensive-sur-les-prix'
+                linkUrl: '/ch-fr/offensive-sur-les-prix',
+                ariaAnnouncementText: 'Bannière publicitaire : Offensive sur les Prix'
             },
             'gb': {
                 imageSrc: 'https://compass24.b-cdn.net/media/1f/d4/f8/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-gb-desk.jpg?width=1920',
                 imageAlt: 'Compass Price-Offensive',
-                linkUrl: '/price-offensive'
+                linkUrl: '/price-offensive',
+                ariaAnnouncementText: 'Promotional banner: Price-Offensive'
             },
             'it': {
                 imageSrc: 'https://compass24.b-cdn.net/media/8d/d4/28/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-it-desk.jpg?width=1920',
                 imageAlt: 'Compass Offensiva sui Prezzi',
-                linkUrl: '/offensiva-sui-prezzi'
+                linkUrl: '/offensiva-sui-prezzi',
+                ariaAnnouncementText: 'Banner promozionale: Offensiva sui Prezzi'
             },
             'nl': {
                 imageSrc: 'https://compass24.b-cdn.net/media/1a/32/80/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-nl-desk.jpg?width=1920',
                 imageAlt: 'Compass Prijs-Offensief',
-                linkUrl: '/prijs-offensief'
+                linkUrl: '/prijs-offensief',
+                ariaAnnouncementText: 'Promotiebanner: Prijs-Offensief'
             },
             'pl': {
                 imageSrc: 'https://compass24.b-cdn.net/media/eb/89/c2/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-pl-desk.jpg?width=1920',
                 imageAlt: 'Compass Ofensywa Cenowa',
-                linkUrl: '/ofensywa-cenowa'
+                linkUrl: '/ofensywa-cenowa',
+                ariaAnnouncementText: 'Baner promocyjny: Ofensywa Cenowa'
             },
             'se': {
                 imageSrc: 'https://compass24.b-cdn.net/media/24/21/4e/1768978339/COM_2026_01_Preisoffensive_Banner_FS26-se-desk.jpg?width=1920',
                 imageAlt: 'Compass Pris-Offensiv',
-                linkUrl: '/pris-offensiv'
+                linkUrl: '/pris-offensiv',
+                ariaAnnouncementText: 'Reklambanner: Pris-Offensiv'
             }
         },
         
@@ -475,7 +486,7 @@ IMPORTANT:
                 // try { if (closeBtn) closeBtn.focus(); } catch (e) {}
 
                 try {
-                    if (announcementEl) announcementEl.textContent = 'Promotional banner: Preis-Offensive';
+                    if (announcementEl) announcementEl.textContent = langData.ariaAnnouncementText;
                 } catch (e) {}
 
                 try { 
