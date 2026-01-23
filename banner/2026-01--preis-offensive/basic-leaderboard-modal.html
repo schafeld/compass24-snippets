@@ -2,7 +2,8 @@
 Banner: Basic Leaderboard Modal
 Experience: Marketing / Banner / Preis-Offensive
 Global object: PreisOffensiveBanner
-Date: 2026-01-22
+Date Start: 2026-01-23
+Date End: t.b.d.
 
 Description:
 This snippet creates a promotional overlay banner for the "Preis-Offensive" campaign. 
@@ -181,7 +182,7 @@ IMPORTANT:
 </div>
 
 
-<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-22_005">
+<script data-id="basic-leaderboard-modal--preis-offensive" data-version="2026-01-23_001">
 /**
  * Preis-Offensive Banner Experience
  * 
@@ -200,7 +201,7 @@ IMPORTANT:
         /* Banner behavior */
         position: 'bottom', /* 'top' or 'bottom' */
         storageKey: 'bannerClosed_preisOffensive_2026-01', /* Unique localStorage key */
-        DEBUG: true,
+        DEBUG: false,
         delay: 5000, /* Delay in ms before showing banner */
         
         /* Experience identification */
@@ -487,7 +488,7 @@ IMPORTANT:
                 }
 
                 /* focus management: focus close button for keyboard users */
-                // try { if (closeBtn) closeBtn.focus(); } catch (e) { log('Error:', e.message); }
+                /* try { if (closeBtn) closeBtn.focus(); } catch (e) { log('Error:', e.message); } */
 
                 try {
                     if (announcementEl) announcementEl.textContent = langData.ariaAnnouncementText;
