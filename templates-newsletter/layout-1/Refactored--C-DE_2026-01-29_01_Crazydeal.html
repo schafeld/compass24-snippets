@@ -7,6 +7,27 @@
   <title>Compass24 Crazy Deal</title>
   <!-- General Styles: Use inline styles for critical elements, keep CSS minimal -->
   <style>
+        /* Make price links fill the entire cell and add hover effect */
+        .article-price-td a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 12px 0;
+          transition: background 0.2s, color 0.2s;
+        }
+        .article-price-td a:hover, .article-price-td a:focus {
+          background: #f7b022 !important;
+          color: #001a3a !important;
+        }
+        /* Subtle hover for CTA button */
+        .cta-row a {
+          transition: background 0.2s, color 0.2s;
+        }
+        .cta-row a:hover, .cta-row a:focus {
+          background: #f7b022 !important;
+          color: #001a3a !important;
+        }
     table {
       border-collapse: collapse;
       mso-table-lspace: 0pt;
@@ -320,7 +341,7 @@
                                   </tr>
                                   <tr>
                                     <td class="article-price-td" style="text-align: center;font-weight: bold;font-size: 125%;color: #002956 !important;background: #f8e931;">
-                                      <a href="https://www.compass24.de/ultra-ax-passendes-reserveset-169610?sPartner=emv01&amp;utm_medium=email" style="text-decoration:none;color: #002956 !important;">
+                                      <a href="https://www.compass24.de/ultra-ax-passendes-reserveset-169610?sPartner=emv01&amp;utm_medium=email" style="text-decoration:none;color: #002956 !important;display:block;width:100%;height:100%;box-sizing:border-box;padding:12px 0;">
                                         » 36,99 €
                                       </a>
                                     </td>
@@ -352,7 +373,7 @@
                                   </tr>
                                   <tr>
                                     <td class="article-price-td" style="text-align: center;font-weight: bold;font-size: 125%;color: #002956 !important;background: #f8e931;">
-                                      <a href="https://www.compass24.de/secumar-lifeline-3-haken-361710?sPartner=emv01&amp;utm_medium=email" style="text-decoration:none;color: #002956 !important;">
+                                      <a href="https://www.compass24.de/secumar-lifeline-3-haken-361710?sPartner=emv01&amp;utm_medium=email" style="text-decoration:none;color: #002956 !important;display:block;width:100%;height:100%;box-sizing:border-box;padding:12px 0;">
                                         » 89,99 €
                                       </a>
                                     </td>
