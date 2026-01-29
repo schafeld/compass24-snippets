@@ -6,8 +6,8 @@ E.g. for A/B-Testing or personalization.
 
 Contents:
 
-- [./banner-test](./banner-test) : HTML, JS, and CSS injection payloads for banners. Experiments with Shopware context.
-- [./banner/2006-01--preis-offensive](./banner/2006-01--preis-offensive ) : multi-language modal-banner, vanilla JS, accessible, json-configurable
+- [./banner-tests](./banner-tests) : HTML, JS, and CSS injection payloads for banners. Experiments with Shopware context.
+- [./banner/2006-01--preis-offensive](./banner/2006-01--preis-offensive) : multi-language modal-banner, vanilla JS, accessible, json-configurable
 - [./templates-newsletter](./templates-newsletter ) : project to create new templates for email newsletters
 - t.b.c.
 
