@@ -6,8 +6,9 @@ E.g. for A/B-Testing or personalization.
 
 Contents:
 
-- /banner-test; HTML, JS, and CSS injection payloads for banners. Experiments with Shopware context.
-- /banner/2006-01--preis-offensive; multi-language modal-banner, vanilla JS, accessible, json-configurable
+- /banner-test : HTML, JS, and CSS injection payloads for banners. Experiments with Shopware context.
+- /banner/2006-01--preis-offensive : multi-language modal-banner, vanilla JS, accessible, json-configurable
+- /template-newsletter : project to create new templates for email newsletters
 - t.b.c.
 
 The code is currently being injected on the Shopware 6.7 stage through the [C24 - Simple AB Testing plugin](https://compass.k24z44.meinserver.io/admin#/sw/extension/config/C24SimpleABTesting).
