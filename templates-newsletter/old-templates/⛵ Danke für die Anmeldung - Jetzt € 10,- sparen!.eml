@@ -1,0 +1,587 @@
+Delivered-To: netzwerktourist@gmail.com
+Received: by 2002:a05:7300:230a:b0:2a7:4bf:96dd with SMTP id r10csp454772dye;
+        Thu, 29 Jan 2026 00:11:28 -0800 (PST)
+X-Received: by 2002:a05:600c:3e16:b0:47d:73a4:45a7 with SMTP id 5b1f17b1804b1-48069c5a3afmr101847935e9.24.1769674288148;
+        Thu, 29 Jan 2026 00:11:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769674288; cv=none;
+        d=google.com; s=arc-20240605;
+        b=c+Uf9H7qj67ug7uMd91XYAvZVQGtzbDuLJMbUASro75mOE7fxgRvdExvmlx6+UYGt/
+         pnw7/UEHXixVA4crTO0djByx7pGz+QakLNlpT/BiPgKn92xjsALMdHCIk9cGpz3zc5CP
+         KO80bGTLIhbH6G+1k+syYVEXfYftn4RlbcwkMWh1lQql18ut28DTI2flPur80h4iAyxN
+         tuZjlVv5LLduPCfi8sb/7c8KA25OAWz/d4JKHa+fKgp+urWjQz8fleuAHa8Vl5S7wppm
+         MUlozYiyTHbS6nh7c6WISwyxWx9lR4+DJshqCsQ3JBP4IEx2kw48CUvqFTOmiGXVb33p
+         uY8w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:mime-version:message-id:frosh-message-id:content-language:to
+         :from:subject;
+        bh=GNiEMBR9ktUu6fTp03YYuWyMDz5tt1ttYrOxaXdRdOg=;
+        fh=uNuuMorjOId6oRh/tyziqXw1sRvLtg8XOkJlH0C+L0M=;
+        b=SJ0gc/ZKz0mmDaeNKjtMg3LXDG7ZRQXi71TYrsLe1sHJsFY+5YMxziXgLaWqCrBoxF
+         67FZEZ/ZCvUxZ1roBNzL7Q4Pc5XDBLRY5tpgZ8k27sLzk2ZgD8FmlVeQN6nj2XIkwAZ+
+         uWvwWqs15olv26B0Y9iHdE+PJgc6lv6Vclj5dq8hZSKuMD4wDxIhKJZVJgXZjA8MFjWO
+         p43a4keehz7Q5h1Jbhwop6MIjRnERLHWU8Lu6IoYqT1tqBFJQWou+wFHvmx5UXGG40Cw
+         AoF/oJa0F5Dw6rfu+GssyG7qdPtcUZ4T5+D/brq/JgIHO4e3zXNwZMeHS5w5yE9oPeoj
+         1s6g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of nachricht-aus-shop@sealand24.de designates 80.67.18.28 as permitted sender) smtp.mailfrom=nachricht-aus-shop@sealand24.de
+Return-Path: <nachricht-aus-shop@sealand24.de>
+Received: from smtprelay05.ispgateway.de (smtprelay05.ispgateway.de. [80.67.18.28])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-435e1670c8esi7974963f8f.291.2026.01.29.00.11.27
+        for <netzwerktourist@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 29 Jan 2026 00:11:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of nachricht-aus-shop@sealand24.de designates 80.67.18.28 as permitted sender) client-ip=80.67.18.28;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of nachricht-aus-shop@sealand24.de designates 80.67.18.28 as permitted sender) smtp.mailfrom=nachricht-aus-shop@sealand24.de
+Received: from k11a70.meinserver.io ([148.251.117.28] helo=[127.0.0.1])
+	by smtprelay05.ispgateway.de with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.99.1)
+	(envelope-from <nachricht-aus-shop@sealand24.de>)
+	id 1vlN7f-0000000075j-2BYa
+	for netzwerktourist@gmail.com;
+	Thu, 29 Jan 2026 09:11:27 +0100
+Subject: =?utf-8?Q?=E2=9B=B5?= Danke =?utf-8?Q?f=C3=BCr?= die Anmeldung -
+ Jetzt =?utf-8?Q?=E2=82=AC?= 10,- sparen!
+From: Sealand24 DE <nachricht-aus-shop@sealand24.de>
+To: netzwerktourist@gmail.com
+Content-Language: de-DE
+Frosh-Message-ID: 019c08cea9bb7297b30c88b3a5639d66
+Message-ID: <134f6f461d9ad72bc5256602bacbe784@sealand24.de>
+MIME-Version: 1.0
+Date: Thu, 29 Jan 2026 08:11:27 +0000
+Content-Type: multipart/alternative; boundary=iptBMe6k
+X-Df-Sender: c2hvcHdhcmVAY29tcGFzcy5pMjQuY2M=
+
+--iptBMe6k
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+--iptBMe6k
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/x=
+html" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+  <me=
+ta charset=3D"utf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice=
+-width,initial-scale=3D1">
+  <meta name=3D"x-apple-disable-message-reform=
+atting">
+  <meta name=3D"color-scheme" content=3D"light dark">
+  <meta =
+name=3D"supported-color-schemes" content=3D"light dark">
+  <title></title=
+><style>
+
+    :root {
+      text-decoration:none
+    }
+    * {
+=
+        max-width: 100% !important;
+        text-align: center;
+    }=
+
+    table {
+      border-collapse: collapse;
+      mso-table-lspace:=
+ 0pt;
+      mso-table-rspace: 0pt;
+    }
+    table, td, div, h1, p {=
+
+      font-family: Verdana, "Helvetica", "Arial", sans-serif;
+      fo=
+nt-size: 12px;
+      /* mso-line-height-rule: exactly; */
+    }
+    .=
+content-table {
+      line-height: 250%;
+    }
+    .separator {
+   =
+   padding: 0;
+      height: 10px;
+    }
+    .padding-default {
+   =
+   padding: 40px 80px;
+    }
+
+    .not-shown {
+      border: none;=
+
+      display: none;
+      float: none;
+      font-size: 0;
+      =
+height: 0;
+      line-height: 0;
+      max-height: 0;
+      mso-hide:=
+ all;
+      overflow: hidden;
+      table-layout: fixed;
+      visibi=
+lity: hidden;
+      width: 0;
+    }
+  </style><style type=3D"text/css=
+">
+        @media screen and (max-width: 600px) {
+
+      table, td, d=
+iv, h1, p {
+        font-family: Verdana, "Helvetica", "Arial", sans-seri=
+f;
+        font-size: 20px;
+      }
+      .header-logo-td {
+       =
+ padding: 40px 10px !important;
+      }
+      .header-logo-img {
+    =
+    width: 155px !important;
+      }
+      .header-title-td {
+       =
+ font-size: large !important;
+        padding: 0 10px !important;
+     =
+ }
+      .legal-link {
+        font-size: 14px !important;
+      }
+=
+      .footer {
+        font-size: 16px !important;
+      }
+      .pa=
+dding-default {
+        padding: 40px 60px !important;
+      }
+    }=
+
+        @media only screen and (max-width:480px) {
+     =20
+    }
+  =
+</style><style type=3D"text/css">
+    @media (prefers-color-scheme: dark)=
+ {
+      * {
+        /* color: #fcfcfc; */
+        /* color: #dddddd;=
+ */
+      }
+      body {
+        background-color: #1f355b !important=
+;
+      }
+      .body-color {
+        background-color: #1f355b !impo=
+rtant;
+      }
+      .main-table {
+        background-color: #1f355b =
+!important;
+      }
+      .content-table {
+        background-color: =
+#0e2440 !important;
+        color: #dddddd !important;
+      }
+      =
+.header-logo-td {
+          background-color: #1f355b !important;
+     =
+ }
+      .compass-title-row {
+=09      /* background-color: #e30613 !im=
+portant; */
+=09      background-color: #042c5d !important;
+=09      col=
+or: #fff !important;
+      }
+    }
+    @media (prefers-color-scheme: =
+light) {
+      * {
+        /* color: #2b3551; */
+        /* color: #3=
+b3f44; */
+      }
+      body {
+        background-color: #ffffff !imp=
+ortant;
+      }
+      .body-color {
+        background-color: #ffffff=
+ !important;
+      }
+      .main-table {
+        background-color: #f=
+fffff !important;
+      }
+      .content-table {
+        background-c=
+olor: #f9fbff !important;
+        color: #25272e !important;
+      }
+=
+      .compass-title-row {
+=09      background-color: #042c5d !important;=
+
+=09      color: #fff !important;
+      }
+      .header-logo-td {
+ =
+         background-color: #f9fbff !important;
+      }
+    }
+  </styl=
+e>
+</head>
+<body style=3D"margin:0;padding:0;word-spacing:normal;backgr=
+ound-color: #ffffff;" bgcolor=3D"#ffffff">
+  <center>
+  <div class=3D"m=
+ain-article" role=3D"article" aria-roledescription=3D"email" lang=3D"en" st=
+yle=3D"width:100vw;text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-=
+text-size-adjust:100%;padding: 0; margin: 0;">
+    <table class=3D"main-t=
+able" align=3D"center" role=3D"presentation" style=3D"width:100%;max-width:=
+ 100% !important;border:none;border-spacing:0; background-color: #ffffff;" =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+      <tr>
+        <t=
+d align=3D"center" style=3D"padding:0;">
+          <table role=3D"present=
+ation" style=3D"width:100%;max-width: 100% !important;border:none;border-sp=
+acing:0;text-align:left;font-family:Arial,sans-serif;font-size:14px;line-he=
+ight:22px;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+           =
+   <tr class=3D"header-row">
+    <td>
+        <table class=3D"header-ro=
+w-table" role=3D"presentation" style=3D"margin: 0; padding: 0; width:100%;b=
+order:none;border-spacing:0;" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+            <tr>
+                <td class=3D"header-logo-td" styl=
+e=3D"padding:40px 30px; background-color: #f8f9fb !important; text-align: c=
+enter;">
+                    <a href=3D"https://www.sealand24.de" style=
+=3D"text-decoration:none;">
+                        <img class=3D"header-=
+logo-img" src=3D"https://compass24.b-cdn.net/media/80/3e/g0/1707982110/seal=
+and24-logo.png" width=3D"185" alt=3D"Logo" style=3D"width:205px;max-width:8=
+0%;height:auto;border:none;text-decoration:none;color:#ffffff;">
+        =
+            </a>
+                </td>
+                <td class=3D"hea=
+der-title-td" style=3D"background-color: #042c5d;color: #fff; text-align: c=
+enter; font-size: x-large; font-weight: bold;">
+                    Newsl=
+etteranmeldung
+                </td>
+            </tr>
+        </tabl=
+e>
+    </td>
+</tr>
+
+<tr class=3D"separator-row">
+    <td class=3D=
+"separator" bgcolor=3D"#042c5d" style=3D"height: 15px; background-color: #0=
+42c5d;  padding: 0;"></td>
+</tr>
+
+<tr class=3D"separator-row">
+    =
+<td class=3D"separator" bgcolor=3D"#47c1f2" style=3D"height: 4px; backgroun=
+d-color: #47c1f2; "></td>
+</tr>
+
+<div class=3D"not-shown" style=3D"fo=
+nt-size:0px; line-height:0px; max-height:0px; max-width:0px;color: #fff0;">=
+</div>
+ =20
+<tr class=3D"separator-row">
+    <td class=3D"separator bod=
+y-color" bgcolor=3D"#d6dde9" style=3D"height: 10px; background-color: #d6dd=
+e9; "></td>
+</tr>
+
+<table class=3D"content-table" role=3D"presentatio=
+n" align=3D"center" bgcolor=3D"#f9fbff" style=3D"width:100%;max-width: 600p=
+x !important;border:none;border-spacing:0;text-align:left;background-color:=
+ #f9fbff;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600px"=
+>
+
+<tr class=3D"compass-intro-row">
+    <td style=3D"padding: 30px 80=
+px 30px 80px; text-align: left">
+        <strong>
+                     =
+       Sehr geehrter Kunde=20
+                         ,
+        </strong=
+>
+        <br>
+        vielen Dank f=C3=BCr Ihre Newsletter-Anmeldung b=
+ei Sealand24 DE.
+        <br>
+        Als Dankesch=C3=B6n f=C3=BCr Ihre=
+ Anmeldung erhalten Sie Ihren Gutschein. Dieser ist f=C3=BCr Sie 4 Wochen l=
+ang reserviert und kann direkt bei Ihrer n=C3=A4chsten Bestellung eingel=
+=C3=B6st werden.=20
+        Geben Sie daf=C3=BCr einfach Ihren pers=C3=
+=B6nlichen Vorteilscode <strong style=3D"font-size: 150%;">A81CSB7</strong>=
+ im Warenkorb an, und schon werden Ihnen Ihre =E2=82=AC 10,- gutgeschrieben=
+*.
+        <br>
+        Mit herzlichen Gr=C3=BC=C3=9Fen<br>Antje Dehler=
+ und das Sealand-Team
+    </td>
+</tr>
+
+<tr class=3D"separator-row">=
+
+    <td class=3D"separator body-color" bgcolor=3D"#d6dde9" style=3D"heig=
+ht: 10px; background-color: #d6dde9; "></td>
+</tr>
+
+<tr class=3D"orde=
+r-info-row">
+    <td style=3D"padding: 40px 80px; text-align: left;">
+ =
+   <em>
+        * Ab einem Warenwert von =E2=82=AC 50,-. Ausgeschlossen s=
+ind Geschenkgutscheine, B=C3=BCcher, Kalender, Videos, CDs, DVDs, Seekarten=
+, bereits reduzierte Artikel, sowie die im Internet und im Katalog gekennze=
+ichneten Artikel.
+        <br>
+        <br>
+        Ihr Gutschein kan=
+n nur einmal eingel=C3=B6st werden, ist nicht =C3=BCbertragbar und kann nic=
+ht mit anderen Aktionen kombiniert oder bereits get=C3=A4tigten Bestellunge=
+n verrechnet werden.
+        <br>
+        <br>
+        Nur g=C3=BClti=
+g f=C3=BCr Bestellungen =C3=BCber unseren Online-Shop.
+    <em>
+    </t=
+d>
+</tr>
+<tr class=3D"separator-row"><td class=3D"separator body-color"=
+ bgcolor=3D"#ffffff" style=3D"height: 10px; background-color: #ffffff; "></=
+td></tr>
+<tr class=3D"separator-row"><td class=3D"separator body-color" b=
+gcolor=3D"#ffffff" style=3D"height: 10px; background-color: #ffffff; "></td=
+></tr>
+
+</table>=20
+  <tr class=3D"separator-row">
+  <td class=3D"sep=
+arator" bgcolor=3D"#7f94aa" style=3D"height: 25px; background-color: #7f94a=
+a; ">
+  </td>
+  </tr>
+
+  <tr class=3D"service-info-row">
+    <td =
+class=3D"padding-default" style=3D"padding: 20px 100px; text-align: left; c=
+olor: #fff; background-color:#042c5d;">
+      <center>
+        <table s=
+tyle=3D"width: 600px;max-width: 100% !important;border:none;border-spacing:=
+0;" align=3D"center">
+          <td>
+            <table style=3D"width:=
+ 100%;">
+              <tr>
+                <td style=3D"text-align: le=
+ft; padding: 5px 10px;">
+                  Falls Sie Fragen zu unserem Se=
+rvice haben, ist unser Kundendienst f=C3=BCr Sie da.
+                </td=
+>
+              </tr>
+              <tr class=3D"separator-row">
+    =
+            <td class=3D"separator body-color" bgcolor=3D"#d6dde9" style=3D=
+"height: 1px; background-color: #d6dde9; "></td>
+              </tr>
+  =
+          </table>
+
+            <table style=3D"font-size: 12px;">
+  =
+            <tr>
+                <td style=3D"font-size: inherit; text-al=
+ign: left; width: 15%; padding: 5px 20px;">
+                  <strong>E-M=
+ail:</strong>
+                </td>
+                <td style=3D"font-s=
+ize: inherit; text-align: left; width: 50%; padding: 5px 10px;color: #fffff=
+f;">
+                  <a href=3D"" style=3D"color: #ffffff;">info@sealan=
+d24.de</a>
+                </td>
+              </tr>
+              <t=
+r>
+                <td style=3D"font-size: inherit; text-align: left; wid=
+th: 15%; padding: 5px 20px;">
+                  <strong>Tel.:</strong>
+=
+                </td>
+                <td style=3D"font-size: inherit; te=
+xt-align: left; width: 50%; padding: 5px 10px;">
+                01 80 / =
+5 73 25 26
+                </td>
+              </tr>
+            </ta=
+ble>
+
+            <table style=3D"width: 100%;">
+              <tr>=
+
+                <td style=3D"text-align: left; padding: 5px 10px;">
+  =
+                Die Kundenbetreuung ist zu folgenden Zeiten erreichbar:
+ =
+               </td>
+              </tr>
+              <tr class=3D"sep=
+arator-row">
+                <td class=3D"separator body-color" bgcolor=
+=3D"#d6dde9" style=3D"height: 1px; background-color: #d6dde9; "></td>
+   =
+           </tr>
+            </table>
+
+            <table style=3D"fo=
+nt-size: 12px">
+              <tr>
+                <td style=3D"font-si=
+ze: inherit; text-align: left; width: 15%; padding: 5px 20px;">
+         =
+         <strong>Mo. bis So.:</strong>
+                </td>
+          =
+      <td style=3D"font-size: inherit; text-align: left; width: 50%; paddin=
+g: 5px 10px;">
+                  08:00 Uhr bis 20:00 Uhr
+              =
+  </td>
+              </tr>
+            </table>
+          </td>
+  =
+      </table>
+      </center>
+    </td>
+  </tr>
+  <tr class=3D"foo=
+ter-row">
+    <td class=3D"footer" style=3D"padding: 0; font-size: 12px; =
+text-align: center; color: #fff !important;">
+      <center>
+        <t=
+able style=3D"width:100%;max-width: 100% !important;border:none;border-spac=
+ing:0;">
+
+          <tr class=3D"company-info-row">
+            <td s=
+tyle=3D"padding: 40px 40px 40px 40px; background-color: #7f94aa;">
+      =
+        <center>
+                <a href=3D"https://www.sealand24.de" sty=
+le=3D"text-decoration:none;">
+                  <img src=3D"https://compa=
+ss24.b-cdn.net/media/87/07/30/1726751474/favicon-sealand.png" width=3D"40" =
+height=3D"40" alt=3D"" style=3D"display: inline-block;">
+                =
+</a>
+              </center>
+              <p style=3D"color: #ffffff; =
+margin:0;font-size:14px;line-height:20px;padding: 0 30px 0 30px;text-align:=
+ center;">&copy; SEALAND Freizeit Mode GmbH - Alle Rechte vorbehalten<br>=
+
+              </p>
+            </td>
+          </tr>
+
+          =
+<tr class=3D"imprint-row">
+            <center>
+            <td style=
+=3D"padding: 20px 40px 20px 40px; background-color: #042c5d;">
+          =
+    <table align=3D"center" style=3D"margin:auto;font-size:14px; font-weigh=
+t: bold; color: #ccc;padding: 0 5px 0 5px;text-align: center;">
+         =
+       <tr>
+                  <td>
+                    <a class=3D"lega=
+l-link" href=3D"https://www.sealand24.de/agb" style=3D"text-decoration:unde=
+rline;color: #ccc;padding: 0 5px 5px 5px;">AGB</a>
+                  </td=
+>
+                  <td>
+                    <a class=3D"legal-link" hr=
+ef=3D"https://www.sealand24.de/datenschutz" style=3D"text-decoration:underl=
+ine;color: #ccc;padding: 0 5px 5px 5px;">Datenschutz</a>
+                =
+  </td>
+                  <td>
+                    <a class=3D"legal-li=
+nk" href=3D"https://www.sealand24.de/impressum" style=3D"text-decoration:un=
+derline;color: #ccc;padding: 0 5px 5px 5px;">Impressum</a>
+              =
+    </td>
+                  <td>
+                    <a class=3D"legal-=
+link" href=3D"https://www.sealand24.de/kontakt" style=3D"text-decoration:un=
+derline;color: #ccc;padding: 0 5px 5px 5px;">Kontakt</a>
+                =
+  </td>
+                </tr>
+              </table>
+            </td=
+>
+            </center>
+          </tr>
+
+        </table>
+      <=
+/center>
+    </td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table=
+>
+  </div>
+  </center>
+  </body>
+
+  </html>
+--iptBMe6k--
+
