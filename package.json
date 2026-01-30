@@ -4,6 +4,9 @@
   "description": "Code snippets for Compass24",
   "main": "index.js",
   "scripts": {
+    "dev": "live-server --port=8080",
+    "dev:banner": "live-server --port=8080 --open=banner",
+    "dev:experiments": "live-server --port=8080 --open=experiments",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/schafeld/compass24-snippets#readme",
   "devDependencies": {
-    "eslint": "^8.57.1"
+    "eslint": "^8.57.1",
+    "live-server": "^1.2.2"
   }
 }
