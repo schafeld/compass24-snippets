@@ -1,0 +1,499 @@
+<!-- 
+Template E-Mail Newsletter 
+Topic: Blauwasser Webinare
+Date: 30.01.2026
+Language: DE
+Author: OS / AI-generated
+
+Version: 1.0 – Variante B: Magazin-Style
+Designprinzip: Redaktioneller Look mit Featured-Article und Grid-Karten
+-->
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Blauwasser Webinare – Wissen für Segler</title>
+  <style>
+    @import url('https://fonts.bunny.net/css?family=work-sans:300,300i,400,400i,700,700i');
+  </style>
+  <style>
+    body, table, td, div, h1, h2, h3, h4, h5, h6, p, a, span, strong, em, th, tr, ul, ol, li {
+      font-family: 'Work Sans', 'Helvetica', 'Arial', sans-serif !important;
+    }
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    a { text-decoration: none; }
+    /* Featured Article Card */
+    .featured-card {
+      background: #ffffff;
+      border: 2px solid #f8e931;
+      box-shadow: 0 4px 12px rgba(0,41,86,0.1);
+    }
+    .featured-badge {
+      display: inline-block;
+      background: #f8e931;
+      color: #002956;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      margin-bottom: 10px;
+    }
+    .featured-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #002956;
+      line-height: 1.3;
+      margin: 0 0 10px 0;
+    }
+    .featured-desc {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+      margin: 0 0 15px 0;
+    }
+    .featured-meta {
+      font-size: 12px;
+      color: #7f94aa;
+      margin: 0;
+    }
+    .featured-price-box {
+      background: #002956;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    .featured-price {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .featured-price-label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin: 5px 0 0 0;
+    }
+    /* Webinar Grid Cards */
+    .webinar-card {
+      background: #ffffff;
+      border: 1px solid #e0e4ea;
+      text-align: center;
+      padding: 0;
+    }
+    .webinar-card:hover {
+      border-color: #f8e931;
+    }
+    .webinar-card-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .webinar-card-content {
+      padding: 15px;
+    }
+    .webinar-card-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #002956;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+    }
+    .webinar-card-date {
+      font-size: 11px;
+      color: #7f94aa;
+      margin: 0 0 10px 0;
+    }
+    .webinar-card-price {
+      display: inline-block;
+      background: #f8e931;
+      color: #002956;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 6px 16px;
+    }
+    /* Horizontal Teaser */
+    .hz-teaser {
+      border-left: 4px solid #f8e931;
+      background: #ffffff;
+      margin-bottom: 10px;
+    }
+    .hz-teaser:hover {
+      background: #fffef0;
+    }
+    .hz-teaser-img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+    }
+    .hz-teaser-content {
+      padding: 12px 15px;
+      vertical-align: middle;
+    }
+    .hz-teaser-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #002956;
+      margin: 0 0 4px 0;
+    }
+    .hz-teaser-meta {
+      font-size: 11px;
+      color: #7f94aa;
+      margin: 0;
+    }
+    /* Section Titles */
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #002956;
+      border-bottom: 3px solid #f8e931;
+      padding-bottom: 10px;
+      margin: 0 0 20px 0;
+    }
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      background: #f8e931;
+      color: #002956;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 14px 30px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover {
+      background: #ffe95c;
+    }
+    .cta-btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: #002956;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 24px;
+      border: 2px solid #002956;
+      border-radius: 4px;
+    }
+    .cta-btn-outline:hover {
+      background: #002956;
+      color: #ffffff;
+    }
+    /* Mobile Responsive */
+    @media screen and (max-width: 600px) {
+      .content-table { max-width: 100% !important; }
+      .featured-title { font-size: 18px !important; }
+      .grid-cell { display: block !important; width: 100% !important; padding: 10px 0 !important; }
+      .hz-teaser-img { width: 80px !important; height: 55px !important; }
+      .section-title { font-size: 16px !important; }
+    }
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #1f355b !important; }
+      .content-table { background-color: #0e2440 !important; color: #dddddd !important; }
+      .featured-card, .webinar-card, .hz-teaser { background: #1a3050 !important; border-color: #2a4060 !important; }
+      .featured-title, .webinar-card-title, .hz-teaser-title, .section-title { color: #ffffff !important; }
+    }
+  </style>
+</head>
+
+<body style="margin:0;padding:0;word-spacing:normal;background-color:#f5f7fa;font-family:'Work Sans','Helvetica','Arial',sans-serif;" bgcolor="#f5f7fa">
+  <center>
+    <div role="article" aria-roledescription="email" lang="de" style="text-size-adjust:100%;">
+      
+      <!-- Preheader -->
+      <div style="display:none;max-height:0;overflow:hidden;font-size:0;line-height:0;color:#f5f7fa;">
+        Blauwasser Webinare: Radar, Elektrik, Erste Hilfe & Wetter – Live-Seminare mit Weltumseglern ab 25 €
+      </div>
+
+      <table align="center" role="presentation" style="width:100%;max-width:100%;border:none;border-spacing:0;background-color:#f5f7fa;" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          
+          <!-- Header -->
+          <tr>
+            <td style="padding:25px 20px;text-align:center;">
+              <a href="https://compass24.de?sPartner=emv01&utm_medium=email">
+                <img src="https://compass24.b-cdn.net/media/9b/6d/92/1742546147/compass24-logo-uni.png" width="180" alt="Compass24 Logo" style="width:180px;max-width:80%;height:auto;border:none;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- Brand Bar with Title -->
+          <tr>
+            <td style="background:#002956;padding:15px 20px;text-align:center;">
+              <span style="color:#f8e931;font-size:13px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;">⚓ Blauwasser Webinare</span>
+              <span style="color:#ffffff;font-size:13px;margin-left:10px;">— Profi-Wissen für Segler</span>
+            </td>
+          </tr>
+          <tr><td style="height:4px;background-color:#f8e931;"></td></tr>
+
+          <!-- Main Content -->
+          <tr>
+            <td>
+              <table class="content-table" role="presentation" align="center" style="width:100%;max-width:600px;border:none;border-spacing:0;background-color:#f9fbff;" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+
+                  <!-- Greeting -->
+                  <tr>
+                    <td style="padding:30px 30px 20px 30px;">
+                      <p style="font-size:15px;color:#333;line-height:1.6;margin:0;">
+                        <strong>${SALUTATION},</strong><br><br>
+                        die Winterzeit ist ideal, um das Segelwissen aufzufrischen. Entdecken Sie unsere <strong>Live-Webinare</strong> mit erfahrenen Referenten – interaktiv, praxisnah und bequem von zu Hause.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <!-- FEATURED WEBINAR -->
+                  <tr>
+                    <td style="padding:0 30px 30px 30px;">
+                      <table class="featured-card" role="presentation" style="width:100%;background:#ffffff;border:2px solid #f8e931;" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <td>
+                            <a href="https://www.compass24.de/webinar-radar-ais-verstehen-interpretieren-und-nutzen-live-491340?sPartner=emv01&utm_medium=email">
+                              <img src="https://compass24.b-cdn.net/media/b2/08/ac/1768508059/0491340_h1_FS26_01.jpg?width=600" alt="Radar/AIS Webinar" width="540" style="width:100%;height:auto;display:block;border:none;">
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:25px;">
+                            <span style="display:inline-block;background:#f8e931;color:#002956;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;margin-bottom:10px;">Empfohlen</span>
+                            <h2 style="font-size:20px;font-weight:bold;color:#002956;line-height:1.3;margin:10px 0;">Radar/AIS verstehen, interpretieren und nutzen</h2>
+                            <p style="font-size:14px;color:#444;line-height:1.5;margin:0 0 15px 0;">
+                              Wie funktioniert die Technik? Weltumsegler Sönke Roever erklärt anschaulich, wie Sie Radar- und AIS-Signale richtig interpretieren und für mehr Sicherheit auf See nutzen.
+                            </p>
+                            <p style="font-size:12px;color:#7f94aa;margin:0;">
+                              📅 Mo. 16.02.2026, 20:00 Uhr · 👤 mit Sönke Roever · ⏱️ ca. 2 Std.
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:0 25px 25px 25px;">
+                            <table role="presentation" style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+                              <tr>
+                                <td style="width:100px;background:#002956;color:#ffffff;text-align:center;padding:15px;vertical-align:middle;">
+                                  <span style="font-size:28px;font-weight:bold;">25 €</span><br>
+                                  <span style="font-size:11px;opacity:0.8;">inkl. Handout</span>
+                                </td>
+                                <td style="text-align:right;padding-left:20px;">
+                                  <a href="https://www.compass24.de/webinar-radar-ais-verstehen-interpretieren-und-nutzen-live-491340?sPartner=emv01&utm_medium=email" style="display:inline-block;background:#f8e931;color:#002956;font-size:16px;font-weight:bold;padding:14px 30px;border-radius:4px;">
+                                    »Lernen los!«
+                                  </a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Section: Weitere Webinare -->
+                  <tr>
+                    <td style="padding:0 30px 10px 30px;">
+                      <h3 style="font-size:18px;font-weight:bold;color:#002956;border-bottom:3px solid #f8e931;padding-bottom:10px;margin:0;">
+                        Weitere Webinare
+                      </h3>
+                    </td>
+                  </tr>
+
+                  <!-- Webinar Grid (2x) -->
+                  <tr>
+                    <td style="padding:10px 30px 20px 30px;">
+                      <table role="presentation" style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <!-- Card 1: Yachtelektrik -->
+                          <td class="grid-cell" style="width:50%;padding:5px;vertical-align:top;">
+                            <table class="webinar-card" role="presentation" style="width:100%;background:#ffffff;border:1px solid #e0e4ea;" cellspacing="0" cellpadding="0" border="0">
+                              <tr>
+                                <td>
+                                  <a href="https://www.compass24.de/webinar-yachtelektrik-grundlagen-und-installation-live-491330?sPartner=emv01&utm_medium=email">
+                                    <img src="https://compass24.b-cdn.net/media/b6/ef/49/1768508075/0491330_h1_FS26_01.jpg?width=280" alt="Yachtelektrik Webinar" width="260" style="width:100%;height:120px;object-fit:cover;display:block;border:none;">
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding:15px;">
+                                  <p style="font-size:13px;font-weight:bold;color:#002956;margin:0 0 8px 0;line-height:1.3;">Yachtelektrik – Grundlagen</p>
+                                  <p style="font-size:11px;color:#7f94aa;margin:0 0 10px 0;">Di. 10.02.2026</p>
+                                  <a href="https://www.compass24.de/webinar-yachtelektrik-grundlagen-und-installation-live-491330?sPartner=emv01&utm_medium=email" style="display:inline-block;background:#f8e931;color:#002956;font-size:14px;font-weight:bold;padding:6px 16px;">25 €</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <!-- Card 2: Erste Hilfe -->
+                          <td class="grid-cell" style="width:50%;padding:5px;vertical-align:top;">
+                            <table class="webinar-card" role="presentation" style="width:100%;background:#ffffff;border:1px solid #e0e4ea;" cellspacing="0" cellpadding="0" border="0">
+                              <tr>
+                                <td>
+                                  <a href="https://www.compass24.de/webinar-erste-hilfe-an-bord-live-491380?sPartner=emv01&utm_medium=email">
+                                    <img src="https://compass24.b-cdn.net/media/6f/9a/e6/1768508055/0491380_h1_FS26_01.jpg?width=280" alt="Erste Hilfe Webinar" width="260" style="width:100%;height:120px;object-fit:cover;display:block;border:none;">
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding:15px;">
+                                  <p style="font-size:13px;font-weight:bold;color:#002956;margin:0 0 8px 0;line-height:1.3;">Erste Hilfe an Bord</p>
+                                  <p style="font-size:11px;color:#7f94aa;margin:0 0 10px 0;">Do. 05.03.2026</p>
+                                  <a href="https://www.compass24.de/webinar-erste-hilfe-an-bord-live-491380?sPartner=emv01&utm_medium=email" style="display:inline-block;background:#f8e931;color:#002956;font-size:14px;font-weight:bold;padding:6px 16px;">25 €</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Horizontal Teaser: Wettersoftware -->
+                  <tr>
+                    <td style="padding:0 30px 10px 30px;">
+                      <a href="https://www.compass24.de/webinar-wettersoftware-anwenden-live-491280?sPartner=emv01&utm_medium=email">
+                        <table class="hz-teaser" role="presentation" style="width:100%;border-left:4px solid #f8e931;background:#ffffff;" cellspacing="0" cellpadding="0" border="0">
+                          <tr>
+                            <td style="width:100px;padding:0;">
+                              <img src="https://compass24.b-cdn.net/media/92/07/62/1768508224/0491280_h1_FS26_01.jpg?width=200" alt="Wettersoftware" width="100" height="70" style="display:block;width:100px;height:70px;object-fit:cover;border:none;">
+                            </td>
+                            <td style="padding:12px 15px;vertical-align:middle;">
+                              <p style="font-size:13px;font-weight:bold;color:#002956;margin:0 0 4px 0;">Wettersoftware anwenden</p>
+                              <p style="font-size:11px;color:#7f94aa;margin:0;">Di. 14.04.2026 · 25 €</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <!-- All Webinars Link -->
+                  <tr>
+                    <td style="padding:20px 30px 30px 30px;text-align:center;">
+                      <a href="https://www.compass24.de/geschenke/seminare?sPartner=emv01&utm_medium=email" style="display:inline-block;background:transparent;color:#002956;font-size:14px;font-weight:bold;padding:10px 24px;border:2px solid #002956;border-radius:4px;">
+                        Alle Webinare anzeigen →
+                      </a>
+                    </td>
+                  </tr>
+
+                  <!-- Separator -->
+                  <tr><td style="height:2px;background:#e0e4ea;"></td></tr>
+
+                  <!-- Section: Shop-Empfehlungen -->
+                  <tr>
+                    <td style="padding:30px 30px 10px 30px;">
+                      <h3 style="font-size:18px;font-weight:bold;color:#002956;border-bottom:3px solid #7f94aa;padding-bottom:10px;margin:0;">
+                        🛒 Shop-Empfehlungen
+                      </h3>
+                    </td>
+                  </tr>
+
+                  <!-- Product Teasers -->
+                  <tr>
+                    <td style="padding:15px 30px;">
+                      <a href="https://www.compass24.de/search?sSearch=ais+transponder&sPartner=emv01&utm_medium=email">
+                        <table style="width:100%;background:#ffffff;border:1px solid #e0e4ea;margin-bottom:10px;" cellspacing="0" cellpadding="0" border="0">
+                          <tr>
+                            <td style="width:80px;padding:10px;">
+                              <img src="https://compass24.b-cdn.net/media/d6/1c/16/1740560419/0493302_s1_FS25ix.jpg?width=200" alt="AIS Transponder" width="60" height="60" style="width:60px;height:60px;object-fit:contain;border:none;">
+                            </td>
+                            <td style="padding:10px;vertical-align:middle;">
+                              <p style="font-size:13px;font-weight:bold;color:#002956;margin:0;">AIS-Transponder & Empfänger</p>
+                              <p style="font-size:11px;color:#7f94aa;margin:4px 0 0 0;">Passend zum Radar/AIS-Webinar</p>
+                            </td>
+                            <td style="padding:10px;text-align:right;vertical-align:middle;">
+                              <span style="font-size:12px;color:#002956;font-weight:bold;">ab 299 €</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </a>
+                      <a href="https://www.compass24.de/search?sSearch=bordapotheke&sPartner=emv01&utm_medium=email">
+                        <table style="width:100%;background:#ffffff;border:1px solid #e0e4ea;" cellspacing="0" cellpadding="0" border="0">
+                          <tr>
+                            <td style="width:80px;padding:10px;">
+                              <img src="https://compass24.b-cdn.net/media/77/15/51/1715936088/0178490_s1_HW21ix.jpg?width=200" alt="Bordapotheke" width="60" height="60" style="width:60px;height:60px;object-fit:contain;border:none;">
+                            </td>
+                            <td style="padding:10px;vertical-align:middle;">
+                              <p style="font-size:13px;font-weight:bold;color:#002956;margin:0;">Bordapotheken & Erste-Hilfe-Sets</p>
+                              <p style="font-size:11px;color:#7f94aa;margin:4px 0 0 0;">Passend zum Erste-Hilfe-Webinar</p>
+                            </td>
+                            <td style="padding:10px;text-align:right;vertical-align:middle;">
+                              <span style="font-size:12px;color:#002956;font-weight:bold;">ab 19,95 €</span>
+                            </td>
+                          </tr>
+                        </table>
+                      </a>
+                    </td>
+                  </tr>
+
+                  <!-- Closing -->
+                  <tr>
+                    <td style="padding:30px;text-align:left;font-size:14px;line-height:1.6;">
+                      <strong>Herzliche Grüße</strong><br>
+                      Ihr Michael Dehler<br>
+                      und das Compass-Team
+                    </td>
+                  </tr>
+
+                  <!-- Banner Row -->
+                  <tr>
+                    <td style="padding:0 10px;">
+                      <table role="presentation" style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                          <td style="width:50%;padding:5px;">
+                            <a href="https://compass24.de/preishammer/preishammer-top-angebote?sPartner=emv01&utm_medium=email">
+                              <img src="https://compass24.b-cdn.net/media/ec/d4/bd/1739950107/25-00-00-COM-Banner_Preishammer.jpg?width=300&format=jpeg&aspect_ratio=4:3" alt="Preishammer" width="270" style="width:100%;height:auto;border:none;">
+                            </a>
+                          </td>
+                          <td style="width:50%;padding:5px;">
+                            <a href="https://compass24.de/sale?sPartner=emv01&utm_medium=email">
+                              <img src="https://compass24.b-cdn.net/media/b9/8d/1a/1739950107/25-00-00-COM-Banner_SALE.jpg?width=300&format=jpeg&aspect_ratio=4:3" alt="Sale" width="270" style="width:100%;height:auto;border:none;">
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <tr><td style="height:20px;"></td></tr>
+
+                  <!-- Legal -->
+                  <tr>
+                    <td style="padding:20px 30px;background:#f0f2f5;font-size:10px;color:#666;line-height:1.5;">
+                      Dieser Newsletter wurde an ${email} gesendet.<br>
+                      <a href="mailto:info@compass24.de" style="color:#002956;">Kontakt</a> · 
+                      <a href="https://www.compass24.de/newsletter?block=unsubscribe&act=unsubscribe&sNewsletter=${email}" style="color:#002956;">Abmelden</a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr><td style="height:5px;background-color:#7f94aa;"></td></tr>
+          <tr>
+            <td style="padding:30px 20px;background-color:#7f94aa;text-align:center;">
+              <img src="https://compass24.b-cdn.net/media/3b/b5/3a/1698750615/compass-rose_64x64px.png" width="35" height="35" alt="Compass Rose" style="display:inline-block;">
+              <p style="color:#ffffff;margin:10px 0 0 0;font-size:11px;line-height:1.6;">
+                Compass Yachtzubehör · Lüdinghauser Str. 34 · 59387 Ascheberg · Tel: 0 25 93 - 915 236
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:15px;background-color:#002956;text-align:center;">
+              <a href="https://compass24.de/agb?sPartner=emv01&utm_medium=email" style="color:#ccc;font-size:11px;padding:0 8px;">AGB</a>
+              <a href="https://compass24.de/datenschutz?sPartner=emv01&utm_medium=email" style="color:#ccc;font-size:11px;padding:0 8px;">Datenschutz</a>
+              <a href="https://compass24.de/impressum?sPartner=emv01&utm_medium=email" style="color:#ccc;font-size:11px;padding:0 8px;">Impressum</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </center>
+</body>
+</html>
