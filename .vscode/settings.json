@@ -1,0 +1,20 @@
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": ".github/copilot-instructions.md"
+    }
+  ],
+  "files.associations": {
+    "*.html": "html"
+  },
+  "html.validate.styles": true,
+  "html.validate.scripts": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": false
+  },
+  "emmet.includeLanguages": {
+    "html": "html"
+  },
+  "html.customData": []
+}
