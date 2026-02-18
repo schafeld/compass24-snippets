@@ -2,6 +2,8 @@
 
 A promotional overlay banner for the Compass Preis-Offensive campaign with multi-language support.
 
+![Banner Preis-Offensive](basic-leaderboard-modal.png)
+
 ## Overview
 
 This banner is designed to be injected into pages via a personalization platform. It displays a fixed-position promotional banner with language-specific images and links.
