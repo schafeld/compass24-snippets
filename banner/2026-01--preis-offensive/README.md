@@ -189,3 +189,7 @@ Last updated: 2026-01-21
 - Focus is returned to the previously focused element when the banner is closed to avoid losing keyboard context.
 
 If you want stricter behavior (e.g., focus trap / modal), we can convert this to a fully modal dialog with `aria-modal` and more rigorous focus management.
+
+## Copyright
+
+The banner motifs are copyright 2026 [Compass®](https://www.compass24.de/).
