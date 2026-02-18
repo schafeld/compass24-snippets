@@ -8,11 +8,12 @@
 
 ## Übersicht der Template-Varianten
 
-| Variante | Datei | Designfokus | Primäre Zielgruppe |
-|----------|-------|-------------|-------------------|
-| **A** | `Variante-A--Hero-mit-CTA-Overlay.html` | Emotionale Ansprache, visuell dominant | Aspirational Sailors, Träumer |
-| **B** | `Variante-B--Magazin-Style.html` | Redaktioneller, informativer Look | Wissenshungrige, Recherchierende |
-| **C** | `Variante-C--Kompakt-Mobile-First.html` | Schneller Überblick, mobile-optimiert | Entscheidungsfreudige, Mobile-User |
+| Variante | Vorschau | Datei | Designfokus | Primäre Zielgruppe |
+|----------|----------|-------|-------------|-------------------|
+| **A** | ![Variante A](previews/variante-A-2026-02-02-001--SCR-20260202-iarw.png) | `Variante-A--Hero-mit-CTA-Overlay.html` | Emotionale Ansprache, visuell dominant | Aspirational Sailors, Träumer |
+| **B** | ![Variante B](previews/variante-B-2026-02-02--SCR-20260202-ifmo.png) | `Variante-B--Magazin-Style.html` | Redaktioneller, informativer Look | Wissenshungrige, Recherchierende |
+| **C** | ![Variante C](previews/variante-C-2026-02-02--SCR-20260202-iggc.png) | `Variante-C--Kompakt-Mobile-First.html` | Schneller Überblick, mobile-optimiert | Entscheidungsfreudige, Mobile-User |
+| **Aktuell (2025)** | ![Aktueller Newsletter 2025](previews/Aktueller-Newsletter-2025--Crazy-Deals--SCR-20260202-ikhw.png) | – | Bisheriges Design (Referenz) | – |
 
 ---
 
